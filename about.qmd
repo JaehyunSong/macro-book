@@ -1,0 +1,240 @@
+---
+title: "本講義について"
+toc: true
+toc-title: "目次"
+---
+
+```{r}
+#| include: false
+knitr::opts_chunk$set(fig.align = "center",
+                      dev       = "ragg_png")
+```
+
+## 概要
+
+* 講義日: 木曜日 第4時限（14:40～16:10）
+* 場所: TC302教室（高槻キャンパス C棟 302教室）
+* 講義内容: 社会科学のリサーチデザイン & Rを用いたデータ分析の基礎
+   * リサーチデザイン
+   * 統計的推論・仮説検定
+   * 平均値の（差の）検定
+   * 相関分析
+   * 独立性の検定
+   * 線形回帰分析
+   * ロジスティック回帰分析
+* Rの使い方そのものについては解説しない。
+   * Rの使い方は前期の「ミクロ政治データ分析実習」で解説済み
+* 前提知識: 前期の「ミクロ政治データ分析実習」を履修すること。
+   * 未修の場合、{dplyr}、{tidyr}、{ggplot2}に関する知識が必要。
+   * ブラインドタッチが出来ること。
+
+## オフィス・アワー
+
+宋、またはTAが研究室に待機し、事前予約**なし**に相談、質問などが可能な時間
+
+* 場所：**TA227**研究室（A棟の2階）
+* 毎週**火曜日3限** (13:00〜14:30)
+   * 宋が対応
+* 毎週**木曜日3・5限** (13:00〜14:30 / 16:20〜17:50)
+   * 3限はTA、5限は宋・TAが対応
+* 上記の時間外は事前予約が必要（メール、対面）
+   * メール: <song@kansai-u.ac.jp>
+
+## 講義内容
+
+| 回 | 内容                   | 教科書     |
+|:--:|------------------------|------------|
+|  1 | ガイダンス             |            |
+|  2 | リサーチデザイン（1）  | 第1〜3章   |
+|  3 | リサーチデザイン（2）  | 同上       |
+|  4 | 記述統計               | 第6章      |
+|  5 | 統計的推定             | 第7章      |
+|  6 | 統計的仮説検定         | 第8章      |
+|  7 | 変数間の関係           | 第9章      |
+|  8 | 回帰分析（1）          | 第10〜13章 |
+|  9 | 回帰分析（2）          | 同上       |
+| 10 | 回帰分析（3）          | 同上       |
+| 11 | 交互作用               | 第14章     |
+| 12 | 分析結果の可視化       |            |
+| 13 | ロジスティック回帰分析 | 第15章     |
+| 14 | 期末レポートの執筆     |            |
+| 15 | 期末レポートの執筆     |            |
+
+## 本講義の位置づけ
+
+```{r}
+#| echo: false
+#| message: false
+#| fig-width: 10
+#| fig-height: 5.75
+pacman::p_load(tidyverse, ggforce)
+
+ggplot() +
+   geom_circle(aes(x0 =  0.5, y0 = 0, r = 1), 
+               fill = "red", alpha = 0.3) +
+   geom_circle(aes(x0 = -0.5, y0 = 0, r = 1), 
+               fill = "blue", alpha = 0.3) +
+   geom_circle(aes(x0 =  0,   y0 = 1, r = 1), 
+               fill = "green", alpha = 0.3) +
+   coord_cartesian(xlim = c(-2.8, 2.8), ylim = c(-1, 2)) +
+   annotate("text", x =  0,    y =  1.5, 
+            label = "政治学", size = 10) +
+   annotate("text", x = -0.85, y = -0.25, 
+            label = "コーディング", size = 10,
+            angle = -45) +
+   annotate("text", x =  0.85, y = -0.25, 
+            label = "統計学", size = 10,
+            angle = 45) +
+   annotate("text", x =  0,    y =  -0.25, 
+            label = "機械学習", size = 5) +
+   annotate("text", x =  0.5,  y =   0.75, 
+            label = "伝統的な\n実証政治学", size = 5) +
+   annotate("text", x = -0.5,  y =   0.75, 
+            label = "？？", size = 5) +
+   geom_segment(aes(x = -1.5, y = 1.5, xend = -0.9, yend = 1.5),
+                arrow = arrow(type = "closed")) +
+   geom_segment(aes(x =  1.5, y = 1.5, xend =  0.9, yend = 1.5),
+                arrow = arrow(type = "closed")) +
+   geom_segment(aes(x =  1.5,   y = -0.75, xend = 1.3, yend = -0.6),
+                arrow = arrow(type = "closed")) +
+   geom_segment(aes(x = -1.5,   y = -0.75, xend = -1.3, yend = -0.6),
+                arrow = arrow(type = "closed")) +
+   annotate("text", x =  0,    y =   0.25, color = "darkred",
+            label = "データサイエンス", size = 8, fontface = 2) +
+   annotate("label", x = 1.5, y = -0.75, hjust = 0,
+            label = "マクロ政治データ分析実習", size = 5,
+            color = "red") +
+   annotate("label", x = -1.5, y = -0.75, hjust = 1,
+            label = "ミクロ政治データ分析実習", size = 5) +
+   annotate("label", x = -1.25, y = 1.5,   hjust = 1,
+            label = "ミクロ政治分析", size = 5) +
+   annotate("label", x =  1.25, y = 1.5,   hjust = 0,
+           label = "マクロ政治分析", size = 5) +
+   theme_void()
+```
+
+## 前提知識
+
+* ファイル・システムの理解
+   * フォルダー (ディレクトリ)の概念
+   * `C:/AAA/BBB/CCC.txt` (Windows)や`~/AAA/BBB/CCC.text` (macOS / Linux)の意味が理解できること
+   * 相対パス / 絶対パスの概念が理解できること
+* ブラインド・タッチ (**重要**)
+   * 期末レポートは第15回の授業**中**に執筆する。
+   * タイピングが遅いと、時間内に期末レポートの完成ができない。
+   * 第15回の授業までにブラインドタッチの練習を推奨
+   * この授業に限らず、現代社会で極めて重要なスキル
+
+## 教科書
+
+* 浅野正彦・矢内勇生. 2018. 『[Rによる計量政治学](https://www.amazon.co.jp/dp/4274223132)』オーム社
+
+```{r}
+#| echo: false
+#| out-width: "250px"
+knitr::include_graphics("Figs/Syllabus/Textbook.jpg")
+```
+
+## 参考書（データ分析）
+
+* 飯田健. 2013. 『[計量政治分析](https://www.amazon.co.jp/dp/4320019245/)』共立出版
+* 今井耕介 著. 粕谷祐子・原田勝孝・久保浩樹 訳. 2018. 『社会科学のためのデータ分析入門([上](https://www.amazon.co.jp/dp/400061245X/)/[下](https://www.amazon.co.jp/dp/4000612468/))』有斐閣.
+
+::: {layout-ncol=3}
+```{r}
+#| echo: false
+#| fig-height: 1
+knitr::include_graphics("Figs/Syllabus/Reference_DA1.jpg")
+```
+
+```{r}
+#| echo: false
+#| fig-height: 1
+knitr::include_graphics("Figs/Syllabus/Reference_DA2.jpg")
+```
+
+```{r}
+#| echo: false
+#| fig-height: 1
+knitr::include_graphics("Figs/Syllabus/Reference_DA3.jpg")
+```
+:::
+
+## 参考書（R）
+
+* 松村優哉 他. 2021. 『[改訂2版 RユーザのためのRStudio[実践]入門](https://www.amazon.co.jp/dp/4297121700/)』技術評論社
+* Garrett Grolemund and Hadley Wickham. 2017. [*R for Data Science.*](https://r4ds.had.co.nz) O'Reilly.
+   * 邦訳『Rではじめるデータサイエンス』(**原著は無料:** <https://r4ds.had.co.nz/>)
+* Song Jaehyun・矢内勇生.『[私たちのR: ベストプラクティスの探求](https://www.jaysong.net/RBook)』Web-book.
+   * [ミクロ政治データ分析実習](https://www.jaysong.net/micro-book/)の教科書
+
+::: {layout-ncol=3}
+```{r}
+#| echo: false
+#| fig-height: 1
+knitr::include_graphics("Figs/Syllabus/Reference_R1.png")
+```
+
+```{r}
+#| echo: false
+#| fig-height: 1
+knitr::include_graphics("Figs/Syllabus/Reference_R2.jpg")
+```
+
+```{r}
+#| echo: false
+#| fig-height: 1
+knitr::include_graphics("Figs/Syllabus/Reference_R3.jpg")
+```
+:::
+
+## 成績評価
+
+* **平常点** (20%)
+   * 学生証を持参すること（カードリーダーで出席を確認）
+   * 欠席4回以上は評価の対象外（3回まで評価対象）
+* **課題** (50%)
+   * 計8〜9回の課題を予定
+   * 未提出4回以上は評価の対象外（3回まで評価対象）
+   * 課題提出期限の延長はない (提出までの期間が長めであるため)
+      * 提出期限は次回講義の前日23時59分まで
+      * 期限内に提出出来なかった場合でも宋に連絡する必要はない (どうせ延ばしてくれない)。
+   * 不正行為厳禁
+* **期末レポート** (30%)
+   * 第15回の授業内に期末レポートを執筆
+   * 未提出者は評価の対象外
+   * 不正行為厳禁
+
+## 注意事項
+
+* コードは以下のように背景に色が付けられている部分である。
+
+```{r}
+#| eval: false
+print("Hello!")
+```
+
+* コードの中で`#`で始まる内容はコメントであり、分析に影響を与えない。ただし、`"`や`'`で囲まれた`#`はコメントではない。また、行の途中から`#`が入る場合、`#`以降は実行されない。
+
+```{r}
+#| eval: false
+# Hello!を出力するコード
+print("Hello!")
+
+# "や'内の#はコメントではない
+print("この#はコメントではありません")
+
+print("Hello World!") # Hello World!を出力
+```
+
+* 出力結果は以下のように背景なし&等幅フォントで出力される。
+
+```{r}
+#| echo: false
+print("Hello!")
+```
+
+* オブジェクト名は`変数名`や`関数名()`のように文中の色付き背景で示された部分である。
+* パッケージ名は{}で囲む。tidyverseパッケージの場合、{tidyverse}と表記する[^package-name]。
+
+[^package-name]: ただし、パッケージ名を{}で囲むのは一般的な表記ではないことを断っておきたい。

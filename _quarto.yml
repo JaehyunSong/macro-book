@@ -1,0 +1,89 @@
+project:
+  type: website
+  output-dir: docs
+
+language: translate_jp.yml
+
+website:
+  favicon: Figs/favicon.png
+  site-url: "https://www.jaysong.net/micro-book/"
+  title: "<img src='/Figs/logo.png' height='20' style='vertical-align:baseline;'> MacroAnalysis@Kandai"
+  page-footer: 
+    left: "Copyright 2022, <a href='https://www.jaysong.net' target='_blank'>Jaehyun Song</a>. Powered by <a href='https://quarto.org/' target='_blank'>Quarto</a>" 
+    right:
+      - icon: house-fill
+        href: https://www.jaysong.net
+      - icon: github
+        href: https://github.com/JaehyunSong
+  navbar:
+    search: true
+    background: "#4169E1"
+    pinned: true
+    left:
+      - text: "本講義について"
+        href: about.qmd
+      - sidebar:intro
+      - sidebar:material
+      - sidebar:homework
+      - text: "データ集"
+        href: data.qmd
+    right: 
+      - icon: terminal
+        href: https://jupyter.cs.rcos.nii.ac.jp/
+      - icon: book
+        href: https://www.jaysong.net/RBook/
+  sidebar:
+    - id: intro
+      title: "Rの使い方"
+      style: "docked"
+      contents:
+        - intro/install.qmd
+        - intro/rstudio.qmd
+        - intro/project.qmd
+        - intro/file.qmd
+        - text: "パッケージ"
+          href: intro/packages.qmd
+        - intro/homework.qmd
+    - id: material
+      title: "講義資料"
+      style: "docked"
+      #contents:
+        #- materials/introduction.qmd      # 第 1回
+        #- materials/install.qmd           # 第 2回
+        #- materials/basic.qmd             # 第 3回
+        #- materials/programming.qmd       # 第 4回
+        #- materials/rmarkdown.qmd         # 第 5回
+        #- materials/data_collection.qmd   # 第 5回
+        #- materials/datatype.qmd          # 第 7回
+        #- materials/datastructure.qmd     # 第 8回
+        #- materials/handling1.qmd         # 第 9回
+        #- materials/handling2.qmd         # 第10回
+        #- materials/handling3.qmd         # 第11回
+        #- materials/visualization1.qmd    # 第12回
+        #- materials/visualization2.qmd    # 第13回
+        #- materials/visualization3.qmd    # 第14回
+    - id: homework
+      title: "課題"
+      style: "docked"
+      contents:
+        - text: "第5回課題"
+        #  href: HW/HW05.qmd
+        - text: "第10回課題"
+        #  href: HW/HW10.qmd
+        - text: "第11回課題"
+        #  href: HW/HW11.qmd
+        - text: "第13回課題"
+        #  href: HW/HW13.qmd
+        - text: "第14回課題"
+        #  href: HW/HW14.qmd
+        - text: "期末レポート執筆要領"
+        #  href: HW/Final.qmd
+  google-analytics: "G-9TLN2VMPQD"
+
+format:
+  html:
+    theme: cosmo
+    css: styles.css
+
+
+

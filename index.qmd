@@ -1,0 +1,28 @@
+---
+title: ""
+---
+
+本ウェブサイトは関西大学総合情報学部「**マクロ政治データ分析実習**（2022年度）」のサポートページです。本ページはPC画面での閲覧を推奨します。
+
+:::{.callout-tip}
+## アイコン説明
+
+* <a href="https://jupyter.cs.rcos.nii.ac.jp/" target="_blank"><i class="bi bi-terminal"></i></a>：NIIオンライン分析システムの起動
+   * 右クリックし、新しいタブ（or ウィンドウ）で開いてください。
+   * 初期設定が必要です。初期設定の方法はRの使い方 > [Rの導入](intro/install.html)を参照してください。
+* <a href="https://www.jaysong.net/RBook/" target="_blank"><i class="bi bi-book"></i></a>：Rの教科書（『私たちのR』）
+* <i class="bi bi-search"></i>：本ウェブサイト内の検索
+:::
+
+:::{.callout-note}
+## ページ情報
+
+* 最終更新日: `r format(Sys.Date(), "%Y年%m月%d日")`
+* 開発環境
+   * macOS 12.4 "Monterey"
+   * Firefox 102.0.0
+   * `r version$version.string`
+   * RStudio 2022.02.3+492 "Prairie Trillium"
+   * Quarto `r quarto::quarto_inspect()$quarto$version`
+   * R package {quarto} `r packageVersion("quarto")`
+:::
