@@ -277,6 +277,90 @@
     "href": "slides/slide01.html#講義概要",
     "title": "マクロ政治データ分析実習",
     "section": "講義概要",
-    "text": "講義概要\n\n講義日: 木曜日 第4時限（14:40～16:10）\n場所: TC302教室（高槻キャンパス C棟 302教室）\n講義内容: 社会科学のリサーチデザイン & Rを用いたデータ分析の基礎\n\nリサーチデザイン\n統計的推論・仮説検定\n平均値の（差の）検定\n相関分析\n独立性の検定\n線形回帰分析\nロジスティック回帰分析\n\nRの使い方そのものについては解説しない。\n\nRの使い方は前期の「ミクロ政治データ分析実習」で解説済み\n\n前提知識: 前期の「ミクロ政治データ分析実習」を履修すること。\n\n未修の場合、{dplyr}、{tidyr}、{ggplot2}に関する知識が必要。\nブラインドタッチが出来ること。\n\n\n\n\n\nhttps://www.jaysong.net/micro-book"
+    "text": "講義概要\n\n講義日: 木曜日 第4時限（14:40～16:10）\n場所: TC302教室（高槻キャンパス C棟 302教室）\n講義内容: 社会科学のリサーチデザイン & Rを用いたデータ分析の基礎\n\nリサーチデザイン\n統計的推論・仮説検定\n平均値の（差の）検定\n相関分析\n独立性の検定\n線形回帰分析\nロジスティック回帰分析\n\nRの使い方そのものについては解説しない。\n\nRの使い方は前期の「ミクロ政治データ分析実習」で解説済み\n\n前提知識: 前期の「ミクロ政治データ分析実習」を履修すること。\n\n未修の場合、{dplyr}、{tidyr}、{ggplot2}に関する知識が必要。\nブラインドタッチが出来ること。"
+  },
+  {
+    "objectID": "materials/introduction.html",
+    "href": "materials/introduction.html",
+    "title": "第1回講義資料",
+    "section": "",
+    "text": "新しいタブで開く"
+  },
+  {
+    "objectID": "slides/slide01.html#講義内容",
+    "href": "slides/slide01.html#講義内容",
+    "title": "マクロ政治データ分析実習",
+    "section": "講義内容",
+    "text": "講義内容\n\n第1回: ガイダンス\n第2回: リサーチデザイン（1）\n第3回: リサーチデザイン（2）\n第4回: 記述統計\n第5回: 統計的推定\n第6回: 統計的仮説検定\n第7回: 変数間の関係\n第8回: 回帰分析（1）\n第9回: 回帰分析（2）\n第10回: 回帰分析（3）\n第11回: 交互作用\n第12回: 分析結果の可視化\n第13回: ロジスティック回帰分析\n第14回: 期末レポートの執筆\n\n第15回: 期末レポートの執筆"
+  },
+  {
+    "objectID": "slides/slide01.html#使用ツール-r",
+    "href": "slides/slide01.html#使用ツール-r",
+    "title": "マクロ政治データ分析実習",
+    "section": "使用ツール: R",
+    "text": "使用ツール: R\nR/RStudioのインストール方法は紹介しない\n\n使用するR/RStudioはNIIオンライン分析システム\n\n使い方は「ミクロ政治データ分析実習」（前期）で紹介\n使い方の復習は「ミクロ政治データ分析実習」のサポートページ、教科書を参照すること\n「ミクロ政治データ分析実習」未修者の場合は速やかに宋に相談"
+  },
+  {
+    "objectID": "slides/slide01.html#前提知識",
+    "href": "slides/slide01.html#前提知識",
+    "title": "マクロ政治データ分析実習",
+    "section": "前提知識",
+    "text": "前提知識\n「ミクロ政治データ分析実習」を履修していること。\n\nRを使うのは第4回（10月13日）から\n\n未修者の場合は10月12日まで以下の内容を習得しておくこと。\n\n\n\n\n\n\n\n\n  \n  \n    \n      内容\n      『私たちのR』\n      「ミクロ政治データ分析実習」\n    \n  \n  \n    データの入出力\n第6、7章\n第3回\n    データ型とデータ構造\n第8、9章\n第7、8回\n    R Markdown\n第21章\n第5回\n    {dplyr}と{tidyr}を用いたデータハンドリング\n第12、13、14、15章\n第9、10、11回\n    {ggplot2}を用いた可視化\n第17、18、19章\n第12、13、14回"
+  },
+  {
+    "objectID": "slides/slide01.html#教科書",
+    "href": "slides/slide01.html#教科書",
+    "title": "マクロ政治データ分析実習",
+    "section": "教科書",
+    "text": "教科書\n浅野正彦・矢内勇生. 2018.『Rによる計量政治学』オーム社.\n\nサポートページ: https://github.com/yukiyanai/quant-methods-R\n\nデータ、解説資料、正誤表など"
+  },
+  {
+    "objectID": "slides/slide01.html#参考書",
+    "href": "slides/slide01.html#参考書",
+    "title": "マクロ政治データ分析実習",
+    "section": "参考書",
+    "text": "参考書\n\n飯田健. 2013. 『計量政治分析』共立出版\n今井耕介 (著). 粕谷祐子・原田勝孝・久保浩樹（訳）. 2018. 『社会科学のためのデータ分析入門（上/下）』岩波書店"
+  },
+  {
+    "objectID": "slides/slide01.html#副読本",
+    "href": "slides/slide01.html#副読本",
+    "title": "マクロ政治データ分析実習",
+    "section": "副読本",
+    "text": "副読本\nRの使い方については以下の本がおすすめ\n\nSong Jaehyun・矢内勇生.『私たちのR: ベストプラクティスの探究』(web-book)\n\n無料: https:/www.jaysong.net/RBook/\n\n松村優哉・湯谷啓明・紀ノ定保礼・前田和寛. 2021. 『改訂2版 RユーザのためのRStudio[実践]入門』技術評論社\nGarrett Grolemund and Hadley Wickham. 2017. R for Data Science. O’Reilly.\n\n邦訳『Rではじめるデータサイエンス』\n原著は無料: https://r4ds.had.co.nz/\n\nJared P. Lander. 2018. R for Everyone. Addison-Wesley Professional.\n\n邦訳『みんなのR』"
+  },
+  {
+    "objectID": "slides/slide01.html#成績評価",
+    "href": "slides/slide01.html#成績評価",
+    "title": "マクロ政治データ分析実習",
+    "section": "成績評価",
+    "text": "成績評価\n\n平常点 (30%)\n\n欠席6回以上は評価の対象外（5回まで評価対象）\n\nただし、5回欠席の場合、単位取得は実質困難\n\n45分以上欠席は出席0.5回扱い\n欠席届を提出した場合は出席扱い\n\n課題 (35%)\n\n課題は計5回\n3回以上未提出は評価の対象外（2回までは評価対象）\n\n期末レポート (35%)\n\n自分独自の問いを立て、その問いに答えるための過程と結果を記録したレポート\n授業の第14・15回は期末レポートの執筆\n\n評価の対象は「採点の対象」であることを意味し、単位を保障するものではない。"
+  },
+  {
+    "objectID": "slides/slide01.html#オフィスアワー",
+    "href": "slides/slide01.html#オフィスアワー",
+    "title": "マクロ政治データ分析実習",
+    "section": "オフィス・アワー",
+    "text": "オフィス・アワー\n宋、またはTAが研究室に待機し、事前予約なしに相談、質問などが可能な時間\n\n毎週火曜日3限（13時00分〜14時30分）\n\n宋が対応\n\n毎週木曜日3・5限（13時00分〜14時30分/16時20分〜17時50分）\n\n3限目TAのみ、5限目は宋とTAが対応\n\n場所：TA227研究室（A棟の2階）\n上記の時間外は事前予約が必要（メール、対面）\n\nメール: song@kansai-u.ac.jp\n\n\n\n\n\nhttps://www.jaysong.net/micro-book"
+  },
+  {
+    "objectID": "slides/slide01.html#講義概要-1",
+    "href": "slides/slide01.html#講義概要-1",
+    "title": "マクロ政治データ分析実習",
+    "section": "講義概要",
+    "text": "講義概要\n\n世論調査データ、市区町村・国の選挙結果データなど、様々なタイプのデータを用いた分析手法を学習するとともに、計量政治学の論文/レポート執筆の基礎を身に付ける。\n\n15回の授業でこの能力は身につかない。毎週、授業.kenten2[外]時間で3時間以上、本講義の内容について予習・復習することが期待される。\n\n前期の「ミクロ政治データ分析実習」とセットで履修することを強く推奨する。「ミクロ政治データ分析実習」は分析ツールの使い方を、本講義では具体的な分析手法について解説する。"
+  },
+  {
+    "objectID": "slides/slide01.html#section-1",
+    "href": "slides/slide01.html#section-1",
+    "title": "マクロ政治データ分析実習",
+    "section": "",
+    "text": "教科書・参考書"
+  },
+  {
+    "objectID": "slides/slide01.html#section-2",
+    "href": "slides/slide01.html#section-2",
+    "title": "マクロ政治データ分析実習",
+    "section": "",
+    "text": "評価"
   }
 ]

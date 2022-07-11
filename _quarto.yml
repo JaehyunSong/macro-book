@@ -47,8 +47,8 @@ website:
     - id: material
       title: "講義資料"
       style: "docked"
-      #contents:
-        #- materials/introduction.qmd      # 第 1回
+      contents:
+        - materials/introduction.qmd      # 第 1回
         #- materials/install.qmd           # 第 2回
         #- materials/basic.qmd             # 第 3回
         #- materials/programming.qmd       # 第 4回
