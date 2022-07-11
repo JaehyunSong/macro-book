@@ -1,0 +1,36 @@
+/*-- scss:defaults --*/
+$presentation-font-size-root: 24px;
+$code-block-font-size: 0.9em;
+
+$presentation-h1-font-size: 2em;
+$presentation-h2-font-size: 1.6em;
+$presentation-h3-font-size: 1.4em;
+$presentation-h4-font-size: 1.2em;
+$--r-heading-margin: 6px 0 0 0;
+
+/*-- scss:rules --*/
+.aside {
+  font-size: 0.75em;
+}
+
+.reveal code {
+  //background-color: #f1f3f5;
+  padding: 0 0.2em 0 0.2em;
+}
+
+.sec-title {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	padding: 15px 30px;
+	text-align: center;
+	font-size: 3em;
+	width: 100%;
+}
+
+.callout .callout-body .callout-caption p {
+  margin-top: 0.25em !important;
+  margin-bottom: 0.25em !important;
+  font-size: 1.25em !important;
+}

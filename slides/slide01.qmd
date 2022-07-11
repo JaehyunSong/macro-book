@@ -1,0 +1,52 @@
+---
+title: "マクロ政治データ分析実習"
+subtitle: "第1回 ガイダンス"
+author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
+institute: "関西大学総合情報学部"
+date: "2022年 9月 22日"
+format:
+  revealjs: 
+    width: 1280
+    height: 720
+    slide-number: true
+    logo: Figs/logo.png
+    theme: [default, styles.scss]
+    footer: <https://www.jaysong.net/micro-book>
+    preview-links: true
+    chalkboard: true
+    touch: true
+    controls: true
+    auto-stretch: false
+---
+
+##
+
+<span class="sec-title">講義概要</span>
+
+```{r}
+#| include: false
+library(tidyverse)
+knitr::opts_chunk$set(dev       = "ragg_png",
+                      dpi       = 300,
+                      fig.align = "center",
+                      echo      = TRUE)
+```
+
+## 講義概要
+
+* 講義日: 木曜日 第4時限（14:40～16:10）
+* 場所: TC302教室（高槻キャンパス C棟 302教室）
+* 講義内容: 社会科学のリサーチデザイン & Rを用いたデータ分析の基礎
+   * リサーチデザイン
+   * 統計的推論・仮説検定
+   * 平均値の（差の）検定
+   * 相関分析
+   * 独立性の検定
+   * 線形回帰分析
+   * ロジスティック回帰分析
+* Rの使い方そのものについては解説しない。
+   * Rの使い方は前期の「ミクロ政治データ分析実習」で解説済み
+* 前提知識: 前期の「ミクロ政治データ分析実習」を履修すること。
+   * 未修の場合、{dplyr}、{tidyr}、{ggplot2}に関する知識が必要。
+   * ブラインドタッチが出来ること。
+
