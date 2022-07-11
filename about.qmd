@@ -38,7 +38,7 @@ knitr::opts_chunk$set(fig.align = "center",
 * 毎週**木曜日3・5限** (13:00〜14:30 / 16:20〜17:50)
    * 3限はTA、5限は宋・TAが対応
 * 上記の時間外は事前予約が必要（メール、対面）
-   * メール: <song@kansai-u.ac.jp>
+   * メール: <song@kansai-u.ac.jp> 
 
 ## 講義内容
 
