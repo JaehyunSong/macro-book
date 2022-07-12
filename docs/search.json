@@ -74,7 +74,7 @@
     "href": "intro/install.html",
     "title": "Rの導入",
     "section": "",
-    "text": "本講義の実習はNIIオンライン分析システムの使用を推奨する。自分のPCにインストールしたR + RStudio、RStuio.cloud、大学PCにインストールされているR + RStudioなどの使用を妨げないが1、本ページの資料と同じ結果が得られることは保証しない。また、実習・分析中に起きた不具合についても授業中には対応しない（オフィスアワーなどでは対応可能）。\n　以下ではNIIオンライン分析システムを用いたRおよびRStudioの導入方法について解説する。\n\n\n\n\n\n\n注意!!!\n\n\n\n初期設定は国立情報学研究所（以下、NII）のサーバーに自分の作業用スペースを借りる作業である。つまり、初期設定を繰り返すことはNIIのサーバー（のスペース）をいくつも借りることとなり、サーバーを圧迫してしまう可能性がある。したがって、初期設定は授業全体を通じて1回のみ実行すること。\n\n\n手順1: 以下のアドレスにアクセスする。\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/Binder_R/HEAD\n\n手順2: 所属機関に「関西大学」、または「Kansai University」を入力・選択し、「選択」をクリックする。このような画面が表示されない場合は手順2から5は飛ばしても良い。\n\n\n\n\n\n\n\n\n\n手順3: 自分の関西大学のIDをパスワードを入力する。こちらのIDとパスワードは関西大学インフォメーション・システムおよびLMSのID/パスワードと同じである。\n\n\n\n\n\n\n\n\n\n手順4: このまま「同意します」をクリックする。\n\n\n\n\n\n\n\n\n\n手順5: 以下のような画面が表示されたらしばらく待つ。\n\n\n\n\n\n\n\n\n\n手順6: 以下のような画面が表示されたら初期設定は完了\n\n\n\n\n\n\n\n\n\n手順7: 初期設定が終わったら、すぐRおよびRStudioが利用可能だが、ここでは一旦右上の「Logout」をクリックし、タブ (or ウィンドウ) を閉じる。"
+    "text": "「ミクロ政治データ分析実習」未修者の場合\n\n\n\n本サポートページの「Rの使い方」は前期の「ミクロ政治データ分析実習」の資料である。未修者は必ず宋に相談すること。"
   },
   {
     "objectID": "intro/install.html#niiオンライン分析システムの起動",
@@ -340,7 +340,7 @@
     "href": "slides/slide01.html#オフィスアワー",
     "title": "マクロ政治データ分析実習",
     "section": "オフィス・アワー",
-    "text": "オフィス・アワー\n宋、またはTAが研究室に待機し、事前予約なしに相談、質問などが可能な時間\n\n毎週火曜日3限（13時00分〜14時30分）\n\n宋が対応\n\n毎週木曜日3・5限（13時00分〜14時30分/16時20分〜17時50分）\n\n3限目TAのみ、5限目は宋とTAが対応\n\n場所：TA227研究室（A棟の2階）\n上記の時間外は事前予約が必要（メール、対面）\n\nメール: song@kansai-u.ac.jp\n\n\n\n\n\nhttps://www.jaysong.net/micro-book"
+    "text": "オフィス・アワー\n宋、またはTAが研究室に待機し、事前予約なしに相談、質問などが可能な時間\n\n毎週火曜日3限（13時00分〜14時30分）\n\n宋が対応\n\n毎週木曜日3・5限（13時00分〜14時30分/16時20分〜17時50分）\n\n3限目TAのみ、5限目は宋とTAが対応\n\n場所：TA227研究室（A棟の2階）\n上記の時間外は事前予約が必要（LMS、メール、対面）\n\nメール: song@kansai-u.ac.jp"
   },
   {
     "objectID": "slides/slide01.html#講義概要-1",
@@ -362,5 +362,166 @@
     "title": "マクロ政治データ分析実習",
     "section": "",
     "text": "評価"
+  },
+  {
+    "objectID": "intro/install.html#初期設定",
+    "href": "intro/install.html#初期設定",
+    "title": "Rの導入",
+    "section": "1 初期設定",
+    "text": "1 初期設定\n　本講義の実習はNIIオンライン分析システムの使用を推奨する。自分のPCにインストールしたR + RStudio、RStuio.cloud、大学PCにインストールされているR + RStudioなどの使用を妨げないが1、本ページの資料と同じ結果が得られることは保証しない。また、実習・分析中に起きた不具合についても授業中には対応しない（オフィスアワーなどでは対応可能）。\n　以下ではNIIオンライン分析システムを用いたRおよびRStudioの導入方法について解説する。\n\n\n\n\n\n\n注意!!!\n\n\n\n初期設定は国立情報学研究所（以下、NII）のサーバーに自分の作業用スペースを借りる作業である。つまり、初期設定を繰り返すことはNIIのサーバー（のスペース）をいくつも借りることとなり、サーバーを圧迫してしまう可能性がある。したがって、初期設定は授業全体を通じて1回のみ実行すること。\n\n\n手順1: 以下のアドレスにアクセスする。\n\nhttps://binder.cs.rcos.nii.ac.jp/v2/gh/JaehyunSong/Binder_R/HEAD\n\n手順2: 所属機関に「関西大学」、または「Kansai University」を入力・選択し、「選択」をクリックする。このような画面が表示されない場合は手順2から5は飛ばしても良い。\n\n\n\n\n\n\n\n\n\n手順3: 自分の関西大学のIDをパスワードを入力する。こちらのIDとパスワードは関西大学インフォメーション・システムおよびLMSのID/パスワードと同じである。\n\n\n\n\n\n\n\n\n\n手順4: このまま「同意します」をクリックする。\n\n\n\n\n\n\n\n\n\n手順5: 以下のような画面が表示されたらしばらく待つ。\n\n\n\n\n\n\n\n\n\n手順6: 以下のような画面が表示されたら初期設定は完了\n\n\n\n\n\n\n\n\n\n手順7: 初期設定が終わったら、すぐRおよびRStudioが利用可能だが、ここでは一旦右上の「Logout」をクリックし、タブ (or ウィンドウ) を閉じる。"
+  },
+  {
+    "objectID": "slides/slide01.html#フィードバックについて",
+    "href": "slides/slide01.html#フィードバックについて",
+    "title": "マクロ政治データ分析実習",
+    "section": "フィードバックについて",
+    "text": "フィードバックについて\n授業内容に関する質問・相談の窓口\n\nオフィスアワーの利用\n\n最も確実な方法\n\nLMSの質問コーナー（匿名投稿可能）\nLMSのメッセージ\n\nメッセージの1行目は宛先を明記すること\n\nZoom\n\nLMSの質問コーナー、メッセージを使って事前に日程調整が必要\n\nDiscord\n\n今後、Discordを使って相談する予定がある場合は宋に自分のユーザー名とタグを事前に伝えておくこと。宋がDiscordオンライン状態であれば、いつでも質問・相談可\n\n\n\n\n\nLMSを使用する場合\n\n\n17時以降の質問に対する回答はなるべく早めにするが、翌日になる可能性もあることに注意すること。質問コーナーは宋・TAが確認できるため、メッセージよりも早めに回答が得られるかも知れない。とりわけ、課題提出日には質問が非常に多く寄せられている。全ての質問に回答する場合、提出期限を過ぎて回答するケースも多いため、課題は余裕を持って取り組むこと。\n\n\n\n\n\n\nhttps://www.jaysong.net/micro-book"
+  },
+  {
+    "objectID": "slides/slide02.html#本日の内容",
+    "href": "slides/slide02.html#本日の内容",
+    "title": "マクロ政治データ分析実習",
+    "section": "本日の内容",
+    "text": "本日の内容\n\n研究テーマの種類\n優れた研究テーマの基準\n論文の構成\n理論と仮説\n分析単位の問題"
+  },
+  {
+    "objectID": "slides/slide02.html#section",
+    "href": "slides/slide02.html#section",
+    "title": "マクロ政治データ分析実習",
+    "section": "",
+    "text": "研究テーマ"
+  },
+  {
+    "objectID": "slides/slide02.html#section-1",
+    "href": "slides/slide02.html#section-1",
+    "title": "マクロ政治データ分析実習",
+    "section": "",
+    "text": "論文の構成"
+  },
+  {
+    "objectID": "slides/slide02.html#section-2",
+    "href": "slides/slide02.html#section-2",
+    "title": "マクロ政治データ分析実習",
+    "section": "",
+    "text": "理論"
+  },
+  {
+    "objectID": "slides/slide02.html#section-3",
+    "href": "slides/slide02.html#section-3",
+    "title": "マクロ政治データ分析実習",
+    "section": "",
+    "text": "仮説"
+  },
+  {
+    "objectID": "slides/slide02.html#section-4",
+    "href": "slides/slide02.html#section-4",
+    "title": "マクロ政治データ分析実習",
+    "section": "",
+    "text": "データに関する注意点"
+  },
+  {
+    "objectID": "slides/slide02.html#section-5",
+    "href": "slides/slide02.html#section-5",
+    "title": "マクロ政治データ分析実習",
+    "section": "",
+    "text": "課題\n\n\n\nhttps://www.jaysong.net/micro-book"
+  },
+  {
+    "objectID": "slides/slide02.html#研究テーマの種類",
+    "href": "slides/slide02.html#研究テーマの種類",
+    "title": "マクロ政治データ分析実習",
+    "section": "研究テーマの種類",
+    "text": "研究テーマの種類"
+  },
+  {
+    "objectID": "slides/slide02.html#実証的問題",
+    "href": "slides/slide02.html#実証的問題",
+    "title": "マクロ政治データ分析実習",
+    "section": "実証的問題",
+    "text": "実証的問題"
+  },
+  {
+    "objectID": "slides/slide02.html#実証的問題の例",
+    "href": "slides/slide02.html#実証的問題の例",
+    "title": "マクロ政治データ分析実習",
+    "section": "実証的問題の例",
+    "text": "実証的問題の例"
+  },
+  {
+    "objectID": "slides/slide02.html#規範的問題",
+    "href": "slides/slide02.html#規範的問題",
+    "title": "マクロ政治データ分析実習",
+    "section": "規範的問題",
+    "text": "規範的問題"
+  },
+  {
+    "objectID": "slides/slide02.html#規範的問題の例",
+    "href": "slides/slide02.html#規範的問題の例",
+    "title": "マクロ政治データ分析実習",
+    "section": "規範的問題の例",
+    "text": "規範的問題の例"
+  },
+  {
+    "objectID": "slides/slide02.html#科学的なものとは何か",
+    "href": "slides/slide02.html#科学的なものとは何か",
+    "title": "マクロ政治データ分析実習",
+    "section": "「科学的なもの」とは何か",
+    "text": "「科学的なもの」とは何か"
+  },
+  {
+    "objectID": "slides/slide02.html#鈴木-2008-から",
+    "href": "slides/slide02.html#鈴木-2008-から",
+    "title": "マクロ政治データ分析実習",
+    "section": "鈴木 (2008) から",
+    "text": "鈴木 (2008) から"
+  },
+  {
+    "objectID": "slides/slide02.html#科学的なものとは何か続き",
+    "href": "slides/slide02.html#科学的なものとは何か続き",
+    "title": "マクロ政治データ分析実習",
+    "section": "「科学的なもの」とは何か（続き）",
+    "text": "「科学的なもの」とは何か（続き）"
+  },
+  {
+    "objectID": "slides/slide02.html#規範的問題から実証的問題へ1",
+    "href": "slides/slide02.html#規範的問題から実証的問題へ1",
+    "title": "マクロ政治データ分析実習",
+    "section": "規範的問題から実証的問題へ（1）",
+    "text": "規範的問題から実証的問題へ（1）"
+  },
+  {
+    "objectID": "slides/slide02.html#規範的問題から実証的問題へ2",
+    "href": "slides/slide02.html#規範的問題から実証的問題へ2",
+    "title": "マクロ政治データ分析実習",
+    "section": "規範的問題から実証的問題へ（2）",
+    "text": "規範的問題から実証的問題へ（2）"
+  },
+  {
+    "objectID": "slides/slide02.html#分析的問題",
+    "href": "slides/slide02.html#分析的問題",
+    "title": "マクロ政治データ分析実習",
+    "section": "分析的問題",
+    "text": "分析的問題"
+  },
+  {
+    "objectID": "slides/slide02.html#分析的問題の例",
+    "href": "slides/slide02.html#分析的問題の例",
+    "title": "マクロ政治データ分析実習",
+    "section": "分析的問題の例",
+    "text": "分析的問題の例"
+  },
+  {
+    "objectID": "materials/descriptive_statistics.html",
+    "href": "materials/descriptive_statistics.html",
+    "title": "第4回講義資料",
+    "section": "",
+    "text": "新しいタブで開く"
+  },
+  {
+    "objectID": "materials/research_design.html",
+    "href": "materials/research_design.html",
+    "title": "第2・3回講義資料",
+    "section": "",
+    "text": "新しいタブで開く"
   }
 ]

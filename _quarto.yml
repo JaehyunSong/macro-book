@@ -48,9 +48,9 @@ website:
       title: "講義資料"
       style: "docked"
       contents:
-        - materials/introduction.qmd      # 第 1回
-        #- materials/install.qmd           # 第 2回
-        #- materials/basic.qmd             # 第 3回
+        - materials/introduction.qmd           # 第 1回
+        - materials/research_design.qmd        # 第 2・3回
+        - materials/descriptive_statistics.qmd # 第 3回
         #- materials/programming.qmd       # 第 4回
         #- materials/rmarkdown.qmd         # 第 5回
         #- materials/data_collection.qmd   # 第 5回
@@ -84,6 +84,3 @@ format:
   html:
     theme: cosmo
     css: styles.css
-
-
-

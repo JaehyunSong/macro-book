@@ -1,0 +1,121 @@
+---
+title: "マクロ政治データ分析実習"
+subtitle: "第2・3回 リサーチデザイン"
+author: "<ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby>"
+institute: "関西大学総合情報学部"
+date: "2022年 9月 29日 / 2022年 10月 6日"
+format:
+  revealjs: 
+    width: 1280
+    height: 720
+    slide-number: true
+    logo: Figs/logo.png
+    theme: [default, styles.scss]
+    footer: <https://www.jaysong.net/micro-book>
+    preview-links: true
+    chalkboard: true
+    touch: true
+    controls: true
+    auto-stretch: false
+---
+
+## 本日の内容
+
+1. 研究テーマの種類
+2. 優れた研究テーマの基準
+3. 論文の構成
+4. 理論と仮説
+5. 分析単位の問題
+
+```{r}
+#| include: false
+pacman::p_load(tidyverse, gt)
+knitr::opts_chunk$set(dev       = "ragg_png",
+                      dpi       = 300,
+                      fig.align = "center",
+                      echo      = TRUE)
+```
+
+<!-- -->
+
+##
+
+<span class="sec-title">研究テーマ</span>
+
+<!-- -->
+
+## 研究テーマの種類
+
+<!-- -->
+
+## 実証的問題
+
+<!-- -->
+
+## 実証的問題の例
+
+<!-- -->
+
+## 規範的問題
+
+<!-- -->
+
+## 規範的問題の例
+
+<!-- -->
+
+## 「科学的なもの」とは何か
+
+<!-- -->
+
+## 鈴木 (2008) から
+
+<!-- -->
+
+## 「科学的なもの」とは何か（続き）
+
+<!-- -->
+
+## 規範的問題から実証的問題へ（1）
+
+<!-- -->
+
+## 規範的問題から実証的問題へ（2）
+
+<!-- -->
+
+## 分析的問題
+
+<!-- -->
+
+## 分析的問題の例
+
+<!-- -->
+
+##
+
+<span class="sec-title">論文の構成</span>
+
+<!-- -->
+
+##
+
+<span class="sec-title">理論</span>
+
+<!-- -->
+
+##
+
+<span class="sec-title">仮説</span>
+
+<!-- -->
+
+##
+
+<span class="sec-title">データに関する注意点</span>
+
+<!-- -->
+
+##
+
+<span class="sec-title">課題</span>

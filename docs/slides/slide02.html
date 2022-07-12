@@ -332,727 +332,99 @@
 
 <section id="title-slide" class="center">
   <h1 class="title">マクロ政治データ分析実習</h1>
-  <p class="subtitle">第1回 ガイダンス</p>
+  <p class="subtitle">第2・3回 リサーチデザイン</p>
   <p class="author"><ruby>宋<rp>(</rp><rt>そん</rt><rp>)</rp></ruby>&nbsp;&nbsp;<ruby>財泫<rp>(</rp><rt>じぇひょん</rt><rp>)</rp></ruby></p>
   <p class="institute">関西大学総合情報学部</p>
-  <p class="date">2022年 9月 22日</p>
+  <p class="date">2022年 9月 29日 / 2022年 10月 6日</p>
 </section>
 
+<section id="本日の内容" class="slide level2">
+<h2>本日の内容</h2>
+<ol type="1">
+<li>研究テーマの種類</li>
+<li>優れた研究テーマの基準</li>
+<li>論文の構成</li>
+<li>理論と仮説</li>
+<li>分析単位の問題</li>
+</ol>
+<!-- -->
+</section>
 <section id="section" class="slide level2">
 <h2></h2>
-<p><span class="sec-title">講義概要</span></p>
+<p><span class="sec-title">研究テーマ</span></p>
 <!-- -->
 </section>
-<section id="講義概要" class="slide level2">
-<h2>講義概要</h2>
-<ul>
-<li>講義日: 木曜日 第4時限（14:40～16:10）</li>
-<li>場所: TC302教室（高槻キャンパス C棟 302教室）</li>
-<li>講義内容: 社会科学のリサーチデザイン &amp; Rを用いたデータ分析の基礎
-<ul>
-<li>リサーチデザイン</li>
-<li>統計的推論・仮説検定</li>
-<li>平均値の（差の）検定</li>
-<li>相関分析</li>
-<li>独立性の検定</li>
-<li>線形回帰分析</li>
-<li>ロジスティック回帰分析</li>
-</ul></li>
-<li>Rの使い方そのものについては解説しない。
-<ul>
-<li>Rの使い方は前期の「ミクロ政治データ分析実習」で解説済み</li>
-</ul></li>
-<li>前提知識: 前期の「ミクロ政治データ分析実習」を履修すること。
-<ul>
-<li>未修の場合、{dplyr}、{tidyr}、{ggplot2}に関する知識が必要。</li>
-<li>ブラインドタッチが出来ること。</li>
-</ul></li>
-</ul>
+<section id="研究テーマの種類" class="slide level2">
+<h2>研究テーマの種類</h2>
 <!-- -->
 </section>
-<section id="講義内容" class="slide level2">
-<h2>講義内容</h2>
-<ul>
-<li><strong>第1回:</strong> ガイダンス</li>
-<li><strong>第2回:</strong> リサーチデザイン（1）</li>
-<li><strong>第3回:</strong> リサーチデザイン（2）</li>
-<li><strong>第4回:</strong> 記述統計</li>
-<li><strong>第5回:</strong> 統計的推定</li>
-<li><strong>第6回:</strong> 統計的仮説検定</li>
-<li><strong>第7回:</strong> 変数間の関係</li>
-<li><strong>第8回:</strong> 回帰分析（1）</li>
-<li><strong>第9回:</strong> 回帰分析（2）</li>
-<li><strong>第10回:</strong> 回帰分析（3）</li>
-<li><strong>第11回:</strong> 交互作用</li>
-<li><strong>第12回:</strong> 分析結果の可視化</li>
-<li><strong>第13回:</strong> ロジスティック回帰分析</li>
-<li><strong>第14回:</strong> 期末レポートの執筆<br>
-</li>
-<li><strong>第15回:</strong> 期末レポートの執筆</li>
-</ul>
+<section id="実証的問題" class="slide level2">
+<h2>実証的問題</h2>
 <!-- -->
 </section>
-<section id="使用ツール-r" class="slide level2">
-<h2>使用ツール: R</h2>
-<p>R/RStudioのインストール方法は紹介しない</p>
-<ul>
-<li>使用するR/RStudioはNIIオンライン分析システム
-<ul>
-<li>使い方は「ミクロ政治データ分析実習」（前期）で紹介</li>
-<li>使い方の復習は「ミクロ政治データ分析実習」の<a href="">サポートページ</a>、<a href="">教科書</a>を参照すること</li>
-<li>「ミクロ政治データ分析実習」未修者の場合は速やかに宋に相談</li>
-</ul></li>
-</ul>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Figs/01/R.png" width="205"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell quarto-layout-cell" style="flex-basis: 50.0%;justify-content: center;">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Figs/01/RStudio.png" width="199"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
+<section id="実証的問題の例" class="slide level2">
+<h2>実証的問題の例</h2>
 <!-- -->
 </section>
-<section id="前提知識" class="slide level2">
-<h2>前提知識</h2>
-<p>「ミクロ政治データ分析実習」を履修していること。</p>
-<ul>
-<li>Rを使うのは第4回（10月13日）から
-<ul>
-<li>未修者の場合は10月12日まで以下の内容を習得しておくこと。</li>
-</ul></li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-
-<div id="weyilbrzvp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
-<style>html {
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
-}
-
-#weyilbrzvp .gt_table {
-  display: table;
-  border-collapse: collapse;
-  margin-left: auto;
-  margin-right: auto;
-  color: #333333;
-  font-size: 24px;
-  font-weight: normal;
-  font-style: normal;
-  background-color: #FFFFFF;
-  width: auto;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #A8A8A8;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #A8A8A8;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-}
-
-#weyilbrzvp .gt_heading {
-  background-color: #FFFFFF;
-  text-align: center;
-  border-bottom-color: #FFFFFF;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#weyilbrzvp .gt_title {
-  color: #333333;
-  font-size: 125%;
-  font-weight: initial;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-color: #FFFFFF;
-  border-bottom-width: 0;
-}
-
-#weyilbrzvp .gt_subtitle {
-  color: #333333;
-  font-size: 85%;
-  font-weight: initial;
-  padding-top: 0;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-color: #FFFFFF;
-  border-top-width: 0;
-}
-
-#weyilbrzvp .gt_bottom_border {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#weyilbrzvp .gt_col_headings {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-}
-
-#weyilbrzvp .gt_col_heading {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 6px;
-  padding-left: 5px;
-  padding-right: 5px;
-  overflow-x: hidden;
-}
-
-#weyilbrzvp .gt_column_spanner_outer {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: normal;
-  text-transform: inherit;
-  padding-top: 0;
-  padding-bottom: 0;
-  padding-left: 4px;
-  padding-right: 4px;
-}
-
-#weyilbrzvp .gt_column_spanner_outer:first-child {
-  padding-left: 0;
-}
-
-#weyilbrzvp .gt_column_spanner_outer:last-child {
-  padding-right: 0;
-}
-
-#weyilbrzvp .gt_column_spanner {
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: bottom;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  overflow-x: hidden;
-  display: inline-block;
-  width: 100%;
-}
-
-#weyilbrzvp .gt_group_heading {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#weyilbrzvp .gt_empty_group_heading {
-  padding: 0.5px;
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  vertical-align: middle;
-}
-
-#weyilbrzvp .gt_from_md > :first-child {
-  margin-top: 0;
-}
-
-#weyilbrzvp .gt_from_md > :last-child {
-  margin-bottom: 0;
-}
-
-#weyilbrzvp .gt_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  margin: 10px;
-  border-top-style: solid;
-  border-top-width: 1px;
-  border-top-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 1px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 1px;
-  border-right-color: #D3D3D3;
-  vertical-align: middle;
-  overflow-x: hidden;
-}
-
-#weyilbrzvp .gt_stub {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#weyilbrzvp .gt_stub_row_group {
-  color: #333333;
-  background-color: #FFFFFF;
-  font-size: 100%;
-  font-weight: initial;
-  text-transform: inherit;
-  border-right-style: solid;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-  padding-left: 5px;
-  padding-right: 5px;
-  vertical-align: top;
-}
-
-#weyilbrzvp .gt_row_group_first td {
-  border-top-width: 2px;
-}
-
-#weyilbrzvp .gt_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#weyilbrzvp .gt_first_summary_row {
-  border-top-style: solid;
-  border-top-color: #D3D3D3;
-}
-
-#weyilbrzvp .gt_first_summary_row.thick {
-  border-top-width: 2px;
-}
-
-#weyilbrzvp .gt_last_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#weyilbrzvp .gt_grand_summary_row {
-  color: #333333;
-  background-color: #FFFFFF;
-  text-transform: inherit;
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#weyilbrzvp .gt_first_grand_summary_row {
-  padding-top: 8px;
-  padding-bottom: 8px;
-  padding-left: 5px;
-  padding-right: 5px;
-  border-top-style: double;
-  border-top-width: 6px;
-  border-top-color: #D3D3D3;
-}
-
-#weyilbrzvp .gt_striped {
-  background-color: rgba(128, 128, 128, 0.05);
-}
-
-#weyilbrzvp .gt_table_body {
-  border-top-style: solid;
-  border-top-width: 2px;
-  border-top-color: #D3D3D3;
-  border-bottom-style: solid;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-}
-
-#weyilbrzvp .gt_footnotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#weyilbrzvp .gt_footnote {
-  margin: 0px;
-  font-size: 90%;
-  padding-left: 4px;
-  padding-right: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#weyilbrzvp .gt_sourcenotes {
-  color: #333333;
-  background-color: #FFFFFF;
-  border-bottom-style: none;
-  border-bottom-width: 2px;
-  border-bottom-color: #D3D3D3;
-  border-left-style: none;
-  border-left-width: 2px;
-  border-left-color: #D3D3D3;
-  border-right-style: none;
-  border-right-width: 2px;
-  border-right-color: #D3D3D3;
-}
-
-#weyilbrzvp .gt_sourcenote {
-  font-size: 90%;
-  padding-top: 4px;
-  padding-bottom: 4px;
-  padding-left: 5px;
-  padding-right: 5px;
-}
-
-#weyilbrzvp .gt_left {
-  text-align: left;
-}
-
-#weyilbrzvp .gt_center {
-  text-align: center;
-}
-
-#weyilbrzvp .gt_right {
-  text-align: right;
-  font-variant-numeric: tabular-nums;
-}
-
-#weyilbrzvp .gt_font_normal {
-  font-weight: normal;
-}
-
-#weyilbrzvp .gt_font_bold {
-  font-weight: bold;
-}
-
-#weyilbrzvp .gt_font_italic {
-  font-style: italic;
-}
-
-#weyilbrzvp .gt_super {
-  font-size: 65%;
-}
-
-#weyilbrzvp .gt_two_val_uncert {
-  display: inline-block;
-  line-height: 1em;
-  text-align: right;
-  font-size: 60%;
-  vertical-align: -0.25em;
-  margin-left: 0.1em;
-}
-
-#weyilbrzvp .gt_footnote_marks {
-  font-style: italic;
-  font-weight: normal;
-  font-size: 75%;
-  vertical-align: 0.4em;
-}
-
-#weyilbrzvp .gt_asterisk {
-  font-size: 100%;
-  vertical-align: 0;
-}
-
-#weyilbrzvp .gt_slash_mark {
-  font-size: 0.7em;
-  line-height: 0.7em;
-  vertical-align: 0.15em;
-}
-
-#weyilbrzvp .gt_fraction_numerator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: 0.45em;
-}
-
-#weyilbrzvp .gt_fraction_denominator {
-  font-size: 0.6em;
-  line-height: 0.6em;
-  vertical-align: -0.05em;
-}
-</style>
-<table class="gt_table">
-  
-  <thead class="gt_col_headings">
-    <tr>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">内容</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">『私たちのR』</th>
-      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">「ミクロ政治データ分析実習」</th>
-    </tr>
-  </thead>
-  <tbody class="gt_table_body">
-    <tr><td class="gt_row gt_left">データの入出力</td>
-<td class="gt_row gt_left">第6、7章</td>
-<td class="gt_row gt_left">第3回</td></tr>
-    <tr><td class="gt_row gt_left">データ型とデータ構造</td>
-<td class="gt_row gt_left">第8、9章</td>
-<td class="gt_row gt_left">第7、8回</td></tr>
-    <tr><td class="gt_row gt_left">R Markdown</td>
-<td class="gt_row gt_left">第21章</td>
-<td class="gt_row gt_left">第5回</td></tr>
-    <tr><td class="gt_row gt_left">{dplyr}と{tidyr}を用いたデータハンドリング</td>
-<td class="gt_row gt_left">第12、13、14、15章</td>
-<td class="gt_row gt_left">第9、10、11回</td></tr>
-    <tr><td class="gt_row gt_left">{ggplot2}を用いた可視化</td>
-<td class="gt_row gt_left">第17、18、19章</td>
-<td class="gt_row gt_left">第12、13、14回</td></tr>
-  </tbody>
-  
-  
-</table>
-</div>
-</div>
-</div>
+<section id="規範的問題" class="slide level2">
+<h2>規範的問題</h2>
+<!-- -->
+</section>
+<section id="規範的問題の例" class="slide level2">
+<h2>規範的問題の例</h2>
+<!-- -->
+</section>
+<section id="科学的なものとは何か" class="slide level2">
+<h2>「科学的なもの」とは何か</h2>
+<!-- -->
+</section>
+<section id="鈴木-2008-から" class="slide level2">
+<h2>鈴木 (2008) から</h2>
+<!-- -->
+</section>
+<section id="科学的なものとは何か続き" class="slide level2">
+<h2>「科学的なもの」とは何か（続き）</h2>
+<!-- -->
+</section>
+<section id="規範的問題から実証的問題へ1" class="slide level2">
+<h2>規範的問題から実証的問題へ（1）</h2>
+<!-- -->
+</section>
+<section id="規範的問題から実証的問題へ2" class="slide level2">
+<h2>規範的問題から実証的問題へ（2）</h2>
+<!-- -->
+</section>
+<section id="分析的問題" class="slide level2">
+<h2>分析的問題</h2>
+<!-- -->
+</section>
+<section id="分析的問題の例" class="slide level2">
+<h2>分析的問題の例</h2>
 <!-- -->
 </section>
 <section id="section-1" class="slide level2">
 <h2></h2>
-<p><span class="sec-title">教科書・参考書</span></p>
-<!-- -->
-</section>
-<section id="教科書" class="slide level2">
-<h2>教科書</h2>
-<p>浅野正彦・矢内勇生. 2018.『<a href="https://www.amazon.co.jp/dp/4274223132/">Rによる計量政治学</a>』オーム社.</p>
-<ul>
-<li>サポートページ: <a href="https://github.com/yukiyanai/quant-methods-R" class="uri">https://github.com/yukiyanai/quant-methods-R</a>
-<ul>
-<li>データ、解説資料、正誤表など</li>
-</ul></li>
-</ul>
-<div class="cell" data-layout-align="center">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Figs/01/Textbook.jpg" width="300"></p>
-</figure>
-</div>
-</div>
-</div>
-<!-- -->
-</section>
-<section id="参考書" class="slide level2">
-<h2>参考書</h2>
-<ul>
-<li>飯田健. 2013. 『<a href="https://www.amazon.co.jp/dp/4320019245/">計量政治分析</a>』共立出版</li>
-<li>今井耕介 (著). 粕谷祐子・原田勝孝・久保浩樹（訳）. 2018. 『社会科学のためのデータ分析入門（<a href="https://www.amazon.co.jp/dp/400061245X/">上</a>/<a href="https://www.amazon.co.jp/dp/4000612468/">下</a>）』岩波書店</li>
-</ul>
-<div class="quarto-layout-panel">
-<div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Figs/01/Reference_DA1.jpg" width="300"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Figs/01/Reference_DA2.jpg" width="300"></p>
-</figure>
-</div>
-</div>
-</div>
-<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="cell-output-display">
-<div class="quarto-figure quarto-figure-center">
-<figure>
-<p><img data-src="Figs/01/Reference_DA3.jpg" width="300"></p>
-</figure>
-</div>
-</div>
-</div>
-</div>
-</div>
-<!-- -->
-</section>
-<section id="副読本" class="slide level2">
-<h2>副読本</h2>
-<p>Rの使い方については以下の本がおすすめ</p>
-<ul>
-<li>Song Jaehyun・矢内勇生.『<a href="https://www.jaysong.net/RBook/">私たちのR: ベストプラクティスの探究</a>』(web-book)
-<ul>
-<li><strong>無料:</strong> https:/www.jaysong.net/RBook/</li>
-</ul></li>
-<li>松村優哉・湯谷啓明・紀ノ定保礼・前田和寛. 2021. 『<a href="https://www.amazon.co.jp/dp/4297121700/">改訂2版 RユーザのためのRStudio[実践]入門</a>』技術評論社</li>
-<li>Garrett Grolemund and Hadley Wickham. 2017. <a href="https://r4ds.had.co.nz"><em>R for Data Science.</em></a> O’Reilly.
-<ul>
-<li>邦訳『Rではじめるデータサイエンス』</li>
-<li><strong>原著は無料:</strong> https://r4ds.had.co.nz/</li>
-</ul></li>
-<li>Jared P. Lander. 2018. <a href="https://www.amazon.co.jp/dp/4839962154"><em>R for Everyone.</em></a> Addison-Wesley Professional.
-<ul>
-<li>邦訳『みんなのR』</li>
-</ul></li>
-</ul>
+<p><span class="sec-title">論文の構成</span></p>
 <!-- -->
 </section>
 <section id="section-2" class="slide level2">
 <h2></h2>
-<p><span class="sec-title">評価</span></p>
+<p><span class="sec-title">理論</span></p>
 <!-- -->
 </section>
-<section id="成績評価" class="slide level2">
-<h2>成績評価</h2>
-<ul>
-<li><strong>平常点</strong> (30%)
-<ul>
-<li>欠席6回以上は評価の対象外（5回まで評価対象）
-<ul>
-<li>ただし、5回欠席の場合、単位取得は実質困難</li>
-</ul></li>
-<li>45分以上欠席は出席0.5回扱い</li>
-<li>欠席届を提出した場合は出席扱い</li>
-</ul></li>
-<li><strong>課題</strong> (35%)
-<ul>
-<li>課題は計5回</li>
-<li>3回以上未提出は評価の対象外（2回までは評価対象）</li>
-</ul></li>
-<li><strong>期末レポート</strong> (35%)
-<ul>
-<li>自分独自の問いを立て、その問いに答えるための過程と結果を記録したレポート</li>
-<li>授業の第14・15回は期末レポートの執筆</li>
-</ul></li>
-<li>評価の対象は「採点の対象」であることを意味し、単位を保障するものではない。</li>
-</ul>
+<section id="section-3" class="slide level2">
+<h2></h2>
+<p><span class="sec-title">仮説</span></p>
 <!-- -->
 </section>
-<section id="オフィスアワー" class="slide level2">
-<h2>オフィス・アワー</h2>
-<p>宋、またはTAが研究室に待機し、事前予約<strong>なし</strong>に相談、質問などが可能な時間</p>
-<ul>
-<li>毎週<strong>火曜日3限</strong>（13時00分〜14時30分）
-<ul>
-<li>宋が対応</li>
-</ul></li>
-<li>毎週<strong>木曜日3・5限</strong>（13時00分〜14時30分/16時20分〜17時50分）
-<ul>
-<li>3限目TAのみ、5限目は宋とTAが対応</li>
-</ul></li>
-<li>場所：<strong>TA227</strong>研究室（A棟の2階）</li>
-<li>上記の時間外は事前予約が必要（LMS、メール、対面）
-<ul>
-<li>メール: <a href="mailto:song@kansai-u.ac.jp" class="email">song@kansai-u.ac.jp</a></li>
-</ul></li>
-</ul>
+<section id="section-4" class="slide level2">
+<h2></h2>
+<p><span class="sec-title">データに関する注意点</span></p>
 <!-- -->
 </section>
-<section id="フィードバックについて" class="slide level2">
-<h2>フィードバックについて</h2>
-<p>授業内容に関する質問・相談の窓口</p>
-<ol type="1">
-<li>オフィスアワーの利用
-<ul>
-<li>最も確実な方法</li>
-</ul></li>
-<li>LMSの質問コーナー（匿名投稿可能）</li>
-<li>LMSのメッセージ
-<ul>
-<li><strong>メッセージの1行目は宛先を明記する</strong>こと</li>
-</ul></li>
-<li>Zoom
-<ul>
-<li>LMSの質問コーナー、メッセージを使って事前に日程調整が必要</li>
-</ul></li>
-<li>Discord
-<ul>
-<li>今後、Discordを使って相談する予定がある場合は宋に自分のユーザー名とタグを事前に伝えておくこと。宋がDiscordオンライン状態であれば、いつでも質問・相談可</li>
-</ul></li>
-</ol>
-<div class="callout callout-note no-icon callout-captioned callout-style-default">
-<div class="callout-body">
-<div class="callout-caption">
-<p><strong>LMSを使用する場合</strong></p>
-</div>
-<div class="callout-content">
-<p><strong>17時以降の質問</strong>に対する回答はなるべく早めにするが、翌日になる可能性もあることに注意すること。<strong>質問コーナー</strong>は宋・TAが確認できるため、<strong>メッセージ</strong>よりも早めに回答が得られるかも知れない。とりわけ、<strong>課題提出日</strong>には質問が非常に多く寄せられている。全ての質問に回答する場合、提出期限を過ぎて回答するケースも多いため、課題は余裕を持って取り組むこと。</p>
-</div>
-</div>
-</div>
+<section id="section-5" class="slide level2">
+<h2></h2>
+<p><span class="sec-title">課題</span></p>
 
 <p><img src="Figs/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
