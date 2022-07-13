@@ -136,17 +136,26 @@ R/RStudioのインストール方法は紹介しない
    * 使い方は「ミクロ政治データ分析実習」（前期）で紹介
    * 使い方の復習は「ミクロ政治データ分析実習」の[サポートページ]()、[教科書]()を参照すること
    * 「ミクロ政治データ分析実習」未修者の場合は速やかに宋に相談
+* 期末レポートを除く課題は全てR Markdown
 
-:::{layout-ncol=2}
+:::{layout-ncol=3}
 
 ```{r}
 #| echo: false
+#| out-width: "50%"
 knitr::include_graphics("Figs/01/R.png")
 ```
 
 ```{r}
 #| echo: false
+#| out-width: "50%"
 knitr::include_graphics("Figs/01/RStudio.png")
+```
+
+```{r}
+#| echo: false
+#| out-width: "50%"
+knitr::include_graphics("Figs/01/RMarkdown.png")
 ```
 
 :::
@@ -155,9 +164,8 @@ knitr::include_graphics("Figs/01/RStudio.png")
 
 ## 前提知識
 
-「ミクロ政治データ分析実習」を履修していること。
-
-* Rを使うのは第4回（10月13日）から
+* 前期の「**ミクロ政治データ分析実習**」が履修済みであること。
+   * Rを使うのは第4回（10月13日）から
    * 未修者の場合は10月12日まで以下の内容を習得しておくこと。
 
 ```{r}
@@ -175,6 +183,10 @@ tibble(
               "z" = "「ミクロ政治データ分析実習」") %>%
    tab_options(table.font.size = "24px")
 ```
+
+* **ブラインド・タッチ**が出来ること。
+   * できない場合は、第4回まで習得しておくこと。
+   * グーグルで「タイビング 練習」で検索
 
 <!-- -->
 
