@@ -68,10 +68,10 @@ website:
       title: "課題"
       style: "docked"
       contents:
-        - text: "第5回課題"
-        #  href: HW/HW05.qmd
-        - text: "第10回課題"
-        #  href: HW/HW10.qmd
+        - text: "第2回課題"
+          href: HW/HW02.qmd
+        - text: "第3回課題"
+          href: HW/HW03.qmd
         - text: "第11回課題"
         #  href: HW/HW11.qmd
         - text: "第13回課題"
@@ -79,7 +79,7 @@ website:
         - text: "第14回課題"
         #  href: HW/HW14.qmd
         - text: "期末レポート執筆要領"
-        #  href: HW/Final.qmd
+          href: HW/Final.qmd
   google-analytics: "G-9TLN2VMPQD"
 
 format:

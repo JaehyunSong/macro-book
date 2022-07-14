@@ -1,0 +1,1378 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-0.9.649">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="宋財泫">
+<meta name="dcterms.date" content="2022-07-14">
+
+<title> MacroAnalysis@Kandai - M-1グランプリにおける出場順番の重要性</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+</style>
+
+
+<script src="../site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="../site_libs/clipboard/clipboard.min.js"></script>
+<script src="../site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="../site_libs/quarto-search/fuse.min.js"></script>
+<script src="../site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="../">
+<link href="../Figs/favicon.png" rel="icon" type="image/png">
+<script src="../site_libs/quarto-html/quarto.js"></script>
+<script src="../site_libs/quarto-html/popper.min.js"></script>
+<script src="../site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="../site_libs/quarto-html/anchor.min.js"></script>
+<link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="../site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="../site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "navbar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "end",
+  "type": "overlay",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit"
+  }
+}</script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9TLN2VMPQD"></script>
+
+<script type="text/javascript">
+
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-9TLN2VMPQD', { 'anonymize_ip': true});
+</script>
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<link rel="stylesheet" href="../styles.css">
+</head>
+
+<body class="nav-fixed fullcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark ">
+      <div class="navbar-container container-fluid">
+      <a class="navbar-brand" href="../index.html">
+    <span class="navbar-title"><img src="../Figs/logo.png" height="20" style="vertical-align:baseline;"> MacroAnalysis@Kandai</span>
+  </a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+  <span class="navbar-toggler-icon"></span>
+</button>
+          <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav navbar-nav-scroll me-auto">
+  <li class="nav-item">
+    <a class="nav-link" href="../about.html">本講義について</a>
+  </li>  
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-rの使い方" role="button" data-bs-toggle="dropdown" aria-expanded="false">Rの使い方</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-rの使い方">    
+        <li>
+    <a class="dropdown-item" href="../intro/install.html">
+ <span class="dropdown-text">Rの導入</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/rstudio.html">
+ <span class="dropdown-text">RStudioの設定</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/project.html">
+ <span class="dropdown-text">プロジェクト管理</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/file.html">
+ <span class="dropdown-text">ファイル管理</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/filesystem.html">
+ <span class="dropdown-text">ファイル管理術</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/packages.html">
+ <span class="dropdown-text">パッケージ</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../intro/homework.html">
+ <span class="dropdown-text">課題の取り組み方</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-" role="button" data-bs-toggle="dropdown" aria-expanded="false">講義資料</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-">    
+        <li>
+    <a class="dropdown-item" href="../materials/introduction.html">
+ <span class="dropdown-text">第1回講義資料</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../materials/research_design.html">
+ <span class="dropdown-text">第2・3回講義資料</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../materials/descriptive_statistics.html">
+ <span class="dropdown-text">第4回講義資料</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu--1" role="button" data-bs-toggle="dropdown" aria-expanded="false">課題</a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu--1">    
+        <li>
+    <a class="dropdown-item" href="../HW/HW02.html">
+ <span class="dropdown-text">第2回課題</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../HW/HW03.html">
+ <span class="dropdown-text">第3回課題</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="../HW/Final.html">
+ <span class="dropdown-text">期末レポート執筆要領</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" href="../data.html">データ集</a>
+  </li>  
+</ul>
+            <ul class="navbar-nav navbar-nav-scroll ms-auto">
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://jupyter.cs.rcos.nii.ac.jp/"><i class="bi bi-terminal" role="img">
+</i> 
+ </a>
+  </li>  
+  <li class="nav-item compact">
+    <a class="nav-link" href="https://www.jaysong.net/RBook/"><i class="bi bi-book" role="img">
+</i> 
+ </a>
+  </li>  
+</ul>
+              <div id="quarto-search" class="" title="Search"></div>
+          </div> <!-- /navcollapse -->
+      </div> <!-- /container-fluid -->
+    </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
+<!-- sidebar -->
+<!-- margin-sidebar -->
+    
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">M-1グランプリにおける出場順番の重要性</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>宋財泫 </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">July 14, 2022</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="sec-intro" class="level2">
+<h2 class="anchored" data-anchor-id="sec-intro">問題背景</h2>
+<p>　日本一の漫才師が選ばれるM-1グランプリは2001年に第1回の大会が開催された以来、年末の風物詩となっている<a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>。株式会社ビデオリサーチの調査によると、第17回M-1グランプリ (2021年)の視聴率は関東で18.5%、関西で28.8%であり、日本国民の約2〜3割が視聴する番組でもある。M-1グランプリの高い人気はインターネット空間上でも確認できる。 <a href="#fig-googletrend">図&nbsp;1</a> はGoogle社が提供するGoogle Trendsから取得した2つのキーワードの人気度である。取得期間は2021年11月22日から2021年12月19日までの30日間である。2020年から話題性の極めて高い新型コロナウィルス感染症の人気度と比較した場合、M-1グランプリの決勝が放映された2021年12月19日は新型コロナウィルス感染症を圧倒する人気度を示している。</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-googletrend" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Final_Example_files/figure-html/fig-googletrend-1.png" class="img-fluid figure-img" width="2100"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">図 1: Google TrendsにおけるM-1グランプリの話題性</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>　毎年12月下旬に放送されるM-1グランプリは数千組<a href="#fn2" class="footnote-ref" id="fnref2" role="doc-noteref"><sup>2</sup></a>から選ばれた上位8〜9組<a href="#fn3" class="footnote-ref" id="fnref3" role="doc-noteref"><sup>3</sup></a>がネタを披露する決勝舞台である。決勝舞台は決勝舞台に進んだ上位8〜9組がエントリー順番で抽選を行い、ネタ披露順番を決める。また、第2回大会から導入された敗者復活制度によって決勝舞台に進出した1組は自動的に最後の順番となる。9〜10組は抽選結果に沿った順番でネタを披露し、7人の審査委員<a href="#fn4" class="footnote-ref" id="fnref4" role="doc-noteref"><sup>4</sup></a>がそれぞれ100点満点で採点を行う。そして上位3組がファイナル・ステージへ進出し、新しいネタを披露する。ファイナル・ステージの場合、点数制でなく、7人による投票で勝者が決まる仕組みである。</p>
+<p>　この評価において重要視されるのがネタの披露順番である。 <a href="#fig-order-final">図&nbsp;2</a> は決勝舞台における出場順番とファイナル・ステージへ進出した組の割合を示したものである。ファイナル・ステージへ進出する傾向が最も高い順番は9番目と10番目であり、それぞれ65%、50%の組がファイナル・ステージへ進出したことが分かる。9番目が10番目よりも高いのは第2回大会から第12回大会までは決勝参加者が9組であり、この時期は9番目は最後の順番だからである。このように9番目、10番目の参加者は比較的評価が高い一方、最初の3組までの評価は決して高くなく、ファイナル・ステージへ進出した組はこれまで約15%前後である。つまり、ネタの披露順番と評価には密接な関係があると考えられる。</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-order-final" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Final_Example_files/figure-html/fig-order-final-1.png" class="img-fluid figure-img" width="2100"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">図 2: 出場順番とファイナル・ステージへ進出したコンビの割合</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>　以上の傾向は上位3組が競争するファイナル・ステージでも観察される。これまでの17回のデータを見ると、1番目の組が優勝した例は3回 (18%)、2番目は6回 (35%)、3番目に披露した組の優勝割合は8回 (47%)であった。つまり、決勝舞台 (1st stage)、ファイナル・ステージ (2nd stage)関係なく、出場順番と成績には密接な関係があると考えられる。本稿では以上の傾向が偶然によるものか、あるいは統計的に有意な傾向であるかを検証する。次節では本稿で検証する仮説について述べる。</p>
+</section>
+<section id="sec-theory" class="level2">
+<h2 class="anchored" data-anchor-id="sec-theory">理論・仮説</h2>
+<p>以下では以上の問いに対する暫定的な答えとして2つの仮説を提示する。</p>
+<p>　出場順番が上位3組のみが進出できるファイナル・ステージへの進出に与える影響は、2つの側面から考えることができる。1つ目は漫才師の心理的な要因に与える影響であり、2つ目は審査委員側に与える影響である。</p>
+<p>　1点目は出場順番と漫才師の緊張、そして「場の雰囲気」と関係する。誰も披露していない舞台に立つ場合、そうでない参加者に比べより緊張しやすいと考えられる。また、1時間以上の番組において序盤の参加者は「場を温める」役割も果たすこととなる。これは逆にいうと、場が温まっていない舞台でネタを披露することを意味する。</p>
+<p>　2点目は出場順番が遅いほど、審査委員からの評価が高い点である。たとえば、Ginsburgh (2003)は映画、書籍、ピアノ・コンクールにおけるタイミングと成功の関係に注目した (Ginsburgh 2003)。この中でピアノ・コンクールの場合、舞台の順番が遅いほど、審査委員からより高い評価を得ることが明らかとなった。順番が参加者の能力と無関係に決まることを考えると、順番そのものが評価に与える効果は存在すると考えられる。以上の理由により、出場が遅いほど、よりファイナル・ステージへ進出するといった仮説が導かれる。</p>
+<ul>
+<li><strong>仮説1:</strong> 出場順番が遅いほど、ファイナル・ステージへ進出確率が増加する。</li>
+<li><strong>帰無仮説1:</strong> 出場順番はファイナル・ステージへ進出確率に影響を与えない。</li>
+<li><strong>対立仮説1:</strong> 出場順番はファイナル・ステージへ進出確率に影響を与える。</li>
+</ul>
+<p>　以上の仮説が支持される場合、更に一つの仮説が考えられる。それは出場順番がファイナル・ステージ進出有無に与える影響は一定ではないということである。たとえば、結成から時間が経ったベテラン漫才師の場合、より安定した漫才ができるだろう。つまり、出場順番と舞台の完成度の結びつきが弱いため、出場順番の影響を受けにくいと考えられる。一方、舞台経験が比較的浅い漫才師の場合、出場順番は重要である。なぜなら、早い順番は出演者にとって緊張しやすい環境であり、ネタ本来の面白さを100%アピールすることが難しいからである。以上のことをまとめると、コンビ結成から経過年数が長い漫才師は出場順番と進出確率の結びつきが弱く、経過年数が浅い漫才師は出場順番と進出確率には正の関係があると考えられる。</p>
+<ul>
+<li><strong>仮説2:</strong> 出場順番はファイナル・ステージへ進出確率に影響はコンビ結成からの経過年数が浅いほど大きい。</li>
+<li><strong>帰無仮説2:</strong> 出場順番はファイナル・ステージへ進出確率に影響はコンビ結成からの経過年数と関係がない。</li>
+<li><strong>対立仮説2:</strong> 出場順番はファイナル・ステージへ進出確率に影響はコンビ結成からの経過年数と関係がある。</li>
+</ul>
+</section>
+<section id="data" class="level2">
+<h2 class="anchored" data-anchor-id="data">データ</h2>
+<p>　前節で述べた仮説を検証するために、本稿では宋財泫氏が公開した2001年 (第1回)から2021年 (第17回)までの決勝舞台における参加者データ<a href="#fn5" class="footnote-ref" id="fnref5" role="doc-noteref"><sup>5</sup></a>を使用する。応答変数はファイナル・ステージへの進出有無を示すバイナリー変数であり、主な説明変数は出場順番 (1番目から10番目まで)、調整変数はコンビ結成から経過年数である。元のデータには経過年数の変数がなかったため、本稿ではM-1グランプリ開催年から結成年を引いた値を結成年数として使用する。その他の統制変数としては、これまで決勝舞台に進出した回数と、敗者復活者が否かを示すダミー変数<a href="#fn6" class="footnote-ref" id="fnref6" role="doc-noteref"><sup>6</sup></a>を用いる。</p>
+<p>　<a href="#tbl-desc">表&nbsp;1</a> は本稿で用いるデータの記述統計量である<a href="#fn7" class="footnote-ref" id="fnref7" role="doc-noteref"><sup>7</sup></a>。出場順番の最大値は10であるものの、第<a href="#sec-intro">1</a>章で述べたように、一部の大会 (第2回から第12回大会まで)は敗者復活組を含め9組のみで決勝が行われたため、最大値が9となる。また、M-1グランプリの場合、出場資格に漫才歴の上限が設けられている。第1・2回は10年未満、第3〜10回は10年以下、第11回以降は15年以下であるため、コンビ結成からの経過年数の最大値も大会ごとに異なることに注意して頂きたい。</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="tbl-desc" class="anchored">
+
+<div id="tocidwgxhi" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#tocidwgxhi .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#tocidwgxhi .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tocidwgxhi .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#tocidwgxhi .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#tocidwgxhi .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tocidwgxhi .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#tocidwgxhi .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#tocidwgxhi .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#tocidwgxhi .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#tocidwgxhi .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#tocidwgxhi .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#tocidwgxhi .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#tocidwgxhi .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#tocidwgxhi .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#tocidwgxhi .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#tocidwgxhi .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#tocidwgxhi .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tocidwgxhi .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#tocidwgxhi .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#tocidwgxhi .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tocidwgxhi .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#tocidwgxhi .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#tocidwgxhi .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tocidwgxhi .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tocidwgxhi .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#tocidwgxhi .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#tocidwgxhi .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#tocidwgxhi .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tocidwgxhi .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tocidwgxhi .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#tocidwgxhi .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#tocidwgxhi .gt_left {
+  text-align: left;
+}
+
+#tocidwgxhi .gt_center {
+  text-align: center;
+}
+
+#tocidwgxhi .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#tocidwgxhi .gt_font_normal {
+  font-weight: normal;
+}
+
+#tocidwgxhi .gt_font_bold {
+  font-weight: bold;
+}
+
+#tocidwgxhi .gt_font_italic {
+  font-style: italic;
+}
+
+#tocidwgxhi .gt_super {
+  font-size: 65%;
+}
+
+#tocidwgxhi .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#tocidwgxhi .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#tocidwgxhi .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#tocidwgxhi .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#tocidwgxhi .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#tocidwgxhi .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  <caption>表 1:  記述統計量 </caption>
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1">変数</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">平均値</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">標準偏差</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">最小値</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">最大値</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">ファイナルステージへの進出有無</td>
+<td class="gt_row gt_right">0.314</td>
+<td class="gt_row gt_right">0.466</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td></tr>
+    <tr><td class="gt_row gt_left">出場順番</td>
+<td class="gt_row gt_right">5.189</td>
+<td class="gt_row gt_right">2.715</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">10</td></tr>
+    <tr><td class="gt_row gt_left">コンビ結成からの経過年数</td>
+<td class="gt_row gt_right">7.843</td>
+<td class="gt_row gt_right">3.386</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">15</td></tr>
+    <tr><td class="gt_row gt_left">決勝舞台の回数</td>
+<td class="gt_row gt_right">0.918</td>
+<td class="gt_row gt_right">1.369</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">8</td></tr>
+    <tr><td class="gt_row gt_left">敗者復活ダミー</td>
+<td class="gt_row gt_right">0.101</td>
+<td class="gt_row gt_right">0.302</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-result" class="level2">
+<h2 class="anchored" data-anchor-id="sec-result">分析結果</h2>
+<p>　応答変数であるファイナル・ステージへの進出有無は0と1のみの値をとるバイナリー変数であるため、本稿では以下のようなモデル (ロジスティック回帰分析)で検証を行う。順番と結成からの経過年数の間の交互作用も含めて検証するために、モデルには2つの交差項も同時に投入した。</p>
+<p><span class="math display">\[
+\begin{aligned}
+\text{Pr(ファイナル進出)} = &amp; \text{logistic}(y^*) = \frac{1}{1 + e^{-y^*}} \\
+y^* = &amp; \alpha + \beta_1 \text{出場順番} + \beta_2 \text{結成からの経過年数} + \beta_3 \text{決勝進出回数} + \\
+&amp; \beta_4 \text{敗者復活ダミー} + \beta_5 \text{出場順番} \cdot \text{結成からの経過年数}.
+\end{aligned}
+\]</span></p>
+<div class="cell" data-layout-align="center">
+
+</div>
+<p>　以下の <a href="#tbl-logit">表&nbsp;2</a> は以上のモデルをロジスティック回帰分析して得られたパラメーター (<span class="math inline">\(\alpha\)</span>と<span class="math inline">\(\beta\)</span>)の推定値である。</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="tbl-logit" class="anchored">
+
+<div id="srhumlgcsp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#srhumlgcsp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#srhumlgcsp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#srhumlgcsp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#srhumlgcsp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#srhumlgcsp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srhumlgcsp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#srhumlgcsp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#srhumlgcsp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#srhumlgcsp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#srhumlgcsp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#srhumlgcsp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#srhumlgcsp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#srhumlgcsp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#srhumlgcsp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#srhumlgcsp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#srhumlgcsp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#srhumlgcsp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srhumlgcsp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#srhumlgcsp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#srhumlgcsp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srhumlgcsp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#srhumlgcsp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#srhumlgcsp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srhumlgcsp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srhumlgcsp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#srhumlgcsp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#srhumlgcsp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#srhumlgcsp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#srhumlgcsp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srhumlgcsp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#srhumlgcsp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#srhumlgcsp .gt_left {
+  text-align: left;
+}
+
+#srhumlgcsp .gt_center {
+  text-align: center;
+}
+
+#srhumlgcsp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#srhumlgcsp .gt_font_normal {
+  font-weight: normal;
+}
+
+#srhumlgcsp .gt_font_bold {
+  font-weight: bold;
+}
+
+#srhumlgcsp .gt_font_italic {
+  font-style: italic;
+}
+
+#srhumlgcsp .gt_super {
+  font-size: 65%;
+}
+
+#srhumlgcsp .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#srhumlgcsp .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#srhumlgcsp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#srhumlgcsp .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#srhumlgcsp .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#srhumlgcsp .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table"><caption>表 2:  ロジスティック回帰分析の結果 </caption>
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">係数</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">標準誤差</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">z統計量</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">p値</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">切片</td>
+<td class="gt_row gt_right">−2.644</td>
+<td class="gt_row gt_right">1.198</td>
+<td class="gt_row gt_right">−2.207</td>
+<td class="gt_row gt_right">0.027</td></tr>
+    <tr><td class="gt_row gt_left">出場順番</td>
+<td class="gt_row gt_right">0.204</td>
+<td class="gt_row gt_right">0.205</td>
+<td class="gt_row gt_right">0.998</td>
+<td class="gt_row gt_right">0.318</td></tr>
+    <tr><td class="gt_row gt_left">経過年数</td>
+<td class="gt_row gt_right">0.032</td>
+<td class="gt_row gt_right">0.135</td>
+<td class="gt_row gt_right">0.235</td>
+<td class="gt_row gt_right">0.814</td></tr>
+    <tr><td class="gt_row gt_left">決勝進出回数</td>
+<td class="gt_row gt_right">0.310</td>
+<td class="gt_row gt_right">0.138</td>
+<td class="gt_row gt_right">2.239</td>
+<td class="gt_row gt_right">0.025</td></tr>
+    <tr><td class="gt_row gt_left">敗者復活ダミー</td>
+<td class="gt_row gt_right">0.233</td>
+<td class="gt_row gt_right">0.576</td>
+<td class="gt_row gt_right">0.404</td>
+<td class="gt_row gt_right">0.686</td></tr>
+    <tr><td class="gt_row gt_left">出場順番 * 経過年数</td>
+<td class="gt_row gt_right">0.004</td>
+<td class="gt_row gt_right">0.023</td>
+<td class="gt_row gt_right">0.153</td>
+<td class="gt_row gt_right">0.878</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+</div>
+<p>　まず、出場順番が遅いほど、ファイナル・ステージへ進出確率が増加するという仮説1の分析結果から紹介したい。ただし、本稿のモデルにおいて出場順番の効果はコンビ結成からの経過年数にも影響を受けるため、特定の年数に固定する必要がある。ここでは平均値である7.834年に固定し、その他の説明変数はすべて周辺化した予測確率を示す。</p>
+<p>　<a href="#fig-pred-plot">図&nbsp;3</a> は、出場順番ごとのファイナル・ステージへの進出確率の予測値とその95%信頼区間である。出場順番が1番目の組における予測確率は約14.8% (95%信頼区間は下限5.3%、上限24.2%)であり、10番目の組のそれは54.4% (95%信頼区間は下限37.1%、上限71.6%)である。つまり、1番目と10番目の組におけるファイナル・ステージへの進出確率には約39.6%ポイントの差があり、非常に大きいと考えられる。したがって、本稿の仮説1は支持される<a href="#fn8" class="footnote-ref" id="fnref8" role="doc-noteref"><sup>8</sup></a>。</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-pred-plot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Final_Example_files/figure-html/fig-pred-plot-1.png" class="img-fluid figure-img" width="2100"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">図 3: 出場順番とファイナル・ステージに進出する確率の関係</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>　つづいて、仮説2の分析結果を紹介する。 <a href="#fig-ame-plot">図&nbsp;4</a> はコンビ結成からの経過年数（1年単位）ごとの出場順番の限界効果とその95%信頼区間を示したものである。限界効果の傾向を見ると、出場順番が持つ効果はコンビ結成の経過年数が経つほど高くなる。つまり、ベテランのコンビほど出場順番の効果が大きいことを意味する。したがって、本稿の仮説2は受容されない。また、出場順番がファイナル・ステージへの進出に統計的に有意な影響を与えるのは、コンビ結成からの経過年数が5年以上、13年以下のコンビであり、4年以下、または14年以上のコンビにおいては影響が観察されなかった<a href="#fn9" class="footnote-ref" id="fnref9" role="doc-noteref"><sup>9</sup></a>。</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-ame-plot" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Final_Example_files/figure-html/fig-ame-plot-1.png" class="img-fluid figure-img" width="2100"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">図 4: コンビ結成からの経過年数と出場順番の限界効果</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>　最後に、コンビ結成からの経過年数ごとに、出場順番とファイナル・ステージへの進出確率の予測値を示す。 <a href="#fig-pred-plot2">図&nbsp;5</a> はコンビ結成からの経過年数が1年、8年、15年の場合の図である。まず、コンビ結成からの経過年数と関係なく、出場順番が遅いほどファイナル・ステージへ進出する確率が増加することが確認できる。ただし、コンビ結成からの経過年数が1年、または15年の場合、この増加傾向は統計的に有意なものではない。つまり、漫才歴が極端に短い、または長い組は、出場順番が成績に影響を与えているとは言えない<a href="#fn10" class="footnote-ref" id="fnref10" role="doc-noteref"><sup>10</sup></a>。</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div id="fig-pred-plot2" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="Final_Example_files/figure-html/fig-pred-plot2-1.png" class="img-fluid figure-img" width="2100"></p>
+<p></p><figcaption aria-hidden="true" class="figure-caption">図 5: コンビ結成からの経過年数ごとの予測確率</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="sec-conclusion" class="level2">
+<h2 class="anchored" data-anchor-id="sec-conclusion">結論</h2>
+<p>　本稿では、これまで開催された17回のM-1グランプリの参加者データから、ネタの披露順番が成績に与える影響を明らかにした。具体的には計9〜10組が競争する決勝舞台におけるネタの披露順番とファイナル・ステージへ進出 (上位3組)有無の関係 (仮説1)、そして、この関係がコンビ結成からの経過年数が浅いほど順番の影響を受ける (仮説2)といった2つの仮説を検証した。分析の結果、仮説1は支持され、出場順番が遅いほど、ファイナル・ステージへ進出する傾向があることが明らかになった。具体的に10番目の組は1番目の組に比べ、ファイナル・ステージへ進出確率が約39.6%ポイント高かった。一方、コンビ結成からの経過年数が長いほど順番の影響力が大きくなるといった、本稿の仮説2とは逆の結果が得られ、統計的に有意でないことから仮説2は支持されなかった。</p>
+<p>　本稿の結果はM-1グランプリにおける評価・審査の制度設計を再考する必要があることを示していると考えられる。ネタの披露順番は漫才師の能力と無関係に決まるものの、漫才師の能力以外の要因が評価に影響を与えることは避けるべきであろう。たとえば、審査委員ごと異なる順番でネタを審査することも考えられるだろう。ただし、この場合、生放送でなく録画放送にする必要があるため、M-1グランプリの話題性が低下する可能性もある。また、敗者復活組が必ず最後の順番になることから、現行制度は敗者復活組に極めて有利な制度となっている。実際、敗者復活が導入された計16回の中、8回の大会において敗者復活組がファイナル・ステージへ進出している。敗者復活組を決勝舞台の最初に選出し、敗者復活組を含めた順番抽選を行うことで改善できると考えられる。あるいは、ファイナル・ステージと同様、すべてのネタの披露が終わってから審査を行うことも改善策の一つである。</p>
+<p>　他にも評価に影響を与える要因は複数あるだろう。選挙制度の側面から考えると、決勝舞台は定数3のスコアリング・ルール（中でもcardinal voting）として解釈できる。しかし、スコアリング・ルールは棄権防止性と中立性といった性質を備えているものの、ペア敗者基準 (コンドルセ敗者基準)すらも満たしていない点で、通常の多数決と大きな違いがない (酒井 2015)。同じスコアリング・ルールを採用するなら、ボルダー式投票を採用することで、ペア敗者基準やベア勝者弱基準を満たせることが可能となり、より審査委員の選好を的確に反映させることができよう。また、ファイナル・ステージにおける審査方法は定数1の単記移譲式投票制度、いわゆる単純多数決である。2つのステージが異なる投票方式を有することに対する理論的根拠がない限り、両制度をボルダー式投票<a href="#fn11" class="footnote-ref" id="fnref11" role="doc-noteref"><sup>11</sup></a>に統一することがより客観性が担保された審査ができるだろう。</p>
+</section>
+<section id="参考文献" class="level2">
+<h2 class="anchored" data-anchor-id="参考文献">参考文献</h2>
+<ul>
+<li>Ginsburgh, Victor. 2003. “Awards,Success and Aesthetic Quality in the Arts,” <em>Journal of Economic Perspectives,</em> 17(2): 99–111.</li>
+<li>酒井豊貴. 2015.『多数決を疑うー社会的選択理論とは何か』岩波新書.</li>
+</ul>
+
+
+</section>
+
+
+<div id="quarto-appendix" class="default"><section class="footnotes footnotes-end-of-document" role="doc-endnotes"><h2 class="anchored quarto-appendix-heading">注</h2>
+
+<ol>
+<li id="fn1" role="doc-endnote"><p>ただし、2011年から2014年までの4年間は未開催<a href="#fnref1" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn2" role="doc-endnote"><p>第17回M-1グランプリ (2021年)の場合、エントリー数は6017組である。<a href="#fnref2" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn3" role="doc-endnote"><p>敗者復活の1組を加えて、計9〜10組である。ただし、第1回大会 (2001年)の場合、敗者復活組なしで10組が競った。<a href="#fnref3" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn4" role="doc-endnote"><p>例外として、第11回と第12回大会はそれぞれ9人、5人であった。<a href="#fnref4" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn5" role="doc-endnote"><p>データの詳細については、入手先である<a href="https://github.com/JaehyunSong/M-1_Grand_Pix" class="uri">https://github.com/JaehyunSong/M-1_Grand_Pix</a>を参照されたい。<a href="#fnref5" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn6" role="doc-endnote"><p>敗者復活は必ず順番が最後となるため、順番に影響を与えるだけでなく、最後に選ばれたという注目度の高さから評価に影響を与える可能性の高い交絡要因として機能する可能性がある。<a href="#fnref6" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn7" role="doc-endnote"><p>本データには他にもいくつかの変数が含まれているものの、ここでは本稿で用いる変数のみの記述統計量を掲載する。<a href="#fnref7" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn8" role="doc-endnote"><p>コンビ結成からの経過年数が7.834年の場合、出場順番の限界効果は約0.043 (95%信頼区間は下限0.017、上限0.068)であり、<span class="math inline">\(p &lt; 0.001\)</span>であることから、帰無仮説1は棄却される。また、平均値でなく中央値である8年でも、限界効果は0.043 (95%信頼区間は下限0.018、上限0.068)であり、<span class="math inline">\(p &lt; 0.001\)</span>であることから、帰無仮説1は棄却される。<a href="#fnref8" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn9" role="doc-endnote"><p>ただし、これにはコンビ結成からの経過年数ごとのサンプルサイズの影響が大きいと考えられる。M-1グランプリの決勝に進出したこれまでの159組の中、経過年数が5年以上10年以下のコンビが計100組であり、全体の約63%を占める。つまり、経過年数が浅いコンビと長いコンビは比較的少数である。標準誤差はサンプルサイズに反比例することを考えると、自然な結果とも言えよう。<a href="#fnref9" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn10" role="doc-endnote"><p>ただし、これには先述したサンプルサイズの問題が影響していると考えられる。<a href="#fnref10" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+<li id="fn11" role="doc-endnote"><p>この場合、必然的に審査はすべてのネタ披露が終わってから行われることとなる。<a href="#fnref11" class="footnote-back" role="doc-backlink">↩︎</a></p></li>
+</ol>
+</section></div></main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      let href = ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+<footer class="footer">
+  <div class="nav-footer">
+    <div class="nav-footer-left">Copyright 2022, <a href="https://www.jaysong.net" target="_blank">Jaehyun Song</a>. Powered by <a href="https://quarto.org/" target="_blank">Quarto</a></div>   
+    <div class="nav-footer-right">
+      <ul class="footer-items list-unstyled">
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://www.jaysong.net">
+      <i class="bi bi-house-fill" role="img">
+</i> 
+    </a>
+  </li>  
+    <li class="nav-item compact">
+    <a class="nav-link" href="https://github.com/JaehyunSong">
+      <i class="bi bi-github" role="img">
+</i> 
+    </a>
+  </li>  
+</ul>
+    </div>
+  </div>
+</footer>
+
+
+
+</body></html>

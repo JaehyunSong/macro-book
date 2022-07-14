@@ -24,6 +24,70 @@
     div.column{display: inline-block; vertical-align: top; width: 50%;}
     div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
     ul.task-list{list-style: none;}
+    pre > code.sourceCode { white-space: pre; position: relative; }
+    pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+    pre > code.sourceCode > span:empty { height: 1.2em; }
+    .sourceCode { overflow: visible; }
+    code.sourceCode > span { color: inherit; text-decoration: inherit; }
+    div.sourceCode { margin: 1em 0; }
+    pre.sourceCode { margin: 0; }
+    @media screen {
+    div.sourceCode { overflow: auto; }
+    }
+    @media print {
+    pre > code.sourceCode { white-space: pre-wrap; }
+    pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+    }
+    pre.numberSource code
+      { counter-reset: source-line 0; }
+    pre.numberSource code > span
+      { position: relative; left: -4em; counter-increment: source-line; }
+    pre.numberSource code > span > a:first-child::before
+      { content: counter(source-line);
+        position: relative; left: -1em; text-align: right; vertical-align: baseline;
+        border: none; display: inline-block;
+        -webkit-touch-callout: none; -webkit-user-select: none;
+        -khtml-user-select: none; -moz-user-select: none;
+        -ms-user-select: none; user-select: none;
+        padding: 0 4px; width: 4em;
+        color: #aaaaaa;
+      }
+    pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+    div.sourceCode
+      { color: #003b4f; background-color: #f1f3f5; }
+    @media screen {
+    pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+    }
+    code span { color: #003b4f; } /* Normal */
+    code span.al { color: #ad0000; } /* Alert */
+    code span.an { color: #5e5e5e; } /* Annotation */
+    code span.at { color: #657422; } /* Attribute */
+    code span.bn { color: #ad0000; } /* BaseN */
+    code span.bu { } /* BuiltIn */
+    code span.cf { color: #003b4f; } /* ControlFlow */
+    code span.ch { color: #20794d; } /* Char */
+    code span.cn { color: #8f5902; } /* Constant */
+    code span.co { color: #5e5e5e; } /* Comment */
+    code span.cv { color: #5e5e5e; font-style: italic; } /* CommentVar */
+    code span.do { color: #5e5e5e; font-style: italic; } /* Documentation */
+    code span.dt { color: #ad0000; } /* DataType */
+    code span.dv { color: #ad0000; } /* DecVal */
+    code span.er { color: #ad0000; } /* Error */
+    code span.ex { } /* Extension */
+    code span.fl { color: #ad0000; } /* Float */
+    code span.fu { color: #4758ab; } /* Function */
+    code span.im { color: #00769e; } /* Import */
+    code span.in { color: #5e5e5e; } /* Information */
+    code span.kw { color: #003b4f; } /* Keyword */
+    code span.op { color: #5e5e5e; } /* Operator */
+    code span.ot { color: #003b4f; } /* Other */
+    code span.pp { color: #ad0000; } /* Preprocessor */
+    code span.sc { color: #5e5e5e; } /* SpecialChar */
+    code span.ss { color: #20794d; } /* SpecialString */
+    code span.st { color: #20794d; } /* String */
+    code span.va { color: #111111; } /* Variable */
+    code span.vs { color: #20794d; } /* VerbatimString */
+    code span.wa { color: #5e5e5e; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="../site_libs/revealjs/dist/theme/quarto.css" id="theme">
   <script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9TLN2VMPQD"></script>
@@ -338,8 +402,2041 @@
   <p class="date">2022年 10月 13日</p>
 </section>
 
-<section class="slide level2">
+<section id="本日の内容" class="slide level2">
+<h2>本日の内容</h2>
+<ul>
+<li>記述統計とは何か</li>
+<li>どの変数にどの記述統計量を求めるべきか</li>
+<li>記述統計をどう報告するか</li>
+<li>Rの復習
+<ul>
+<li>前期履修者でも数ヶ月はRを触っていないはずなので、ウォーミングアップ</li>
+</ul></li>
+</ul>
+<!-- -->
+</section>
+<section id="section" class="slide level2">
+<h2></h2>
+<p><span class="sec-title">変数の種類と記述統計</span></p>
+<!-- -->
+</section>
+<section id="記述統計" class="slide level2">
+<h2>記述統計</h2>
+<p><strong>記述統計量</strong>（descriptive statistics）</p>
+<ul>
+<li>ある変数が持つ情報を要約した数値</li>
+<li>データ分析を用いる論文、レポートにはデータ分析の結果を紹介する前に<strong>必ず</strong>分析に用いる変数の記述統計が必要</li>
+<li>記述統計量の種類
+<ul>
+<li>各変数を代表する値: 平均値、中央値、最頻値</li>
+<li>値の散らばり具合: 標準偏差、分散、範囲（最大値 - 最小値）、四分位範囲など</li>
+</ul></li>
+</ul>
+<!-- -->
+</section>
+<section id="記述統計量の必要性" class="slide level2">
+<h2>記述統計量の必要性</h2>
+<p>通常、データ分析で用いるケースは数百〜数万であるため、一つずつ列挙することはほぼ不可能であり、記述統計量を用いた方が効率的</p>
+<ul>
+<li><strong>例1)</strong> あるクラス（3人）の数学成績が82点、45点、69点なら
+<ul>
+<li>「うちのクラスの数学成績は82点、45点、69点です！」で良い</li>
+</ul></li>
+<li><strong>例2)</strong> あるクラス（30人）の数学成績が82点、45点、69点、94点、…、63点なら
+<ul>
+<li>「うちのクラスの数学成績は82点、45点、69点、94点、…、63点です！」は長い</li>
+<li>「うちのクラスの数学成績は平均して75点で、標準偏差は8点です。」</li>
+</ul></li>
+</ul>
+<!-- -->
+</section>
+<section id="実習の準備" class="slide level2">
+<h2>実習の準備</h2>
+<p>パッケージとデータの読み込み（データはLMSから）</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># {tidyverse}パッケージを読み込む</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>df <span class="ot">&lt;-</span> <span class="fu">read_csv</span>(<span class="st">"Data/Macro_04.csv"</span>)　<span class="co"># Dataフォルダー内のMacro_04.csvを読み込み、dfと名付ける</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="fu">print</span>(df, <span class="at">n =</span> <span class="dv">10</span>) <span class="co"># dfの最初の10行を確認</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,000 × 272
+   USER_ID    Q1    Q2    Q3    Q4  Q5_1  Q5_2  Q5_3  Q5_4  Q5_5  Q5_6  Q5_7
+     &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+ 1       1     3     3     1     1    80    80    70    50    40    20    50
+ 2       2     2     2     2     8     0    25    30    30    60    30    10
+ 3       3     3     1     1     8    80    10     0     0     0     0    75
+ 4       4     3     3     1     1   100    50     0     0    50     0   100
+ 5       5     3     3     2     3    70    40    40    50    30    20    70
+ 6       6     3     1     1     1   100     0     0     0     0     0   100
+ 7       7     3     3     1     6   100    10    20    10    10    10    50
+ 8       8     3     1     1     6    80     0    60    55     0     0    90
+ 9       9     3     1     1     1   100    50   100    75    50    25   100
+10      10     3     3     1     8    25    25    25    25    55    50    50
+# … with 2,990 more rows, and 260 more variables: Q5_8 &lt;dbl&gt;, Q5_9 &lt;dbl&gt;,
+#   Q5_10 &lt;dbl&gt;, Q5_11 &lt;dbl&gt;, Q5_12 &lt;dbl&gt;, Q6_1 &lt;dbl&gt;, Q6_2 &lt;dbl&gt;, Q6_3 &lt;dbl&gt;,
+#   Q6_4 &lt;dbl&gt;, Q6_5 &lt;dbl&gt;, Q7 &lt;dbl&gt;, Q8 &lt;dbl&gt;, Q9 &lt;dbl&gt;, Q10_1 &lt;dbl&gt;,
+#   Q10_2 &lt;dbl&gt;, Q10_3 &lt;dbl&gt;, Q10_4 &lt;dbl&gt;, Q10_5 &lt;dbl&gt;, Q10_6 &lt;dbl&gt;,
+#   Q10_7 &lt;dbl&gt;, Q10_8 &lt;dbl&gt;, Q11 &lt;dbl&gt;, Q12 &lt;dbl&gt;, Q12S1 &lt;dbl&gt;, Q13 &lt;dbl&gt;,
+#   Q13S1 &lt;dbl&gt;, Q13S2 &lt;dbl&gt;, Q14 &lt;dbl&gt;, Q14S1 &lt;dbl&gt;, Q15 &lt;dbl&gt;, Q15S1 &lt;dbl&gt;,
+#   Q15S2 &lt;dbl&gt;, Q16 &lt;dbl&gt;, Q16S1 &lt;dbl&gt;, Q16S2 &lt;dbl&gt;, Q17_1 &lt;dbl&gt;, …</code></pre>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="データの確認" class="slide level2">
+<h2>データの確認</h2>
+<p>データの大きさ（行数と列数）の確認</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="fu">dim</span>(df)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3000  272</code></pre>
+</div>
+</div>
+<p>変数名の確認</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="fu">names</span>(df)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  [1] "USER_ID" "Q1"      "Q2"      "Q3"      "Q4"      "Q5_1"    "Q5_2"   
+  [8] "Q5_3"    "Q5_4"    "Q5_5"    "Q5_6"    "Q5_7"    "Q5_8"    "Q5_9"   
+ [15] "Q5_10"   "Q5_11"   "Q5_12"   "Q6_1"    "Q6_2"    "Q6_3"    "Q6_4"   
+ [22] "Q6_5"    "Q7"      "Q8"      "Q9"      "Q10_1"   "Q10_2"   "Q10_3"  
+ [29] "Q10_4"   "Q10_5"   "Q10_6"   "Q10_7"   "Q10_8"   "Q11"     "Q12"    
+ [36] "Q12S1"   "Q13"     "Q13S1"   "Q13S2"   "Q14"     "Q14S1"   "Q15"    
+ [43] "Q15S1"   "Q15S2"   "Q16"     "Q16S1"   "Q16S2"   "Q17_1"   "Q17_2"  
+ [50] "Q17_3"   "Q17_4"   "Q17_5"   "Q17_6"   "Q17_7"   "Q17_8"   "Q18S1"  
+ [57] "Q19S1"   "Q20S1"   "Q20S2"   "Q20S3_1" "Q20S3_2" "Q20S3_3" "Q20S3_4"
+ [64] "Q20S3_5" "Q20S3_6" "Q21S1"   "Q21S2"   "Q21S3_1" "Q21S3_2" "Q21S3_3"
+ [71] "Q21S3_4" "Q21S3_5" "Q21S3_6" "Q22S1"   "Q22S2"   "Q22S3_1" "Q22S3_2"
+ [78] "Q22S3_3" "Q22S3_4" "Q22S3_5" "Q22S3_6" "Q23S1"   "Q23S2"   "Q23S3_1"
+ [85] "Q23S3_2" "Q23S3_3" "Q23S3_4" "Q23S3_5" "Q23S3_6" "Q24S1"   "Q24S2"  
+ [92] "Q24S3_1" "Q24S3_2" "Q24S3_3" "Q24S3_4" "Q24S3_5" "Q24S3_6" "Q25S1"  
+ [99] "Q25S2"   "Q25S3_1" "Q25S3_2" "Q25S3_3" "Q25S3_4" "Q25S3_5" "Q25S3_6"
+[106] "Q26S1"   "Q26S2"   "Q26S3_1" "Q26S3_2" "Q26S3_3" "Q26S3_4" "Q26S3_5"
+[113] "Q26S3_6" "Q27S1"   "Q27S2"   "Q27S3_1" "Q27S3_2" "Q27S3_3" "Q27S3_4"
+[120] "Q27S3_5" "Q27S3_6" "Q28_1"   "Q29"     "Q30"     "Q31"     "Q32"    
+[127] "Q33"     "Q34"     "Q35_1"   "Q35_2"   "Q35_3"   "Q35_4"   "Q35_5"  
+[134] "Q35_6"   "Q35_7"   "Q35_8"   "Q35_9"   "Q35_10"  "Q35_11"  "Q35_12" 
+[141] "Q35_13"  "Q35_14"  "Q35_15"  "Q36S1"   "Q36S2"   "Q36S3"   "Q36S4"  
+[148] "Q36S5"   "Q36S6"   "Q36S7"   "Q36S8"   "Q36S9"   "Q37"     "Q38"    
+[155] "Q39"     "Q40S1"   "Q40S2"   "Q40S3"   "Q40S4"   "Q40S5"   "Q41_1"  
+[162] "Q41_2"   "Q41_3"   "Q41_4"   "Q41_5"   "Q41_6"   "Q42"     "Q43"    
+[169] "Q44"     "Q45"     "Q46"     "Q47_1"   "Q47_2"   "Q47_3"   "Q47_4"  
+[176] "Q47_5"   "Q47_6"   "Q47_7"   "Q47_8"   "Q47_9"   "Q47_10"  "Q47_11" 
+[183] "Q47_12"  "Q47_13"  "Q47_14"  "Q47_15"  "Q47_16"  "Q47_17"  "Q48_1"  
+[190] "Q48_2"   "Q48_3"   "Q48_4"   "Q48_5"   "Q48_6"   "Q49_1"   "Q49_2"  
+[197] "Q49_3"   "Q50_1"   "Q50_2"   "Q50_3"   "Q50_4"   "Q50_5"   "Q50_6"  
+[204] "Q51_1"   "Q51_2"   "Q51_3"   "Q51_4"   "Q51_5"   "Q51_6"   "Q51_7"  
+[211] "Q51_8"   "Q51_9"   "Q51_10"  "Q51_11"  "Q51_12"  "Q51_13"  "Q51_14" 
+[218] "Q51_15"  "Q52"     "Q53"     "Q54"     "Q55"     "Q56_1"   "Q56_2"  
+[225] "Q56_3"   "Q56_4"   "Q56_5"   "Q56_6"   "Q56_7"   "Q57"     "Q58_1"  
+[232] "Q58_2"   "Q58_3"   "Q58_4"   "Q58_5"   "Q58_6"   "Q58_7"   "Q58_8"  
+[239] "Q58_9"   "Q58_10"  "Q58_11"  "Q58_12"  "Q58_13"  "Q58_14"  "Q58_15" 
+[246] "Q58_16"  "Q59"     "Q59_1"   "Q59_2"   "Q59_3"   "Q59_4"   "X2_1"   
+[253] "X2_2"    "X2_3"    "Q60"     "Q60S1"   "Q61"     "Q62S1"   "Q62S2"  
+[260] "Q62S4"   "Q63"     "Q63S1"   "Q63S2"   "Q63S4"   "Q64"     "Q65"    
+[267] "seg"     "sex"     "age"     "chiiki"  "QVOTES"  "QVOTEP" </code></pre>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="データの加工変数の抽出" class="slide level2">
+<h2>データの加工（変数の抽出）</h2>
+<p>分析に使用する変数だけを残し、新しいオブジェクトとして格納</p>
+<ul>
+<li><code>select()</code>関数で列（=変数）抽出と変数名変更を同時に行う。</li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-1" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-1-1">コード</a></li><li><a href="#tabset-1-2">結果</a></li></ul>
+<div class="tab-content">
+<div id="tabset-1-1">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a>df2 <span class="ot">&lt;-</span> df <span class="sc">%&gt;%</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="fu">select</span>(<span class="at">ID           =</span> USER_ID, <span class="co"># 回答者ID</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>         <span class="at">Gender       =</span> sex,     <span class="co"># 性別</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a>         <span class="at">Age          =</span> age,     <span class="co"># 年齢</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a>         <span class="at">Education    =</span> Q61,     <span class="co"># 最終学歴</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>         <span class="at">Voted        =</span> Q15,     <span class="co"># 投票参加 (2016参院選)</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a>         <span class="at">VotedParty   =</span> Q15S2,   <span class="co"># 投票先 (2016参院選)</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>         <span class="at">T_Jimin      =</span> Q5_7,    <span class="co"># 自民に対する感情温度</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a>         <span class="at">T_Minshin    =</span> Q5_11)   <span class="co"># 民進に対する感情温度</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-1-2">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a>df2 <span class="co"># print(df2)もOK</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,000 × 8
+      ID Gender   Age Education Voted VotedParty T_Jimin T_Minshin
+   &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt;     &lt;dbl&gt; &lt;dbl&gt;      &lt;dbl&gt;   &lt;dbl&gt;     &lt;dbl&gt;
+ 1     1      2    69         4     1          7      50        30
+ 2     2      2    47         3     2         NA      10        50
+ 3     3      2    37         2     1          1      75         0
+ 4     4      1    51         4     1          1     100        50
+ 5     5      1    38         4     2         NA      70        30
+ 6     6      1    71         2     1          1     100         0
+ 7     7      1    47         3     1          7      50        10
+ 8     8      1    71         2     1          1      90         0
+ 9     9      1    75         4     1          1     100        50
+10    10      2    66         3     1          2      50        55
+# … with 2,990 more rows</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="量的変数" class="slide level2">
+<h2>量的変数</h2>
+<p>間隔尺度、または比率尺度で測定された変数</p>
+<ul>
+<li>量的変数の例: 年齢 (<code>Age</code>)、感情温度 (<code>T_Jimin</code>と<code>T_Minshin</code>)
+<ul>
+<li>変数の尺度についてはミクロ政治データ分析実習の<a href="https://www.jaysong.net/micro-book/materials/data_collection.html">第6回</a>を参照</li>
+</ul></li>
+<li>量的変数の記述統計量（太字は掲載がほぼ必須の記述統計量）
+<ul>
+<li><strong>平均値</strong> (<code>mean()</code>)</li>
+<li>中央値 (<code>median()</code>)</li>
+<li><strong>標準偏差</strong> (<code>sd()</code>)</li>
+<li>分散 (<code>var()</code>)</li>
+<li><strong>最小値</strong> (<code>min()</code>)</li>
+<li><strong>最大値</strong> (<code>max()</code>)</li>
+<li>欠損値を除く有効ケース数 (Observation; Obs)
+<ul>
+<li>一部の変数に欠損値が含まれている場合は必須</li>
+<li>ただし、分析を行う場合、予め欠損値を含む行を削除 or 補完する場合が多い</li>
+</ul></li>
+<li>その他</li>
+</ul></li>
+</ul>
+<!-- -->
+</section>
+<section id="記述統計の計算-base-rの場合" class="slide level2">
+<h2>記述統計の計算: Base Rの場合</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1"></a><span class="fu">mean</span>(df2<span class="sc">$</span>Age)        <span class="co"># Ageの平均値</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 47.34</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="fu">median</span>(df2<span class="sc">$</span>Age)      <span class="co"># Ageの中央値</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 47</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a><span class="fu">sd</span>(df2<span class="sc">$</span>Age)          <span class="co"># Ageの標準偏差</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 15.62839</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1"></a><span class="fu">min</span>(df2<span class="sc">$</span>Age)         <span class="co"># Ageの最小値</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 18</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="fu">max</span>(df2<span class="sc">$</span>Age)         <span class="co"># Ageの最大値</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 75</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(df2<span class="sc">$</span>Age)) <span class="co"># Ageの有効ケース数</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 3000</code></pre>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="記述統計の計算-dplyrを利用する" class="slide level2">
+<h2>記述統計の計算: {dplyr}を利用する</h2>
+<p><code>summarise()</code>関数を使用</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb22-2"><a href="#cb22-2"></a>  <span class="fu">summarise</span>(<span class="at">Mean   =</span> <span class="fu">mean</span>(Age),         <span class="co"># Ageの平均値</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>            <span class="at">Median =</span> <span class="fu">median</span>(Age),       <span class="co"># Ageの中央値</span></span>
+<span id="cb22-4"><a href="#cb22-4"></a>            <span class="at">SD     =</span> <span class="fu">sd</span>(Age),           <span class="co"># Ageの標準偏差</span></span>
+<span id="cb22-5"><a href="#cb22-5"></a>            <span class="at">Min    =</span> <span class="fu">min</span>(Age),          <span class="co"># Ageの最小値</span></span>
+<span id="cb22-6"><a href="#cb22-6"></a>            <span class="at">Max    =</span> <span class="fu">max</span>(Age),          <span class="co"># Ageの最大値</span></span>
+<span id="cb22-7"><a href="#cb22-7"></a>            <span class="at">Obs    =</span> <span class="fu">sum</span>(<span class="sc">!</span><span class="fu">is.na</span>(Age)))  <span class="co"># Ageの有効ケース数</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 6
+   Mean Median    SD   Min   Max   Obs
+  &lt;dbl&gt;  &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;int&gt;
+1  47.3     47  15.6    18    75  3000</code></pre>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="一つの表としてまとめる" class="slide level2">
+<h2>一つの表としてまとめる</h2>
+<p>論文、レポートに記述統計を掲載する際は一つの表としてまとめること</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
 
+<div id="rhsqorsjaf" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#rhsqorsjaf .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 24px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#rhsqorsjaf .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rhsqorsjaf .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#rhsqorsjaf .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#rhsqorsjaf .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhsqorsjaf .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#rhsqorsjaf .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#rhsqorsjaf .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#rhsqorsjaf .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#rhsqorsjaf .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#rhsqorsjaf .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#rhsqorsjaf .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rhsqorsjaf .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#rhsqorsjaf .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#rhsqorsjaf .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#rhsqorsjaf .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#rhsqorsjaf .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhsqorsjaf .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#rhsqorsjaf .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#rhsqorsjaf .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhsqorsjaf .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#rhsqorsjaf .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#rhsqorsjaf .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhsqorsjaf .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhsqorsjaf .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#rhsqorsjaf .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#rhsqorsjaf .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#rhsqorsjaf .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rhsqorsjaf .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhsqorsjaf .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#rhsqorsjaf .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#rhsqorsjaf .gt_left {
+  text-align: left;
+}
+
+#rhsqorsjaf .gt_center {
+  text-align: center;
+}
+
+#rhsqorsjaf .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#rhsqorsjaf .gt_font_normal {
+  font-weight: normal;
+}
+
+#rhsqorsjaf .gt_font_bold {
+  font-weight: bold;
+}
+
+#rhsqorsjaf .gt_font_italic {
+  font-style: italic;
+}
+
+#rhsqorsjaf .gt_super {
+  font-size: 65%;
+}
+
+#rhsqorsjaf .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#rhsqorsjaf .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#rhsqorsjaf .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#rhsqorsjaf .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#rhsqorsjaf .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#rhsqorsjaf .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">平均値</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">標準偏差</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">最小値</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">最大値</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">年齢</td>
+<td class="gt_row gt_right">47.340</td>
+<td class="gt_row gt_right">15.628</td>
+<td class="gt_row gt_right">18</td>
+<td class="gt_row gt_right">75</td></tr>
+    <tr><td class="gt_row gt_left">感情温度: 自由民主党</td>
+<td class="gt_row gt_right">41.130</td>
+<td class="gt_row gt_right">28.015</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">100</td></tr>
+    <tr><td class="gt_row gt_left">感情温度: 民進党</td>
+<td class="gt_row gt_right">34.248</td>
+<td class="gt_row gt_right">25.947</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">100</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="summarytoolsの利用" class="slide level2">
+<h2>{summarytools}の利用</h2>
+<ul>
+<li>{summarytools}の<code>desc()</code>関数
+<ul>
+<li><code>desc()</code>内には記述統計を確認するdata.frame / tibbleのオブジェクト名</li>
+<li>連続変数のみ記述統計量が出力される。</li>
+</ul></li>
+</ul>
+<div class="panel-tabset">
+<ul id="tabset-2" class="panel-tabset-tabby"><li><a data-tabby-default="" href="#tabset-2-1">コード</a></li><li><a href="#tabset-2-2">結果</a></li></ul>
+<div class="tab-content">
+<div id="tabset-2-1">
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb24"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb24-1"><a href="#cb24-1"></a><span class="co"># インストールされていない場合はRコンソール上にinstall.pacakges("summarytools")</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="fu">library</span>(summarytools)</span>
+<span id="cb24-3"><a href="#cb24-3"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb24-4"><a href="#cb24-4"></a>  <span class="fu">select</span>(<span class="sc">-</span>ID) <span class="sc">%&gt;%</span> <span class="co"># 回答者IDの記述統計量は不要なので除外</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>  <span class="fu">descr</span>()</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+</div>
+<div id="tabset-2-2">
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code>Descriptive Statistics  
+df2  
+N: 3000  
+
+                        Age   Education    Gender   T_Jimin   T_Minshin     Voted   VotedParty
+----------------- --------- ----------- --------- --------- ----------- --------- ------------
+             Mean     47.34        3.11      1.50     41.13       34.25      1.30         2.94
+          Std.Dev     15.63        0.89      0.50     28.02       25.95      0.53         2.21
+              Min     18.00        1.00      1.00      0.00        0.00      1.00         1.00
+               Q1     34.00        2.00      1.00     20.00       10.00      1.00         1.00
+           Median     47.00        3.00      2.00     50.00       40.00      1.00         2.00
+               Q3     61.00        4.00      2.00     60.00       50.00      2.00         5.00
+              Max     75.00        4.00      2.00    100.00      100.00      3.00         7.00
+              MAD     19.27        1.48      0.00     29.65       29.65      0.00         1.48
+              IQR     27.00        2.00      1.00     40.00       40.00      1.00         4.00
+               CV      0.33        0.29      0.33      0.68        0.76      0.41         0.75
+         Skewness     -0.03       -0.38     -0.01      0.02        0.16      1.56         0.82
+      SE.Skewness      0.04        0.04      0.04      0.04        0.04      0.04         0.05
+         Kurtosis     -1.14       -1.28     -2.00     -0.83       -0.81      1.53        -0.82
+          N.Valid   3000.00     3000.00   3000.00   3000.00     3000.00   3000.00      2208.00
+        Pct.Valid    100.00      100.00    100.00    100.00      100.00    100.00        73.60</code></pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="カテゴリ変数" class="slide level2">
+<h2>カテゴリ変数</h2>
+<p>カテゴリ変数：名目尺度で測定された変数（=名目変数）</p>
+<ul>
+<li>カテゴリ変数の例: 性別 (<code>Gender</code>)、投票参加 (<code>Voted</code>)、投票先 (<code>VotedParty</code>)
+<ul>
+<li>教育水準（<code>Education</code>）のような<strong>順序変数</strong>は、連続変数としてもカテゴリ変数としても扱うことが可能</li>
+</ul></li>
+</ul>
+<h3 id="カテゴリ変数の可視化">カテゴリ変数の可視化</h3>
+<ul>
+<li><strong>方法1:</strong> 度数分布表を作成する
+<ul>
+<li>事前にfactor化する</li>
+</ul></li>
+<li><strong>方法2:</strong> ダミー変数に変換し、量的変数と同じ扱い
+<ul>
+<li>記述統計の表を作成する場合は、ダミー変換後、量的変数同様に扱う</li>
+</ul></li>
+</ul>
+<!-- -->
+</section>
+<section id="度数分布表の作成" class="slide level2">
+<h2>度数分布表の作成</h2>
+<p><code>Voted</code>変数の度数分布表</p>
+<ul>
+<li>値 (1, 2, 3, …)の意味は質問票、またはコードブックを参照
+<ul>
+<li>事前にfactor化しておくと読みやすくなる</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb26"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1"></a><span class="fu">table</span>(df2<span class="sc">$</span>Voted) <span class="co"># 度数</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   1    2    3 
+2208  687  105 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb28"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb28-1"><a href="#cb28-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(df2<span class="sc">$</span>Voted)) <span class="co"># 割合</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+    1     2     3 
+0.736 0.229 0.035 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1"></a><span class="fu">prop.table</span>(<span class="fu">table</span>(df2<span class="sc">$</span>Voted)) <span class="sc">*</span> <span class="dv">100</span> <span class="co"># パーセントで出力</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+   1    2    3 
+73.6 22.9  3.5 </code></pre>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="カテゴリ変数のfactor化" class="slide level2">
+<h2>カテゴリ変数のfactor化</h2>
+<p><code>Voted</code>と<code>VotedParty</code>変数のfactor化</p>
+<ul>
+<li><code>factor()</code>関数を使用
+<ul>
+<li><code>levels =</code>には元の値を、<code>labels =</code>には各値に対応するラベルを指定</li>
+</ul></li>
+</ul>
+<div class="sourceCode" id="cb32"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1"></a>df2 <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb32-2"><a href="#cb32-2"></a>  <span class="fu">mutate</span>(<span class="at">Voted_F      =</span> <span class="fu">factor</span>(Voted, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">3</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"投票"</span>, <span class="st">"棄権"</span>, <span class="st">"選挙権なし"</span>)),</span>
+<span id="cb32-3"><a href="#cb32-3"></a>         <span class="at">VotedParty_F =</span> <span class="fu">factor</span>(VotedParty, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>,</span>
+<span id="cb32-4"><a href="#cb32-4"></a>                               <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"自民"</span>, <span class="st">"民進"</span>, <span class="st">"公明"</span>, <span class="st">"維新"</span>, <span class="st">"共産"</span>, <span class="st">"その他"</span>, <span class="st">"不明"</span>))) </span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- -->
+</section>
+<section id="カテゴリ変数のfactor化-1" class="slide level2">
+<h2>カテゴリ変数のfactor化</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1"></a><span class="fu">table</span>(df2<span class="sc">$</span>Voted_F) <span class="co"># Voted_Fの度数分布表</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+      投票       棄権 選挙権なし 
+      2208        687        105 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1"></a><span class="fu">table</span>(df2<span class="sc">$</span>Voted_F) <span class="sc">%&gt;%</span> <span class="fu">prop.table</span>() <span class="sc">*</span> <span class="dv">100</span> <span class="co"># パイプ演算子も使用可能</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+      投票       棄権 選挙権なし 
+      73.6       22.9        3.5 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1"></a><span class="fu">table</span>(df2<span class="sc">$</span>VotedParty_F) <span class="co"># VotedParty_Fの度数分布表</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  自民   民進   公明   維新   共産 その他   不明 
+   880    439    113    220    173     24    359 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1"></a><span class="fu">table</span>(df2<span class="sc">$</span>VotedParty_F) <span class="sc">%&gt;%</span> <span class="fu">prop.table</span>() <span class="sc">*</span> <span class="dv">100</span> <span class="co"># パイプ演算子も使用可能</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+     自民      民進      公明      維新      共産    その他      不明 
+39.855072 19.882246  5.117754  9.963768  7.835145  1.086957 16.259058 </code></pre>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="論文レポートでの掲載方法" class="slide level2">
+<h2>論文・レポートでの掲載方法</h2>
+<p>値、度数、割合、累積割合を掲載</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+
+<div id="hjohbpgdgp" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#hjohbpgdgp .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 16px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#hjohbpgdgp .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hjohbpgdgp .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#hjohbpgdgp .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#hjohbpgdgp .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hjohbpgdgp .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#hjohbpgdgp .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#hjohbpgdgp .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#hjohbpgdgp .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#hjohbpgdgp .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#hjohbpgdgp .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#hjohbpgdgp .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hjohbpgdgp .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#hjohbpgdgp .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#hjohbpgdgp .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#hjohbpgdgp .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#hjohbpgdgp .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hjohbpgdgp .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#hjohbpgdgp .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#hjohbpgdgp .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hjohbpgdgp .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#hjohbpgdgp .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#hjohbpgdgp .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hjohbpgdgp .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hjohbpgdgp .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#hjohbpgdgp .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#hjohbpgdgp .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#hjohbpgdgp .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hjohbpgdgp .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hjohbpgdgp .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#hjohbpgdgp .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#hjohbpgdgp .gt_left {
+  text-align: left;
+}
+
+#hjohbpgdgp .gt_center {
+  text-align: center;
+}
+
+#hjohbpgdgp .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#hjohbpgdgp .gt_font_normal {
+  font-weight: normal;
+}
+
+#hjohbpgdgp .gt_font_bold {
+  font-weight: bold;
+}
+
+#hjohbpgdgp .gt_font_italic {
+  font-style: italic;
+}
+
+#hjohbpgdgp .gt_super {
+  font-size: 65%;
+}
+
+#hjohbpgdgp .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#hjohbpgdgp .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#hjohbpgdgp .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#hjohbpgdgp .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#hjohbpgdgp .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#hjohbpgdgp .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">度数 (人)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">割合 (%)</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">累積割合 (%)</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">1. 投票</td>
+<td class="gt_row gt_right">2208</td>
+<td class="gt_row gt_right">73.6</td>
+<td class="gt_row gt_right">73.6</td></tr>
+    <tr><td class="gt_row gt_left">2. 棄権</td>
+<td class="gt_row gt_right">687</td>
+<td class="gt_row gt_right">22.9</td>
+<td class="gt_row gt_right">96.5</td></tr>
+    <tr><td class="gt_row gt_left">3. 投票権なし</td>
+<td class="gt_row gt_right">105</td>
+<td class="gt_row gt_right">3.5</td>
+<td class="gt_row gt_right">100.0</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="ダミー変数" class="slide level2">
+<h2>ダミー変数</h2>
+<p>ある属性を備えているかどうかを示す変数 * 特定のカテゴリの属している場合は1、属さない場合は0の値をとる<strong>二値変数</strong></p>
+<p>.left-column[ .center[ダミー変換<strong>前</strong>]]</p>
+<p>.right-column[ .center[ダミー変換<strong>後</strong>]]</p>
+<!-- -->
+</section>
+<section id="ダミー変数の作成" class="slide level2">
+<h2>ダミー変数の作成</h2>
+<p><code>mutate()</code>内に<code>ifelse()</code>で作成 * {fastDummies}パッケージを使えばより簡単にダミー変換が可能</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb41"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb41-1"><a href="#cb41-1"></a>df2 <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb41-2"><a href="#cb41-2"></a>  <span class="fu">mutate</span>(<span class="at">Voted_F_Vote       =</span> <span class="fu">ifelse</span>(Voted_F <span class="sc">==</span> <span class="st">"投票"</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb41-3"><a href="#cb41-3"></a>         <span class="at">Voted_F_Absent     =</span> <span class="fu">ifelse</span>(Voted_F <span class="sc">==</span> <span class="st">"棄権"</span>, <span class="dv">1</span>, <span class="dv">0</span>),</span>
+<span id="cb41-4"><a href="#cb41-4"></a>         <span class="at">Voted_F_Ineligible =</span> <span class="fu">ifelse</span>(Voted_F <span class="sc">==</span> <span class="st">"選挙権なし"</span>, <span class="dv">1</span>, <span class="dv">0</span>))</span>
+<span id="cb41-5"><a href="#cb41-5"></a></span>
+<span id="cb41-6"><a href="#cb41-6"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb41-7"><a href="#cb41-7"></a>  <span class="fu">select</span>(ID, Voted_F<span class="sc">:</span>Voted_F_Ineligible)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3,000 × 6
+      ID Voted_F VotedParty_F Voted_F_Vote Voted_F_Absent Voted_F_Ineligible
+   &lt;dbl&gt; &lt;fct&gt;   &lt;fct&gt;               &lt;dbl&gt;          &lt;dbl&gt;              &lt;dbl&gt;
+ 1     1 投票    不明                    1              0                  0
+ 2     2 棄権    &lt;NA&gt;                    0              1                  0
+ 3     3 投票    自民                    1              0                  0
+ 4     4 投票    自民                    1              0                  0
+ 5     5 棄権    &lt;NA&gt;                    0              1                  0
+ 6     6 投票    自民                    1              0                  0
+ 7     7 投票    不明                    1              0                  0
+ 8     8 投票    自民                    1              0                  0
+ 9     9 投票    自民                    1              0                  0
+10    10 投票    民進                    1              0                  0
+# … with 2,990 more rows</code></pre>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="順序変数" class="slide level2">
+<h2>順序変数</h2>
+<p>順序尺度で測定された変数 * 例) 最終学歴 * カテゴリー変数のように扱うことも、連続変数のように扱うことも可能 * 記述統計の表としてまとめる場合は、連続変数同様に扱う</p>
+<!-- -->
+</section>
+<section id="記述統計掲載の例" class="slide level2">
+<h2>記述統計掲載の例</h2>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+
+<div id="kcyasjjiws" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<style>html {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
+}
+
+#kcyasjjiws .gt_table {
+  display: table;
+  border-collapse: collapse;
+  margin-left: auto;
+  margin-right: auto;
+  color: #333333;
+  font-size: 11px;
+  font-weight: normal;
+  font-style: normal;
+  background-color: #FFFFFF;
+  width: auto;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #A8A8A8;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #A8A8A8;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+}
+
+#kcyasjjiws .gt_heading {
+  background-color: #FFFFFF;
+  text-align: center;
+  border-bottom-color: #FFFFFF;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kcyasjjiws .gt_title {
+  color: #333333;
+  font-size: 125%;
+  font-weight: initial;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-color: #FFFFFF;
+  border-bottom-width: 0;
+}
+
+#kcyasjjiws .gt_subtitle {
+  color: #333333;
+  font-size: 85%;
+  font-weight: initial;
+  padding-top: 0;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-color: #FFFFFF;
+  border-top-width: 0;
+}
+
+#kcyasjjiws .gt_bottom_border {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kcyasjjiws .gt_col_headings {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+}
+
+#kcyasjjiws .gt_col_heading {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 6px;
+  padding-left: 5px;
+  padding-right: 5px;
+  overflow-x: hidden;
+}
+
+#kcyasjjiws .gt_column_spanner_outer {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: normal;
+  text-transform: inherit;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  padding-right: 4px;
+}
+
+#kcyasjjiws .gt_column_spanner_outer:first-child {
+  padding-left: 0;
+}
+
+#kcyasjjiws .gt_column_spanner_outer:last-child {
+  padding-right: 0;
+}
+
+#kcyasjjiws .gt_column_spanner {
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: bottom;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  overflow-x: hidden;
+  display: inline-block;
+  width: 100%;
+}
+
+#kcyasjjiws .gt_group_heading {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#kcyasjjiws .gt_empty_group_heading {
+  padding: 0.5px;
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  vertical-align: middle;
+}
+
+#kcyasjjiws .gt_from_md > :first-child {
+  margin-top: 0;
+}
+
+#kcyasjjiws .gt_from_md > :last-child {
+  margin-bottom: 0;
+}
+
+#kcyasjjiws .gt_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  margin: 10px;
+  border-top-style: solid;
+  border-top-width: 1px;
+  border-top-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 1px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 1px;
+  border-right-color: #D3D3D3;
+  vertical-align: middle;
+  overflow-x: hidden;
+}
+
+#kcyasjjiws .gt_stub {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kcyasjjiws .gt_stub_row_group {
+  color: #333333;
+  background-color: #FFFFFF;
+  font-size: 100%;
+  font-weight: initial;
+  text-transform: inherit;
+  border-right-style: solid;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+  padding-left: 5px;
+  padding-right: 5px;
+  vertical-align: top;
+}
+
+#kcyasjjiws .gt_row_group_first td {
+  border-top-width: 2px;
+}
+
+#kcyasjjiws .gt_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kcyasjjiws .gt_first_summary_row {
+  border-top-style: solid;
+  border-top-color: #D3D3D3;
+}
+
+#kcyasjjiws .gt_first_summary_row.thick {
+  border-top-width: 2px;
+}
+
+#kcyasjjiws .gt_last_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kcyasjjiws .gt_grand_summary_row {
+  color: #333333;
+  background-color: #FFFFFF;
+  text-transform: inherit;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kcyasjjiws .gt_first_grand_summary_row {
+  padding-top: 8px;
+  padding-bottom: 8px;
+  padding-left: 5px;
+  padding-right: 5px;
+  border-top-style: double;
+  border-top-width: 6px;
+  border-top-color: #D3D3D3;
+}
+
+#kcyasjjiws .gt_striped {
+  background-color: rgba(128, 128, 128, 0.05);
+}
+
+#kcyasjjiws .gt_table_body {
+  border-top-style: solid;
+  border-top-width: 2px;
+  border-top-color: #D3D3D3;
+  border-bottom-style: solid;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+}
+
+#kcyasjjiws .gt_footnotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kcyasjjiws .gt_footnote {
+  margin: 0px;
+  font-size: 90%;
+  padding-left: 4px;
+  padding-right: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kcyasjjiws .gt_sourcenotes {
+  color: #333333;
+  background-color: #FFFFFF;
+  border-bottom-style: none;
+  border-bottom-width: 2px;
+  border-bottom-color: #D3D3D3;
+  border-left-style: none;
+  border-left-width: 2px;
+  border-left-color: #D3D3D3;
+  border-right-style: none;
+  border-right-width: 2px;
+  border-right-color: #D3D3D3;
+}
+
+#kcyasjjiws .gt_sourcenote {
+  font-size: 90%;
+  padding-top: 4px;
+  padding-bottom: 4px;
+  padding-left: 5px;
+  padding-right: 5px;
+}
+
+#kcyasjjiws .gt_left {
+  text-align: left;
+}
+
+#kcyasjjiws .gt_center {
+  text-align: center;
+}
+
+#kcyasjjiws .gt_right {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+#kcyasjjiws .gt_font_normal {
+  font-weight: normal;
+}
+
+#kcyasjjiws .gt_font_bold {
+  font-weight: bold;
+}
+
+#kcyasjjiws .gt_font_italic {
+  font-style: italic;
+}
+
+#kcyasjjiws .gt_super {
+  font-size: 65%;
+}
+
+#kcyasjjiws .gt_two_val_uncert {
+  display: inline-block;
+  line-height: 1em;
+  text-align: right;
+  font-size: 60%;
+  vertical-align: -0.25em;
+  margin-left: 0.1em;
+}
+
+#kcyasjjiws .gt_footnote_marks {
+  font-style: italic;
+  font-weight: normal;
+  font-size: 75%;
+  vertical-align: 0.4em;
+}
+
+#kcyasjjiws .gt_asterisk {
+  font-size: 100%;
+  vertical-align: 0;
+}
+
+#kcyasjjiws .gt_slash_mark {
+  font-size: 0.7em;
+  line-height: 0.7em;
+  vertical-align: 0.15em;
+}
+
+#kcyasjjiws .gt_fraction_numerator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: 0.45em;
+}
+
+#kcyasjjiws .gt_fraction_denominator {
+  font-size: 0.6em;
+  line-height: 0.6em;
+  vertical-align: -0.05em;
+}
+</style>
+<table class="gt_table">
+  
+  <thead class="gt_col_headings">
+    <tr>
+      <th class="gt_col_heading gt_columns_bottom_border gt_left" rowspan="1" colspan="1"></th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">平均値</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">中央値</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">標準偏差</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">最小値</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">最大値</th>
+      <th class="gt_col_heading gt_columns_bottom_border gt_right" rowspan="1" colspan="1">有効ケース数</th>
+    </tr>
+  </thead>
+  <tbody class="gt_table_body">
+    <tr><td class="gt_row gt_left">女性</td>
+<td class="gt_row gt_right">0.503</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">0.500</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">3000</td></tr>
+    <tr><td class="gt_row gt_left">年齢</td>
+<td class="gt_row gt_right">47.340</td>
+<td class="gt_row gt_right">47</td>
+<td class="gt_row gt_right">15.628</td>
+<td class="gt_row gt_right">18</td>
+<td class="gt_row gt_right">75</td>
+<td class="gt_row gt_right">3000</td></tr>
+    <tr><td class="gt_row gt_left">最終学歴</td>
+<td class="gt_row gt_right">0.018</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0.134</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">3000</td></tr>
+    <tr><td class="gt_row gt_left">投票有無: 投票</td>
+<td class="gt_row gt_right">0.736</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">0.441</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">3000</td></tr>
+    <tr><td class="gt_row gt_left">投票有無: 棄権</td>
+<td class="gt_row gt_right">0.229</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0.420</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">3000</td></tr>
+    <tr><td class="gt_row gt_left">投票有無: 選挙権なし</td>
+<td class="gt_row gt_right">0.035</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0.184</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">3000</td></tr>
+    <tr><td class="gt_row gt_left">投票先: 自民</td>
+<td class="gt_row gt_right">0.399</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0.490</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">2208</td></tr>
+    <tr><td class="gt_row gt_left">投票先: 民進</td>
+<td class="gt_row gt_right">0.199</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0.399</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">2208</td></tr>
+    <tr><td class="gt_row gt_left">投票先: 公明</td>
+<td class="gt_row gt_right">0.051</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0.220</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">2208</td></tr>
+    <tr><td class="gt_row gt_left">投票先: 維新</td>
+<td class="gt_row gt_right">0.100</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0.300</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">2208</td></tr>
+    <tr><td class="gt_row gt_left">投票先: 共産</td>
+<td class="gt_row gt_right">0.078</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0.269</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">2208</td></tr>
+    <tr><td class="gt_row gt_left">投票先: その他</td>
+<td class="gt_row gt_right">0.011</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0.104</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">2208</td></tr>
+    <tr><td class="gt_row gt_left">投票先: 不明</td>
+<td class="gt_row gt_right">0.163</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">0.369</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">1</td>
+<td class="gt_row gt_right">2208</td></tr>
+    <tr><td class="gt_row gt_left">感情温度: 自民</td>
+<td class="gt_row gt_right">41.130</td>
+<td class="gt_row gt_right">50</td>
+<td class="gt_row gt_right">28.015</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">100</td>
+<td class="gt_row gt_right">3000</td></tr>
+    <tr><td class="gt_row gt_left">感情温度: 自民</td>
+<td class="gt_row gt_right">34.248</td>
+<td class="gt_row gt_right">40</td>
+<td class="gt_row gt_right">25.947</td>
+<td class="gt_row gt_right">0</td>
+<td class="gt_row gt_right">100</td>
+<td class="gt_row gt_right">3000</td></tr>
+  </tbody>
+  
+  
+</table>
+</div>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="便利なパッケージ" class="slide level2">
+<h2>便利なパッケージ</h2>
+<p>{summarytools}パッケージの<code>dfSummary()</code>関数</p>
+<ul>
+<li>結果は各自RStudioのViewerペインから確認すること</li>
+</ul>
+<div class="sourceCode" id="cb43"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb43-1"><a href="#cb43-1"></a><span class="fu">install.packages</span>(<span class="st">"summarytools"</span>) <span class="co"># {summarytools}のインストール (1回のみ)</span></span>
+<span id="cb43-2"><a href="#cb43-2"></a><span class="fu">library</span>(summarytools)            <span class="co"># {summarytools}の読み込み</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>  <span class="co"># 記述統計を出力する変数を指定</span></span>
+<span id="cb43-5"><a href="#cb43-5"></a>  <span class="fu">select</span>(Age, Education, Voted_F, VotedParty_F, T_Jimin, T_Minshin) <span class="sc">%&gt;%</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a>  <span class="fu">dfSummary</span>() <span class="sc">%&gt;%</span> <span class="co"># 記述統計量を計算</span></span>
+<span id="cb43-7"><a href="#cb43-7"></a>  <span class="fu">view</span>()          <span class="co"># RStudioのViewerペインに表示</span></span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<!-- -->
+</section>
+<section id="離散変数間の関係" class="slide level2">
+<h2>離散変数間の関係</h2>
+<p>クロス表 (corss tabulation)</p>
+<ul>
+<li><code>table(ベクトル1, ベクトル2)</code>で作成可能
+<ul>
+<li><code>with(データ名, table(変数名1, 変数名2))</code>も可能</li>
+</ul></li>
+</ul>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb44"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb44-1"><a href="#cb44-1"></a>df2 <span class="ot">&lt;-</span> df2 <span class="sc">%&gt;%</span></span>
+<span id="cb44-2"><a href="#cb44-2"></a>  <span class="fu">mutate</span>(<span class="at">Gender_F =</span> <span class="fu">factor</span>(Gender, <span class="at">levels =</span> <span class="dv">1</span><span class="sc">:</span><span class="dv">2</span>, <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">"男性"</span>, <span class="st">"女性"</span>)))</span>
+<span id="cb44-3"><a href="#cb44-3"></a></span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="co"># dfのGender_F変数とVotedParty_F変数のクロス表</span></span>
+<span id="cb44-5"><a href="#cb44-5"></a><span class="co"># with(df2, table(Gender_F, VotedParty_F)) もOK</span></span>
+<span id="cb44-6"><a href="#cb44-6"></a><span class="fu">table</span>(df2<span class="sc">$</span>Gender_F, df2<span class="sc">$</span>VotedParty_F)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      
+       自民 民進 公明 維新 共産 その他 不明
+  男性  502  249   53  128   92     13  136
+  女性  378  190   60   92   81     11  223</code></pre>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="グループごとの記述統計量" class="slide level2">
+<h2>グループごとの記述統計量</h2>
+<p>.left-column[ 投票有無ごとの平均年齢] .right-column[ 投票先ごとの民進党に対する感情温度]</p>
+<!-- -->
+</section>
+<section id="section-1" class="slide level2">
+<h2></h2>
+<p><span class="sec-title">記述統計の示し方</span></p>
+<!-- -->
+</section>
+<section id="記述統計の可視化が必要なケース" class="slide level2">
+<h2>記述統計の可視化が必要なケース</h2>
+<p>グループごとの記述統計を提示する際 * 表: 情報量が多く、サイズも小さい * 図: 全体的な傾向や差が読み取りやすい。主に棒グラフと箱ひげ図を利用</p>
+<div class="columns">
+<div class="column" style="width:40%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 7 × 2
+  VotedParty_F T_Jimin
+  &lt;fct&gt;          &lt;dbl&gt;
+1 自民            60.4
+2 民進            23.4
+3 公明            45.1
+4 維新            39.8
+5 共産            18.8
+6 その他          18.5
+7 不明            35.0</code></pre>
+</div>
+</div>
+</div><div class="column" style="width:60%;">
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide04_files/figure-revealjs/unnamed-chunk-24-1.png" width="900"></p>
+</figure>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="グループごとの記述統計-棒グラフ" class="slide level2">
+<h2>グループごとの記述統計 (棒グラフ)</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb47"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb47-1"><a href="#cb47-1"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb47-2"><a href="#cb47-2"></a>  <span class="fu">drop_na</span>(VotedParty_F) <span class="sc">%&gt;%</span></span>
+<span id="cb47-3"><a href="#cb47-3"></a>  <span class="fu">group_by</span>(VotedParty_F) <span class="sc">%&gt;%</span></span>
+<span id="cb47-4"><a href="#cb47-4"></a>  <span class="fu">summarise</span>(<span class="at">T_Minshin =</span> <span class="fu">mean</span>(T_Minshin)) <span class="sc">%&gt;%</span></span>
+<span id="cb47-5"><a href="#cb47-5"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb47-6"><a href="#cb47-6"></a>  <span class="fu">geom_bar</span>(<span class="fu">aes</span>(<span class="at">x =</span> VotedParty_F, <span class="at">y =</span> T_Minshin), <span class="at">stat =</span> <span class="st">"identity"</span>) <span class="sc">+</span></span>
+<span id="cb47-7"><a href="#cb47-7"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"投票先 (2016参院選比例区)"</span>, <span class="at">y =</span> <span class="st">"民進党に対する</span><span class="sc">\n</span><span class="st">感情温度の平均値"</span>)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide04_files/figure-revealjs/unnamed-chunk-25-1.png" width="900"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="グループごとの記述統計-箱ひげ図" class="slide level2">
+<h2>グループごとの記述統計 (箱ひげ図)</h2>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb48"><pre class="sourceCode numberSource r number-lines code-with-copy"><code class="sourceCode r"><span id="cb48-1"><a href="#cb48-1"></a>df2 <span class="sc">%&gt;%</span></span>
+<span id="cb48-2"><a href="#cb48-2"></a>  <span class="fu">drop_na</span>(VotedParty_F) <span class="sc">%&gt;%</span></span>
+<span id="cb48-3"><a href="#cb48-3"></a>  <span class="fu">ggplot</span>() <span class="sc">+</span></span>
+<span id="cb48-4"><a href="#cb48-4"></a>  <span class="fu">geom_boxplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> VotedParty_F, <span class="at">y =</span> T_Jimin)) <span class="sc">+</span></span>
+<span id="cb48-5"><a href="#cb48-5"></a>  <span class="fu">labs</span>(<span class="at">x =</span> <span class="st">"投票先 (2016参院選比例区)"</span>, <span class="at">y =</span> <span class="st">"自民党に対する感情温度"</span>)</span></code><button title="コピーする" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure>
+<p><img data-src="slide04_files/figure-revealjs/unnamed-chunk-26-1.png" width="900"></p>
+</figure>
+</div>
+</div>
+</div>
+<!-- -->
+</section>
+<section id="教科書との対応" class="slide level2">
+<h2>教科書との対応</h2>
+<p>副読本『<a href="https://www.jaysong.net/RBook/">私たちのR</a>』の章</p>
+<ul>
+<li><code>library()</code>: 第3章</li>
+<li><code>read_csv()</code>: 第8章</li>
+<li><code>dim()</code>: 第10章</li>
+<li><code>names()</code>, <code>select()</code>: 第13章</li>
+<li><code>summarise()</code>, <code>group_by()</code>, <code>mutate()</code>: 第14章</li>
+<li><code>factor()</code>: 第15章</li>
+<li>グラフの作成: 第17〜18章</li>
+</ul>
+<p>Rの操作になれていない場合、当該章のみを読んでも内容を理解することは難しい。これは文法を勉強せずに辞書を調べることと同じ行為である。プログラミング、ソフトウェアの使い方は積み上げが重要であるため、第1章から読むことを推奨（当該章のみ抜粋して読むことは、その後の話）</p>
 
 <p><img src="Figs/logo.png" class="slide-logo"></p>
 <div class="footer footer-default">
@@ -559,6 +2656,48 @@
         ]
       });
     </script>
+    
+    <script>
+      // htmlwidgets need to know to resize themselves when slides are shown/hidden.
+      // Fire the "slideenter" event (handled by htmlwidgets.js) when the current
+      // slide changes (different for each slide format).
+      (function () {
+        function fireSlideChanged(previousSlide, currentSlide) {
+
+          // dispatch for htmlwidgets
+          const event = window.document.createEvent("Event");
+          event.initEvent("slideenter", true, true);
+          window.document.dispatchEvent(event);
+
+          // dispatch for shiny
+          if (window.jQuery) {
+            if (previousSlide) {
+              window.jQuery(previousSlide).trigger("hidden");
+            }
+            if (currentSlide) {
+              window.jQuery(currentSlide).trigger("shown");
+            }
+          }
+        }
+
+        // hookup for reveal
+        if (window.Reveal) {
+          window.Reveal.addEventListener("slidechanged", function(event) {
+            fireSlideChanged(event.previousSlide, event.currentSlide);
+          });
+        }
+
+        // hookup for slidy
+        if (window.w3c_slidy) {
+          window.w3c_slidy.add_observer(function (slide_num) {
+            // slide_num starts at position 1
+            fireSlideChanged(null, w3c_slidy.slides[slide_num - 1]);
+          });
+        }
+
+      })();
+    </script>
+
     <script id="quarto-html-after-body" type="application/javascript">
     window.document.addEventListener("DOMContentLoaded", function (event) {
       const tabsets =  window.document.querySelectorAll(".panel-tabset-tabby")
