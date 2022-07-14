@@ -81,7 +81,7 @@
     "href": "HW/Final.html",
     "title": "期末レポート執筆要領",
     "section": "",
-    "text": "PDFバージョン R Markdownバージョン"
+    "text": "PDFバージョン  R Markdown（Quarto）バージョン"
   },
   {
     "objectID": "intro/filesystem.html",
