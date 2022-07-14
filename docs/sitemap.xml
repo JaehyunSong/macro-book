@@ -2,82 +2,82 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://www.jaysong.net/micro-book/materials/research_design.html</loc>
-    <lastmod>2022-07-12T01:55:38.464Z</lastmod>
+    <lastmod>2022-07-14T01:52:38.919Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/micro-book/materials/descriptive_statistics.html</loc>
-    <lastmod>2022-07-12T01:55:38.738Z</lastmod>
+    <lastmod>2022-07-14T01:52:39.189Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/micro-book/materials/introduction.html</loc>
-    <lastmod>2022-07-12T01:55:38.975Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/intro/file.html</loc>
-    <lastmod>2022-07-12T01:55:40.024Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/intro/homework.html</loc>
-    <lastmod>2022-07-12T01:55:40.961Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/intro/install.html</loc>
-    <lastmod>2022-07-12T01:55:41.897Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/intro/packages.html</loc>
-    <lastmod>2022-07-12T01:55:42.918Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/intro/project.html</loc>
-    <lastmod>2022-07-12T01:55:43.844Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/intro/rstudio.html</loc>
-    <lastmod>2022-07-12T01:55:44.909Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/index.html</loc>
-    <lastmod>2022-07-13T01:59:07.911Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/slides/slide01.html</loc>
-    <lastmod>2022-07-13T02:56:28.430Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/slides/slide02.html</loc>
-    <lastmod>2022-07-12T05:29:22.380Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/slides/slide04.html</loc>
-    <lastmod>2022-07-13T05:48:16.409Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/about.html</loc>
-    <lastmod>2022-07-13T02:49:12.194Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/data.html</loc>
-    <lastmod>2022-07-12T01:55:56.566Z</lastmod>
-  </url>
-  <url>
-    <loc>https://www.jaysong.net/micro-book/intro/filesystem.html</loc>
-    <lastmod>2022-07-13T02:39:52.293Z</lastmod>
+    <lastmod>2022-07-14T01:52:39.451Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/micro-book/HW/Final_Example.html</loc>
-    <lastmod>2022-07-14T01:46:35.224Z</lastmod>
+    <lastmod>2022-07-14T01:52:46.474Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/micro-book/HW/HW03.html</loc>
-    <lastmod>2022-07-14T01:32:19.445Z</lastmod>
+    <lastmod>2022-07-14T01:52:46.699Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/micro-book/HW/HW02.html</loc>
-    <lastmod>2022-07-14T01:32:19.703Z</lastmod>
+    <lastmod>2022-07-14T01:52:46.903Z</lastmod>
   </url>
   <url>
     <loc>https://www.jaysong.net/micro-book/HW/Final.html</loc>
-    <lastmod>2022-07-14T01:49:12.050Z</lastmod>
+    <lastmod>2022-07-14T01:52:47.130Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/intro/filesystem.html</loc>
+    <lastmod>2022-07-14T01:52:48.998Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/intro/file.html</loc>
+    <lastmod>2022-07-14T01:52:49.999Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/intro/homework.html</loc>
+    <lastmod>2022-07-14T01:52:50.914Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/intro/install.html</loc>
+    <lastmod>2022-07-14T01:52:51.875Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/intro/packages.html</loc>
+    <lastmod>2022-07-14T01:52:52.971Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/intro/project.html</loc>
+    <lastmod>2022-07-14T01:52:53.916Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/intro/rstudio.html</loc>
+    <lastmod>2022-07-14T01:52:55.008Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/index.html</loc>
+    <lastmod>2022-07-14T01:52:56.579Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/slides/slide01.html</loc>
+    <lastmod>2022-07-14T01:53:01.906Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/slides/slide02.html</loc>
+    <lastmod>2022-07-14T01:53:05.661Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/slides/slide04.html</loc>
+    <lastmod>2022-07-14T01:53:26.825Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/about.html</loc>
+    <lastmod>2022-07-14T01:53:29.808Z</lastmod>
+  </url>
+  <url>
+    <loc>https://www.jaysong.net/micro-book/data.html</loc>
+    <lastmod>2022-07-14T01:53:30.044Z</lastmod>
   </url>
 </urlset>
