@@ -405,6 +405,19 @@ gtag('config', 'G-9TLN2VMPQD', { 'anonymize_ip': true});
 <p>　また、何らかの理由で<code>Day03</code>フォルダーの名前を<code>Day05</code>に変更したとしよう。もし、プロジェクト機能を使っていないのであれば、パスの<code>Day03</code>を全て<code>Day05</code>に変更する必要がある。しかし、プロジェクト機能を使っているのであれば、<code>.Rproj</code>ファイルが存在するフォルダーが作業フォルダーになるため、そもそもパスに<code>Day03</code>は存在しない。つまり、修正不要ということだ。ちなみに、プロジェクトを一旦作成したら、そのプロジェクトのフォルダー名や<code>.Rproj</code>ファイルの名前は自由に修正しても良いし、フォルダー名と<code>.Rproj</code>ファイルの名前が一致しなくても良い。</p>
 <p>　以上の内容をまた住所と郵便の話で例えるとしよう。社内でも郵便物の行き来は頻繁に行われる。とりわけ面積が広く、キャンパスも複数ある大学なら尚更だ。たとえば、「大阪府吹田市山手町3-3-35 関西大学 ラーメン学部」の宋が「大阪府吹田市山手町3-3-35 関西大学 ラーメン研究支援課」の金に郵便を送る場合、同じ大学であるにも関わらず、住所を全て書くのは面倒なことであろう。ここで関西大学専用の郵便局を作れば問題は解決される（「学内便」と呼ばれる）。そうすれば差出人は「ラーメン学部　宋」、受取人は「ラーメン研究支援課　金」と書くだけで郵便物は届く。つまり、「大阪府吹田市山手町3-3-35 関西大学」は省略できる（同じ市区町村内の引っ越した際、転入・転出届けの住所欄に市区町村名までは省略できるのと同じ）。また、関西大学がなぜかキャンパスを沖縄に移転した場合を考えてみよう。学内便がなければ、郵便物の住所を全て「沖縄県〜」に変えなければならない。しかし、学内便が存在すればこれまで使ってきた「ラーメン学部　宋」という表記は有効であろう。</p>
 <p>　このように<strong>RStudioのプロジェクト機能は必須</strong>といっても過言ではない。簡単な計算目的として使う場合は問題ないが、何かの分析をする時、授業の実習時、課題時には必ずRStudioの右上が「Project: (None)」になっていないことを確認しよう。</p>
+<div class="callout-note callout callout-style-default callout-captioned">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-caption-container flex-fill">
+絶対パスと相対パス
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>　これまで紹介したパスの書き方で<code>/</code>（Windowsなら<code>C:\</code>）から始まるパスは、<strong>絶対パス</strong>（absolute path）または<strong>フルパス</strong>（full path）と呼ばれる。これはファイル名を最上位フォルダーを起点に書く方法である。一方、<code>/</code>（Windowsなら<code>C:\</code>）で始まらないパスは<strong>相対パス</strong>（relative path）呼ばれ、ファイル名を作業フォルダーを起点に書く方法である。</p>
+</div>
+</div>
 </section>
 <section id="本講義でおすすめするフォルダー構造" class="level2" data-number="4">
 <h2 data-number="4" class="anchored" data-anchor-id="本講義でおすすめするフォルダー構造"><span class="header-section-number">4</span> 本講義でおすすめするフォルダー構造</h2>
