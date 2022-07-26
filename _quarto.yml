@@ -7,7 +7,7 @@ language: translate_jp.yml
 website:
   favicon: Figs/favicon.png
   site-url: "https://www.jaysong.net/micro-book/"
-  title: "<img src='/Figs/logo.png' height='20' style='vertical-align:baseline;'> MacroAnalysis@Kandai"
+  title: "MacroAnalysis@Kandai"
   page-footer: 
     left: "Copyright 2022, <a href='https://www.jaysong.net' target='_blank'>Jaehyun Song</a>. Powered by <a href='https://quarto.org/' target='_blank'>Quarto</a>" 
     right:
@@ -16,6 +16,7 @@ website:
       - icon: github
         href: https://github.com/JaehyunSong
   navbar:
+    logo: Figs/logo.png
     search: true
     background: "#4169E1"
     pinned: true
@@ -80,7 +81,7 @@ website:
         #  href: HW/HW14.qmd
         - text: "期末レポート執筆要領"
           href: HW/Final.qmd
-  google-analytics: "G-9TLN2VMPQD"
+  google-analytics: "G-M4G57ETW0Y"
 
 format:
   html:

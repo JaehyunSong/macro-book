@@ -11,7 +11,7 @@ format:
     slide-number: true
     logo: Figs/logo.png
     theme: [default, styles.scss]
-    footer: <https://www.jaysong.net/micro-book>
+    footer: <https://www.jaysong.net/macro-book>
     preview-links: true
     chalkboard: true
     touch: true

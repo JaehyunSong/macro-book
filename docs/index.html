@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-0.9.649">
+<meta name="generator" content="quarto-1.0.36">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title> MacroAnalysis@Kandai -</title>
+<title>MacroAnalysis@Kandai -</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ ul.task-list{list-style: none;}
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -53,14 +53,14 @@ ul.task-list{list-style: none;}
     "search-submit-button-title": "Submit"
   }
 }</script>
-<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-9TLN2VMPQD"></script>
+<script async="" src="https://www.googletagmanager.com/gtag/js?id=G-M4G57ETW0Y"></script>
 
 <script type="text/javascript">
 
 window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', 'G-9TLN2VMPQD', { 'anonymize_ip': true});
+gtag('config', 'G-M4G57ETW0Y', { 'anonymize_ip': true});
 </script>
 
 
@@ -74,7 +74,8 @@ gtag('config', 'G-9TLN2VMPQD', { 'anonymize_ip': true});
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title"><img src="./Figs/logo.png" height="20" style="vertical-align:baseline;"> MacroAnalysis@Kandai</span>
+    <img src="./Figs/logo.png" alt="">
+    <span class="navbar-title">MacroAnalysis@Kandai</span>
   </a>
           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
   <span class="navbar-toggler-icon"></span>
@@ -215,15 +216,15 @@ gtag('config', 'G-9TLN2VMPQD', { 'anonymize_ip': true});
 </div>
 <div class="callout-body-container callout-body">
 <ul>
-<li>最終更新日: 2022年07月14日</li>
+<li>最終更新日: 2022年07月26日</li>
 <li>開発環境
 <ul>
 <li>macOS 12.4 “Monterey”</li>
-<li>Firefox 102.0.0</li>
+<li>Firefox 102.0.1</li>
 <li>R version 4.2.1 (2022-06-23)</li>
-<li>RStudio 2022.02.3+492 “Prairie Trillium”</li>
-<li>Quarto 0.9.649</li>
-<li>R package {quarto} 1.1</li>
+<li>RStudio 2022.07.1+554 “Spotted Wakerobin”</li>
+<li>Quarto 1.0.36</li>
+<li>R package {quarto} 1.2</li>
 </ul></li>
 </ul>
 </div>
@@ -234,6 +235,24 @@ gtag('config', 'G-9TLN2VMPQD', { 'anonymize_ip': true});
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
   const icon = "";
   const anchorJS = new window.AnchorJS();
   anchorJS.options = {
