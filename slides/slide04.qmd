@@ -6,8 +6,7 @@ institute: "関西大学総合情報学部"
 date: "2022年 10月 13日"
 format:
   revealjs: 
-    width: 1280
-    height: 720
+    width: 1400
     slide-number: true
     logo: Figs/logo.png
     theme: [default, styles.scss]
@@ -26,12 +25,11 @@ format:
 * 記述統計をどう報告するか
 * Rの復習
    * 前期履修者でも数ヶ月はRを触っていないはずなので、ウォーミングアップ
+   * ゼロベースの解説では**ない**（Rの導入やデータの読み込みなどは解説しない）
 
 <!-- -->
 
-##
-
-<span class="sec-title">変数の種類と記述統計</span>
+# 変数の種類と記述統計
 
 ```{r}
 #| include: false
@@ -71,14 +69,13 @@ df <- read_csv("Data/Macro_04.csv")
 
 ## 実習の準備
 
-パッケージとデータの読み込み（データはLMSから）
+パッケージとデータの読み込み（データはサポートページから入手可能）
 
 ```{r}
-#| message: false
 library(tidyverse) # {tidyverse}パッケージを読み込む
 df <- read_csv("Data/Macro_04.csv")　# Dataフォルダー内のMacro_04.csvを読み込み、dfと名付ける
 
-print(df, n = 10) # dfの最初の10行を確認
+print(df) # dfの最初の10行を確認
 ```
 
 <!-- -->
@@ -130,7 +127,11 @@ df2 # print(df2)もOK
 
 <!-- -->
 
-## 量的変数
+# 連続変数の記述統計
+
+<!-- -->
+
+## 連続変数（continuous variable）
 
 間隔尺度、または比率尺度で測定された変数
 
@@ -210,11 +211,11 @@ df2 %>%
 
 <!-- -->
 
-## {summarytools}の利用
+## {summarytools}の利用（1）
 
-* {summarytools}の`desc()`関数
-   * `desc()`内には記述統計を確認するdata.frame / tibbleのオブジェクト名
-   * 連続変数のみ記述統計量が出力される。
+* {summarytools}の`descr()`関数
+   * `descr()`内には記述統計を確認するdata.frame / tibbleのオブジェクト名
+   * **連続変数のみ**記述統計量が出力される。
 
 :::{.panel-tabset}
 ### コード
@@ -240,12 +241,49 @@ df2 %>%
 
 <!-- -->
 
-## カテゴリ変数
+## {summarytools}の利用（2）
+
+* 主要統計量のみ、行と列の交換、変数の順番は固定
+
+```{r}
+#| code-line-numbers: "4-6"
+df2 %>%
+  select(-ID) %>%
+  # 平均値、標準偏差、最小値、最大値、有効ケース数
+  descr(stats = c("mean", "sd", "min", "max", "n.valid"),
+        transpose = TRUE, 
+        sort = "p")
+```
+
+<!-- -->
+
+## {summarytools}の利用（3）
+
+* RMarkdownを使う場合（Chunkオプションとして`results = "asis"`を指定）
+
+```{r}
+#| results: "asis"
+#| code-line-numbers: "5"
+df2 %>%
+  select(-ID) %>%
+  descr(stats = c("mean", "sd", "min", "max", "n.valid"),
+        transpose = TRUE, sort = "p", 
+        style = "rmarkdown", plain.ascii = FALSE)
+```
+
+<!-- -->
+
+# カテゴリ変数の記述統計
+
+<!-- -->
+
+## カテゴリ変数（categorical variable）
 
 カテゴリ変数：名目尺度で測定された変数（=名目変数）
 
 * カテゴリ変数の例: 性別 (`Gender`)、投票参加 (`Voted`)、投票先 (`VotedParty`)
    * 教育水準（`Education`）のような**順序変数**は、連続変数としてもカテゴリ変数としても扱うことが可能
+* 名目尺度は足し算、掛け算などができないため、平均値や標準偏差のような概念が存在しない。
 
 ### カテゴリ変数の可視化
 
@@ -258,16 +296,38 @@ df2 %>%
 
 ## 度数分布表の作成
 
-`Voted`変数の度数分布表
+`Voted`（投票有無）変数の度数分布表
 
 * 値 (1, 2, 3, ...)の意味は質問票、またはコードブックを参照
-   * 事前にfactor化しておくと読みやすくなる
+* カテゴリ変数が複数ある場合、一つ一つの変数に対し、度数分布表を作成する必要がある。
+   * $\Rightarrow$ できれば、連続変数の記述統計表と一つにまとめたい。
 
+
+::::{.columns}
+:::{.column width=60%}
 ```{r}
 table(df2$Voted) # 度数
 prop.table(table(df2$Voted)) # 割合
 prop.table(table(df2$Voted)) * 100 # パーセントで出力
 ```
+:::
+
+:::{.column width=40%}
+
+<center>度数分布表の例</center>
+
+```{r}
+#| echo: false
+tibble(x = c("投票した", "棄権した", "投票権がなかった"),
+       y = table(df2$Voted),
+       z = prop.table(table(df2$Voted)) * 100) %>%
+  gt() %>%
+  cols_align(columns = 2:3, align = "right") %>%
+  cols_label("x" = "値", "y" = "度数", "z" = "割合 (%)") %>%
+  tab_options(table.font.size = 24)
+```
+:::
+::::
 
 <!-- -->
 
@@ -278,14 +338,8 @@ prop.table(table(df2$Voted)) * 100 # パーセントで出力
 * `factor()`関数を使用
    * `levels =`には元の値を、`labels =`には各値に対応するラベルを指定
 
-```r
-df2 <- df2 %>%
-  mutate(Voted_F      = factor(Voted, levels = 1:3, labels = c("投票", "棄権", "選挙権なし")),
-         VotedParty_F = factor(VotedParty, levels = 1:7,
-                               labels = c("自民", "民進", "公明", "維新", "共産", "その他", "不明"))) 
-```
-
-```{r, include = FALSE}
+```{r}
+#| code-line-numbers: "2-4"
 df2 <- df2 %>%
   mutate(Voted_F      = factor(Voted, levels = 1:3, labels = c("投票", "棄権", "選挙権なし")),
          VotedParty_F = factor(VotedParty, levels = 1:7,

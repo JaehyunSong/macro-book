@@ -6,8 +6,7 @@ institute: "関西大学総合情報学部"
 date: "2022年 9月 22日"
 format:
   revealjs: 
-    width: 1280
-    height: 720
+    width: 1400
     slide-number: true
     logo: Figs/logo.png
     theme: [default, styles.scss]
@@ -19,9 +18,7 @@ format:
     auto-stretch: false
 ---
 
-##
-
-<span class="sec-title">講義概要</span>
+# 講義概要
 
 ```{r}
 #| include: false
@@ -60,6 +57,8 @@ knitr::opts_chunk$set(dev       = "ragg_png",
 #| echo: false
 #| message: false
 #| cache: true
+#| fig-width: 12
+#| fig-height: 6
 pacman::p_load(tidyverse, ggforce)
 
 ggplot() +
@@ -139,32 +138,18 @@ R/RStudioのインストール方法は紹介しない
 * 期末レポートを除く課題は全てR Markdown
 
 :::{layout-ncol=3}
+![](Figs/01/R.png){width=300px fig-align="center"}
 
-```{r}
-#| echo: false
-#| out-width: "50%"
-knitr::include_graphics("Figs/01/R.png")
-```
+![](Figs/01/RStudio.png){width=250px fig-align="center"}
 
-```{r}
-#| echo: false
-#| out-width: "50%"
-knitr::include_graphics("Figs/01/RStudio.png")
-```
-
-```{r}
-#| echo: false
-#| out-width: "50%"
-knitr::include_graphics("Figs/01/RMarkdown.png")
-```
-
+![](Figs/01/RMarkdown.png){width=200px fig-align="center"}
 :::
 
 <!-- -->
 
-## 前提知識
+## 【重要】前提知識
 
-* 前期の「**ミクロ政治データ分析実習**」が履修済みであること。
+* 前期の「**ミクロ政治データ分析実習**」が履修済みか、それに相当する知識を持っていること
    * Rを使うのは第4回（10月13日）から
    * 未修者の場合は10月12日まで以下の内容を習得しておくこと。
 
@@ -184,15 +169,15 @@ tibble(
    tab_options(table.font.size = "24px")
 ```
 
+<br/>
+
 * **ブラインド・タッチ**が出来ること。
    * できない場合は、第4回まで習得しておくこと。
    * グーグルで「タイビング 練習」で検索
 
 <!-- -->
 
-##
-
-<span class="sec-title">教科書・参考書</span>
+# 教科書・参考書
 
 <!-- -->
 
@@ -217,25 +202,11 @@ knitr::include_graphics("Figs/01/Textbook.jpg")
 * 今井耕介 (著).  粕谷祐子・原田勝孝・久保浩樹（訳）. 2018. 『社会科学のためのデータ分析入門（[上](https://www.amazon.co.jp/dp/400061245X/)/[下](https://www.amazon.co.jp/dp/4000612468/)）』岩波書店
 
 :::{layout-ncol=3}
+![](Figs/01/Reference_DA1.jpg){width=300px fig-align="center"}
 
-```{r}
-#| echo: false
-#| out-width: "300px"
-knitr::include_graphics("Figs/01/Reference_DA1.jpg")
-```
+![](Figs/01/Reference_DA2.jpg){width=300px fig-align="center"}
 
-```{r}
-#| echo: false
-#| out-width: "300px"
-knitr::include_graphics("Figs/01/Reference_DA2.jpg")
-```
-
-```{r}
-#| echo: false
-#| out-width: "300px"
-knitr::include_graphics("Figs/01/Reference_DA3.jpg")
-```
-
+![](Figs/01/Reference_DA3.jpg){width=300px fig-align="center"}
 :::
 
 <!-- -->
@@ -255,9 +226,7 @@ Rの使い方については以下の本がおすすめ
 
 <!-- -->
 
-##
-
-<span class="sec-title">評価</span>
+# 評価
 
 <!-- -->
 

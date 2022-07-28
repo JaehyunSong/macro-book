@@ -8,7 +8,7 @@
 <link href="../site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="../site_libs/quarto-html/quarto-html.min.css" rel="stylesheet" data-mode="light">
 <link href="../site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles"><meta charset="utf-8">
-  <meta name="generator" content="quarto-1.0.36">
+  <meta name="generator" content="quarto-1.0.37">
 
   <meta name="author" content="宋(そん)&nbsp;&nbsp;財泫(じぇひょん)">
   <title>MacroAnalysis@Kandai - マクロ政治データ分析実習</title>
@@ -338,12 +338,12 @@
   <p class="date">2022年 9月 22日</p>
 </section>
 
-<section id="section" class="slide level2">
-<h2></h2>
-<p><span class="sec-title">講義概要</span></p>
+<section>
+<section id="講義概要" class="title-slide slide level1 center">
+<h1>講義概要</h1>
 <!-- -->
 </section>
-<section id="講義概要" class="slide level2">
+<section id="講義概要-1" class="slide level2">
 <h2>講義概要</h2>
 <ul>
 <li>講義日: 木曜日 第4時限（14:40～16:10）</li>
@@ -372,11 +372,11 @@
 </section>
 <section id="本講義の位置づけ" class="slide level2">
 <h2>本講義の位置づけ</h2>
-<div class="cell" data-layout-align="center" data-hash="slide01_cache/revealjs/unnamed-chunk-2_1b71252a89d38835637ae2f2b0d850bd">
+<div class="cell" data-layout-align="center" data-hash="slide01_cache/revealjs/unnamed-chunk-2_c503ae2dea82d4610f8131502ce379c4">
 <div class="cell-output-display">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="slide01_files/figure-revealjs/unnamed-chunk-2-1.png" width="3000"></p>
+<p><img data-src="slide01_files/figure-revealjs/unnamed-chunk-2-1.png" width="3600"></p>
 </figure>
 </div>
 </div>
@@ -419,41 +419,35 @@
 </ul>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="cell-output-display">
+<div class="quarto-layout-cell" style="flex-basis: 40.0%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Figs/01/R.png" style="width:50.0%"></p>
+<p><img data-src="Figs/01/R.png" width="300"></p>
 </figure>
 </div>
 </div>
-</div>
-<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="cell-output-display">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Figs/01/RStudio.png" style="width:50.0%"></p>
+<p><img data-src="Figs/01/RStudio.png" width="250"></p>
 </figure>
 </div>
 </div>
-</div>
-<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="cell-output-display">
+<div class="quarto-layout-cell" style="flex-basis: 26.7%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
-<p><img data-src="Figs/01/RMarkdown.png" style="width:50.0%"></p>
+<p><img data-src="Figs/01/RMarkdown.png" width="200"></p>
 </figure>
-</div>
 </div>
 </div>
 </div>
 </div>
 <!-- -->
 </section>
-<section id="前提知識" class="slide level2">
-<h2>前提知識</h2>
+<section id="重要前提知識" class="slide level2">
+<h2>【重要】前提知識</h2>
 <ul>
-<li>前期の「<strong>ミクロ政治データ分析実習</strong>」が履修済みであること。
+<li>前期の「<strong>ミクロ政治データ分析実習</strong>」が履修済みか、それに相当する知識を持っていること
 <ul>
 <li>Rを使うのは第4回（10月13日）から</li>
 <li>未修者の場合は10月12日まで以下の内容を習得しておくこと。</li>
@@ -462,12 +456,12 @@
 <div class="cell" data-layout-align="center">
 <div class="cell-output-display">
 
-<div id="bdduxharmv" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
+<div id="ymmgvpydny" style="overflow-x:auto;overflow-y:auto;width:auto;height:auto;">
 <style>html {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Helvetica Neue', 'Fira Sans', 'Droid Sans', Arial, sans-serif;
 }
 
-#bdduxharmv .gt_table {
+#ymmgvpydny .gt_table {
   display: table;
   border-collapse: collapse;
   margin-left: auto;
@@ -492,7 +486,7 @@
   border-left-color: #D3D3D3;
 }
 
-#bdduxharmv .gt_heading {
+#ymmgvpydny .gt_heading {
   background-color: #FFFFFF;
   text-align: center;
   border-bottom-color: #FFFFFF;
@@ -504,7 +498,7 @@
   border-right-color: #D3D3D3;
 }
 
-#bdduxharmv .gt_title {
+#ymmgvpydny .gt_title {
   color: #333333;
   font-size: 125%;
   font-weight: initial;
@@ -516,7 +510,7 @@
   border-bottom-width: 0;
 }
 
-#bdduxharmv .gt_subtitle {
+#ymmgvpydny .gt_subtitle {
   color: #333333;
   font-size: 85%;
   font-weight: initial;
@@ -528,13 +522,13 @@
   border-top-width: 0;
 }
 
-#bdduxharmv .gt_bottom_border {
+#ymmgvpydny .gt_bottom_border {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
 }
 
-#bdduxharmv .gt_col_headings {
+#ymmgvpydny .gt_col_headings {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -549,7 +543,7 @@
   border-right-color: #D3D3D3;
 }
 
-#bdduxharmv .gt_col_heading {
+#ymmgvpydny .gt_col_heading {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -569,7 +563,7 @@
   overflow-x: hidden;
 }
 
-#bdduxharmv .gt_column_spanner_outer {
+#ymmgvpydny .gt_column_spanner_outer {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -581,15 +575,15 @@
   padding-right: 4px;
 }
 
-#bdduxharmv .gt_column_spanner_outer:first-child {
+#ymmgvpydny .gt_column_spanner_outer:first-child {
   padding-left: 0;
 }
 
-#bdduxharmv .gt_column_spanner_outer:last-child {
+#ymmgvpydny .gt_column_spanner_outer:last-child {
   padding-right: 0;
 }
 
-#bdduxharmv .gt_column_spanner {
+#ymmgvpydny .gt_column_spanner {
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: #D3D3D3;
@@ -601,7 +595,7 @@
   width: 100%;
 }
 
-#bdduxharmv .gt_group_heading {
+#ymmgvpydny .gt_group_heading {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -626,7 +620,7 @@
   vertical-align: middle;
 }
 
-#bdduxharmv .gt_empty_group_heading {
+#ymmgvpydny .gt_empty_group_heading {
   padding: 0.5px;
   color: #333333;
   background-color: #FFFFFF;
@@ -641,15 +635,15 @@
   vertical-align: middle;
 }
 
-#bdduxharmv .gt_from_md > :first-child {
+#ymmgvpydny .gt_from_md > :first-child {
   margin-top: 0;
 }
 
-#bdduxharmv .gt_from_md > :last-child {
+#ymmgvpydny .gt_from_md > :last-child {
   margin-bottom: 0;
 }
 
-#bdduxharmv .gt_row {
+#ymmgvpydny .gt_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -668,7 +662,7 @@
   overflow-x: hidden;
 }
 
-#bdduxharmv .gt_stub {
+#ymmgvpydny .gt_stub {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -681,7 +675,7 @@
   padding-right: 5px;
 }
 
-#bdduxharmv .gt_stub_row_group {
+#ymmgvpydny .gt_stub_row_group {
   color: #333333;
   background-color: #FFFFFF;
   font-size: 100%;
@@ -695,11 +689,11 @@
   vertical-align: top;
 }
 
-#bdduxharmv .gt_row_group_first td {
+#ymmgvpydny .gt_row_group_first td {
   border-top-width: 2px;
 }
 
-#bdduxharmv .gt_summary_row {
+#ymmgvpydny .gt_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -709,16 +703,16 @@
   padding-right: 5px;
 }
 
-#bdduxharmv .gt_first_summary_row {
+#ymmgvpydny .gt_first_summary_row {
   border-top-style: solid;
   border-top-color: #D3D3D3;
 }
 
-#bdduxharmv .gt_first_summary_row.thick {
+#ymmgvpydny .gt_first_summary_row.thick {
   border-top-width: 2px;
 }
 
-#bdduxharmv .gt_last_summary_row {
+#ymmgvpydny .gt_last_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -728,7 +722,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#bdduxharmv .gt_grand_summary_row {
+#ymmgvpydny .gt_grand_summary_row {
   color: #333333;
   background-color: #FFFFFF;
   text-transform: inherit;
@@ -738,7 +732,7 @@
   padding-right: 5px;
 }
 
-#bdduxharmv .gt_first_grand_summary_row {
+#ymmgvpydny .gt_first_grand_summary_row {
   padding-top: 8px;
   padding-bottom: 8px;
   padding-left: 5px;
@@ -748,11 +742,11 @@
   border-top-color: #D3D3D3;
 }
 
-#bdduxharmv .gt_striped {
+#ymmgvpydny .gt_striped {
   background-color: rgba(128, 128, 128, 0.05);
 }
 
-#bdduxharmv .gt_table_body {
+#ymmgvpydny .gt_table_body {
   border-top-style: solid;
   border-top-width: 2px;
   border-top-color: #D3D3D3;
@@ -761,7 +755,7 @@
   border-bottom-color: #D3D3D3;
 }
 
-#bdduxharmv .gt_footnotes {
+#ymmgvpydny .gt_footnotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -775,7 +769,7 @@
   border-right-color: #D3D3D3;
 }
 
-#bdduxharmv .gt_footnote {
+#ymmgvpydny .gt_footnote {
   margin: 0px;
   font-size: 90%;
   padding-left: 4px;
@@ -784,7 +778,7 @@
   padding-right: 5px;
 }
 
-#bdduxharmv .gt_sourcenotes {
+#ymmgvpydny .gt_sourcenotes {
   color: #333333;
   background-color: #FFFFFF;
   border-bottom-style: none;
@@ -798,7 +792,7 @@
   border-right-color: #D3D3D3;
 }
 
-#bdduxharmv .gt_sourcenote {
+#ymmgvpydny .gt_sourcenote {
   font-size: 90%;
   padding-top: 4px;
   padding-bottom: 4px;
@@ -806,36 +800,36 @@
   padding-right: 5px;
 }
 
-#bdduxharmv .gt_left {
+#ymmgvpydny .gt_left {
   text-align: left;
 }
 
-#bdduxharmv .gt_center {
+#ymmgvpydny .gt_center {
   text-align: center;
 }
 
-#bdduxharmv .gt_right {
+#ymmgvpydny .gt_right {
   text-align: right;
   font-variant-numeric: tabular-nums;
 }
 
-#bdduxharmv .gt_font_normal {
+#ymmgvpydny .gt_font_normal {
   font-weight: normal;
 }
 
-#bdduxharmv .gt_font_bold {
+#ymmgvpydny .gt_font_bold {
   font-weight: bold;
 }
 
-#bdduxharmv .gt_font_italic {
+#ymmgvpydny .gt_font_italic {
   font-style: italic;
 }
 
-#bdduxharmv .gt_super {
+#ymmgvpydny .gt_super {
   font-size: 65%;
 }
 
-#bdduxharmv .gt_two_val_uncert {
+#ymmgvpydny .gt_two_val_uncert {
   display: inline-block;
   line-height: 1em;
   text-align: right;
@@ -844,31 +838,31 @@
   margin-left: 0.1em;
 }
 
-#bdduxharmv .gt_footnote_marks {
+#ymmgvpydny .gt_footnote_marks {
   font-style: italic;
   font-weight: normal;
   font-size: 75%;
   vertical-align: 0.4em;
 }
 
-#bdduxharmv .gt_asterisk {
+#ymmgvpydny .gt_asterisk {
   font-size: 100%;
   vertical-align: 0;
 }
 
-#bdduxharmv .gt_slash_mark {
+#ymmgvpydny .gt_slash_mark {
   font-size: 0.7em;
   line-height: 0.7em;
   vertical-align: 0.15em;
 }
 
-#bdduxharmv .gt_fraction_numerator {
+#ymmgvpydny .gt_fraction_numerator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: 0.45em;
 }
 
-#bdduxharmv .gt_fraction_denominator {
+#ymmgvpydny .gt_fraction_denominator {
   font-size: 0.6em;
   line-height: 0.6em;
   vertical-align: -0.05em;
@@ -906,6 +900,7 @@
 </div>
 </div>
 </div>
+<p><br></p>
 <ul>
 <li><strong>ブラインド・タッチ</strong>が出来ること。
 <ul>
@@ -914,10 +909,10 @@
 </ul></li>
 </ul>
 <!-- -->
-</section>
-<section id="section-1" class="slide level2">
-<h2></h2>
-<p><span class="sec-title">教科書・参考書</span></p>
+</section></section>
+<section>
+<section id="教科書参考書" class="title-slide slide level1 center">
+<h1>教科書・参考書</h1>
 <!-- -->
 </section>
 <section id="教科書" class="slide level2">
@@ -948,31 +943,25 @@
 </ul>
 <div class="quarto-layout-panel">
 <div class="quarto-layout-row quarto-layout-valign-top">
-<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="cell-output-display">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="Figs/01/Reference_DA1.jpg" width="300"></p>
 </figure>
 </div>
 </div>
-</div>
-<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="cell-output-display">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="Figs/01/Reference_DA2.jpg" width="300"></p>
 </figure>
 </div>
 </div>
-</div>
-<div class="cell quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
-<div class="cell-output-display">
+<div class="quarto-layout-cell" style="flex-basis: 33.3%;justify-content: center;">
 <div class="quarto-figure quarto-figure-center">
 <figure>
 <p><img data-src="Figs/01/Reference_DA3.jpg" width="300"></p>
 </figure>
-</div>
 </div>
 </div>
 </div>
@@ -999,10 +988,10 @@
 </ul></li>
 </ul>
 <!-- -->
-</section>
-<section id="section-2" class="slide level2">
-<h2></h2>
-<p><span class="sec-title">評価</span></p>
+</section></section>
+<section>
+<section id="評価" class="title-slide slide level1 center">
+<h1>評価</h1>
 <!-- -->
 </section>
 <section id="成績評価" class="slide level2">
@@ -1092,7 +1081,7 @@
 <div class="footer footer-default">
 <p><a href="https://www.jaysong.net/macro-book" class="uri">https://www.jaysong.net/macro-book</a></p>
 </div>
-</section>
+</section></section>
     </div>
   </div>
 
@@ -1272,9 +1261,9 @@
         // The "normal" size of the presentation, aspect ratio will be preserved
         // when the presentation is scaled to fit different resolutions. Can be
         // specified using percentage units.
-        width: 1280,
+        width: 1400,
 
-        height: 720,
+        height: 700,
 
         // Factor of the display size that should remain empty around the content
         margin: 0.1,

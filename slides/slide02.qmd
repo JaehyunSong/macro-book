@@ -6,8 +6,7 @@ institute: "関西大学総合情報学部"
 date: "2022年 9月 29日 / 2022年 10月 6日"
 format:
   revealjs: 
-    width: 1280
-    height: 720
+    width: 1400
     slide-number: true
     logo: Figs/logo.png
     theme: [default, styles.scss]
@@ -38,9 +37,7 @@ knitr::opts_chunk$set(dev       = "ragg_png",
 
 <!-- -->
 
-##
-
-<span class="sec-title">研究テーマ</span>
+# 研究テーマ
 
 <!-- -->
 
@@ -220,9 +217,7 @@ knitr::opts_chunk$set(dev       = "ragg_png",
 <!-- -->
 
 
-##
-
-<span class="sec-title">良い研究テーマとは何か</span>
+# 良い研究テーマとは何か
 
 <!-- -->
 
@@ -234,7 +229,7 @@ Monroe (2000) の「良い研究テーマ」の条件
 
 ::::{.columns}
 
-:::{.column width=80%}
+:::{.column width=75%}
 1. **明快さ** (clarity)
 2. **検証可能性** (testability)
 3. **理論的重要性** (theoretical significance)
@@ -246,10 +241,7 @@ Monroe (2000) の「良い研究テーマ」の条件
 * 1と2は研究のための不可欠な条件
 :::
 
-:::{.column width=2%}
-:::
-
-:::{.column width=18%}
+:::{.column width=25%}
 ![](Figs/02/Monroe_2000.jpg)
 :::
 
@@ -406,9 +398,7 @@ Monroe (2000) の「良い研究テーマ」の条件
 
 <!-- -->
 
-##
-
-<span class="sec-title">論文の構成</span>
+# 論文の構成
 
 <!-- -->
 
@@ -612,9 +602,7 @@ knitr::include_graphics("Figs/02/Hypothesis.png")
 
 <!-- -->
 
-##
-
-<span class="sec-title">理論</span>
+# 理論
 
 <!-- -->
 
@@ -873,9 +861,7 @@ dagify(X ~ Z,
 
 <!-- -->
 
-##
-
-<span class="sec-title">仮説</span>
+# 仮説
 
 <!-- -->
 
@@ -957,9 +943,7 @@ dagify(X ~ Z,
 
 <!-- -->
 
-##
-
-<span class="sec-title">データに関する注意点</span>
+# データに関する注意点
 
 <!-- -->
 
@@ -1189,9 +1173,7 @@ cake_df %>%
 
 <!-- -->
 
-##
-
-<span class="sec-title">課題</span>
+# 課題
 
 <!-- -->
 

@@ -354,7 +354,7 @@
     "href": "slides/slide01.html#前提知識",
     "title": "マクロ政治データ分析実習",
     "section": "前提知識",
-    "text": "前提知識\n\n前期の「ミクロ政治データ分析実習」が履修済みであること。\n\nRを使うのは第4回（10月13日）から\n未修者の場合は10月12日まで以下の内容を習得しておくこと。\n\n\n\n\n\n\n\n\n  \n  \n    \n      内容\n      『私たちのR』\n      「ミクロ政治データ分析実習」\n    \n  \n  \n    データの入出力\n第6、7章\n第3回\n    データ型とデータ構造\n第8、9章\n第7、8回\n    R Markdown\n第21章\n第5回\n    {dplyr}と{tidyr}を用いたデータハンドリング\n第12、13、14、15章\n第9、10、11回\n    {ggplot2}を用いた可視化\n第17、18、19章\n第12、13、14回\n  \n  \n  \n\n\n\n\n\nブラインド・タッチが出来ること。\n\nできない場合は、第4回まで習得しておくこと。\nグーグルで「タイビング 練習」で検索"
+    "text": "前提知識\n\n【重要】 前期の「ミクロ政治データ分析実習」が履修済みか、それに相当する知識を持っていること\n\nRを使うのは第4回（10月13日）から\n未修者の場合は10月12日まで以下の内容を習得しておくこと。\n\n\n\n\n\n\n\n\n  \n  \n    \n      内容\n      『私たちのR』\n      「ミクロ政治データ分析実習」\n    \n  \n  \n    データの入出力\n第6、7章\n第3回\n    データ型とデータ構造\n第8、9章\n第7、8回\n    R Markdown\n第21章\n第5回\n    {dplyr}と{tidyr}を用いたデータハンドリング\n第12、13、14、15章\n第9、10、11回\n    {ggplot2}を用いた可視化\n第17、18、19章\n第12、13、14回\n  \n  \n  \n\n\n\n\n\nブラインド・タッチが出来ること。\n\nできない場合は、第4回まで習得しておくこと。\nグーグルで「タイビング 練習」で検索"
   },
   {
     "objectID": "slides/slide01.html#section-1",
@@ -879,14 +879,14 @@
     "href": "slides/slide04.html#本日の内容",
     "title": "マクロ政治データ分析実習",
     "section": "本日の内容",
-    "text": "本日の内容\n\n記述統計とは何か\nどの変数にどの記述統計量を求めるべきか\n記述統計をどう報告するか\nRの復習\n\n前期履修者でも数ヶ月はRを触っていないはずなので、ウォーミングアップ"
+    "text": "本日の内容\n\n記述統計とは何か\nどの変数にどの記述統計量を求めるべきか\n記述統計をどう報告するか\nRの復習\n\n前期履修者でも数ヶ月はRを触っていないはずなので、ウォーミングアップ\nゼロベースの解説ではない（Rの導入やデータの読み込みなどは解説しない）"
   },
   {
     "objectID": "slides/slide04.html#section",
     "href": "slides/slide04.html#section",
     "title": "マクロ政治データ分析実習",
     "section": "",
-    "text": "変数の種類と記述統計"
+    "text": "記述統計の示し方"
   },
   {
     "objectID": "slides/slide04.html#記述統計",
@@ -907,7 +907,7 @@
     "href": "slides/slide04.html#実習の準備",
     "title": "マクロ政治データ分析実習",
     "section": "実習の準備",
-    "text": "実習の準備\nパッケージとデータの読み込み（データはLMSから）\n\nlibrary(tidyverse) # {tidyverse}パッケージを読み込む\ndf <- read_csv(\"Data/Macro_04.csv\")　# Dataフォルダー内のMacro_04.csvを読み込み、dfと名付ける\n\nprint(df, n = 10) # dfの最初の10行を確認\n\n# A tibble: 3,000 × 272\n   USER_ID    Q1    Q2    Q3    Q4  Q5_1  Q5_2  Q5_3  Q5_4  Q5_5  Q5_6  Q5_7\n     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>\n 1       1     3     3     1     1    80    80    70    50    40    20    50\n 2       2     2     2     2     8     0    25    30    30    60    30    10\n 3       3     3     1     1     8    80    10     0     0     0     0    75\n 4       4     3     3     1     1   100    50     0     0    50     0   100\n 5       5     3     3     2     3    70    40    40    50    30    20    70\n 6       6     3     1     1     1   100     0     0     0     0     0   100\n 7       7     3     3     1     6   100    10    20    10    10    10    50\n 8       8     3     1     1     6    80     0    60    55     0     0    90\n 9       9     3     1     1     1   100    50   100    75    50    25   100\n10      10     3     3     1     8    25    25    25    25    55    50    50\n# … with 2,990 more rows, and 260 more variables: Q5_8 <dbl>, Q5_9 <dbl>,\n#   Q5_10 <dbl>, Q5_11 <dbl>, Q5_12 <dbl>, Q6_1 <dbl>, Q6_2 <dbl>, Q6_3 <dbl>,\n#   Q6_4 <dbl>, Q6_5 <dbl>, Q7 <dbl>, Q8 <dbl>, Q9 <dbl>, Q10_1 <dbl>,\n#   Q10_2 <dbl>, Q10_3 <dbl>, Q10_4 <dbl>, Q10_5 <dbl>, Q10_6 <dbl>,\n#   Q10_7 <dbl>, Q10_8 <dbl>, Q11 <dbl>, Q12 <dbl>, Q12S1 <dbl>, Q13 <dbl>,\n#   Q13S1 <dbl>, Q13S2 <dbl>, Q14 <dbl>, Q14S1 <dbl>, Q15 <dbl>, Q15S1 <dbl>,\n#   Q15S2 <dbl>, Q16 <dbl>, Q16S1 <dbl>, Q16S2 <dbl>, Q17_1 <dbl>, …\n# ℹ Use `print(n = ...)` to see more rows, and `colnames()` to see all variable names"
+    "text": "実習の準備\nパッケージとデータの読み込み（データはサポートページから入手可能）\n\nlibrary(tidyverse) # {tidyverse}パッケージを読み込む\ndf <- read_csv(\"Data/Macro_04.csv\")　# Dataフォルダー内のMacro_04.csvを読み込み、dfと名付ける\n\nprint(df) # dfの最初の10行を確認\n\n# A tibble: 3,000 × 272\n   USER_ID    Q1    Q2    Q3    Q4  Q5_1  Q5_2  Q5_3  Q5_4  Q5_5  Q5_6  Q5_7\n     <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl> <dbl>\n 1       1     3     3     1     1    80    80    70    50    40    20    50\n 2       2     2     2     2     8     0    25    30    30    60    30    10\n 3       3     3     1     1     8    80    10     0     0     0     0    75\n 4       4     3     3     1     1   100    50     0     0    50     0   100\n 5       5     3     3     2     3    70    40    40    50    30    20    70\n 6       6     3     1     1     1   100     0     0     0     0     0   100\n 7       7     3     3     1     6   100    10    20    10    10    10    50\n 8       8     3     1     1     6    80     0    60    55     0     0    90\n 9       9     3     1     1     1   100    50   100    75    50    25   100\n10      10     3     3     1     8    25    25    25    25    55    50    50\n# … with 2,990 more rows, and 260 more variables: Q5_8 <dbl>, Q5_9 <dbl>,\n#   Q5_10 <dbl>, Q5_11 <dbl>, Q5_12 <dbl>, Q6_1 <dbl>, Q6_2 <dbl>, Q6_3 <dbl>,\n#   Q6_4 <dbl>, Q6_5 <dbl>, Q7 <dbl>, Q8 <dbl>, Q9 <dbl>, Q10_1 <dbl>,\n#   Q10_2 <dbl>, Q10_3 <dbl>, Q10_4 <dbl>, Q10_5 <dbl>, Q10_6 <dbl>,\n#   Q10_7 <dbl>, Q10_8 <dbl>, Q11 <dbl>, Q12 <dbl>, Q12S1 <dbl>, Q13 <dbl>,\n#   Q13S1 <dbl>, Q13S2 <dbl>, Q14 <dbl>, Q14S1 <dbl>, Q15 <dbl>, Q15S1 <dbl>,\n#   Q15S2 <dbl>, Q16 <dbl>, Q16S1 <dbl>, Q16S2 <dbl>, Q17_1 <dbl>, …"
   },
   {
     "objectID": "slides/slide04.html#データの確認",
@@ -921,7 +921,7 @@
     "href": "slides/slide04.html#データの加工変数の抽出",
     "title": "マクロ政治データ分析実習",
     "section": "データの加工（変数の抽出）",
-    "text": "データの加工（変数の抽出）\n分析に使用する変数だけを残し、新しいオブジェクトとして格納\n\nselect()関数で列（=変数）抽出と変数名変更を同時に行う。\n\n\nコード結果\n\n\n\ndf2 <- df %>%\n  select(ID           = USER_ID, # 回答者ID\n         Gender       = sex,     # 性別\n         Age          = age,     # 年齢\n         Education    = Q61,     # 最終学歴\n         Voted        = Q15,     # 投票参加 (2016参院選)\n         VotedParty   = Q15S2,   # 投票先 (2016参院選)\n         T_Jimin      = Q5_7,    # 自民に対する感情温度\n         T_Minshin    = Q5_11)   # 民進に対する感情温度\n\n\n\n\ndf2 # print(df2)もOK\n\n# A tibble: 3,000 × 8\n      ID Gender   Age Education Voted VotedParty T_Jimin T_Minshin\n   <dbl>  <dbl> <dbl>     <dbl> <dbl>      <dbl>   <dbl>     <dbl>\n 1     1      2    69         4     1          7      50        30\n 2     2      2    47         3     2         NA      10        50\n 3     3      2    37         2     1          1      75         0\n 4     4      1    51         4     1          1     100        50\n 5     5      1    38         4     2         NA      70        30\n 6     6      1    71         2     1          1     100         0\n 7     7      1    47         3     1          7      50        10\n 8     8      1    71         2     1          1      90         0\n 9     9      1    75         4     1          1     100        50\n10    10      2    66         3     1          2      50        55\n# … with 2,990 more rows\n# ℹ Use `print(n = ...)` to see more rows"
+    "text": "データの加工（変数の抽出）\n分析に使用する変数だけを残し、新しいオブジェクトとして格納\n\nselect()関数で列（=変数）抽出と変数名変更を同時に行う。\n\n\nコード結果\n\n\n\ndf2 <- df %>%\n  select(ID           = USER_ID, # 回答者ID\n         Gender       = sex,     # 性別\n         Age          = age,     # 年齢\n         Education    = Q61,     # 最終学歴\n         Voted        = Q15,     # 投票参加 (2016参院選)\n         VotedParty   = Q15S2,   # 投票先 (2016参院選)\n         T_Jimin      = Q5_7,    # 自民に対する感情温度\n         T_Minshin    = Q5_11)   # 民進に対する感情温度\n\n\n\n\ndf2 # print(df2)もOK\n\n# A tibble: 3,000 × 8\n      ID Gender   Age Education Voted VotedParty T_Jimin T_Minshin\n   <dbl>  <dbl> <dbl>     <dbl> <dbl>      <dbl>   <dbl>     <dbl>\n 1     1      2    69         4     1          7      50        30\n 2     2      2    47         3     2         NA      10        50\n 3     3      2    37         2     1          1      75         0\n 4     4      1    51         4     1          1     100        50\n 5     5      1    38         4     2         NA      70        30\n 6     6      1    71         2     1          1     100         0\n 7     7      1    47         3     1          7      50        10\n 8     8      1    71         2     1          1      90         0\n 9     9      1    75         4     1          1     100        50\n10    10      2    66         3     1          2      50        55\n# … with 2,990 more rows"
   },
   {
     "objectID": "slides/slide04.html#量的変数",
@@ -970,14 +970,14 @@
     "href": "slides/slide04.html#度数分布表の作成",
     "title": "マクロ政治データ分析実習",
     "section": "度数分布表の作成",
-    "text": "度数分布表の作成\nVoted変数の度数分布表\n\n値 (1, 2, 3, …)の意味は質問票、またはコードブックを参照\n\n事前にfactor化しておくと読みやすくなる\n\n\n\ntable(df2$Voted) # 度数\n\n\n   1    2    3 \n2208  687  105 \n\nprop.table(table(df2$Voted)) # 割合\n\n\n    1     2     3 \n0.736 0.229 0.035 \n\nprop.table(table(df2$Voted)) * 100 # パーセントで出力\n\n\n   1    2    3 \n73.6 22.9  3.5"
+    "text": "度数分布表の作成\nVoted（投票有無）変数の度数分布表\n\n値 (1, 2, 3, …)の意味は質問票、またはコードブックを参照\nカテゴリ変数が複数ある場合、一つ一つの変数に対し、度数分布表を作成する必要がある。\n\n\\(\\Rightarrow\\) できれば、連続変数の記述統計表と一つにまとめたい。\n\n\n\n\n\ntable(df2$Voted) # 度数\n\n\n   1    2    3 \n2208  687  105 \n\nprop.table(table(df2$Voted)) # 割合\n\n\n    1     2     3 \n0.736 0.229 0.035 \n\nprop.table(table(df2$Voted)) * 100 # パーセントで出力\n\n\n   1    2    3 \n73.6 22.9  3.5 \n\n\n\n\n度数分布表の例\n\n\n\n\n\n\n\n  \n  \n    \n      値\n      度数\n      割合 (%)\n    \n  \n  \n    投票した\n2208\n73.6\n    棄権した\n687\n22.9\n    投票権がなかった\n105\n3.5"
   },
   {
     "objectID": "slides/slide04.html#カテゴリ変数のfactor化",
     "href": "slides/slide04.html#カテゴリ変数のfactor化",
     "title": "マクロ政治データ分析実習",
     "section": "カテゴリ変数のfactor化",
-    "text": "カテゴリ変数のfactor化\nVotedとVotedParty変数のfactor化\n\nfactor()関数を使用\n\nlevels =には元の値を、labels =には各値に対応するラベルを指定\n\n\ndf2 <- df2 %>%\n  mutate(Voted_F      = factor(Voted, levels = 1:3, labels = c(\"投票\", \"棄権\", \"選挙権なし\")),\n         VotedParty_F = factor(VotedParty, levels = 1:7,\n                               labels = c(\"自民\", \"民進\", \"公明\", \"維新\", \"共産\", \"その他\", \"不明\")))"
+    "text": "カテゴリ変数のfactor化\nVotedとVotedParty変数のfactor化\n\nfactor()関数を使用\n\nlevels =には元の値を、labels =には各値に対応するラベルを指定\n\n\n\ndf2 <- df2 %>%\n  mutate(Voted_F      = factor(Voted, levels = 1:3, labels = c(\"投票\", \"棄権\", \"選挙権なし\")),\n         VotedParty_F = factor(VotedParty, levels = 1:7,\n                               labels = c(\"自民\", \"民進\", \"公明\", \"維新\", \"共産\", \"その他\", \"不明\")))"
   },
   {
     "objectID": "slides/slide04.html#カテゴリ変数のfactor化-1",
@@ -1005,7 +1005,7 @@
     "href": "slides/slide04.html#ダミー変数の作成",
     "title": "マクロ政治データ分析実習",
     "section": "ダミー変数の作成",
-    "text": "ダミー変数の作成\nmutate()内にifelse()で作成 * {fastDummies}パッケージを使えばより簡単にダミー変換が可能\n\ndf2 <- df2 %>%\n  mutate(Voted_F_Vote       = ifelse(Voted_F == \"投票\", 1, 0),\n         Voted_F_Absent     = ifelse(Voted_F == \"棄権\", 1, 0),\n         Voted_F_Ineligible = ifelse(Voted_F == \"選挙権なし\", 1, 0))\n\ndf2 %>%\n  select(ID, Voted_F:Voted_F_Ineligible)\n\n# A tibble: 3,000 × 6\n      ID Voted_F VotedParty_F Voted_F_Vote Voted_F_Absent Voted_F_Ineligible\n   <dbl> <fct>   <fct>               <dbl>          <dbl>              <dbl>\n 1     1 投票    不明                    1              0                  0\n 2     2 棄権    <NA>                    0              1                  0\n 3     3 投票    自民                    1              0                  0\n 4     4 投票    自民                    1              0                  0\n 5     5 棄権    <NA>                    0              1                  0\n 6     6 投票    自民                    1              0                  0\n 7     7 投票    不明                    1              0                  0\n 8     8 投票    自民                    1              0                  0\n 9     9 投票    自民                    1              0                  0\n10    10 投票    民進                    1              0                  0\n# … with 2,990 more rows\n# ℹ Use `print(n = ...)` to see more rows"
+    "text": "ダミー変数の作成\nmutate()内にifelse()で作成 * {fastDummies}パッケージを使えばより簡単にダミー変換が可能\n\ndf2 <- df2 %>%\n  mutate(Voted_F_Vote       = ifelse(Voted_F == \"投票\", 1, 0),\n         Voted_F_Absent     = ifelse(Voted_F == \"棄権\", 1, 0),\n         Voted_F_Ineligible = ifelse(Voted_F == \"選挙権なし\", 1, 0))\n\ndf2 %>%\n  select(ID, Voted_F:Voted_F_Ineligible)\n\n# A tibble: 3,000 × 6\n      ID Voted_F VotedParty_F Voted_F_Vote Voted_F_Absent Voted_F_Ineligible\n   <dbl> <fct>   <fct>               <dbl>          <dbl>              <dbl>\n 1     1 投票    不明                    1              0                  0\n 2     2 棄権    <NA>                    0              1                  0\n 3     3 投票    自民                    1              0                  0\n 4     4 投票    自民                    1              0                  0\n 5     5 棄権    <NA>                    0              1                  0\n 6     6 投票    自民                    1              0                  0\n 7     7 投票    不明                    1              0                  0\n 8     8 投票    自民                    1              0                  0\n 9     9 投票    自民                    1              0                  0\n10    10 投票    民進                    1              0                  0\n# … with 2,990 more rows"
   },
   {
     "objectID": "slides/slide04.html#順序変数",
@@ -1153,5 +1153,61 @@
     "title": "実習用データ集",
     "section": "",
     "text": "以下のリストからデータのファイル名をクリックし、PCにダウンロード&保存する。\nNIIオンライン分析システムのプロジェクト・フォルダー内にDataという名の新しいフォルダーを作成する。\nDataフォルダーにダウンロードしたデータをアップロードする。\n\nプロジェクト・フォルダー直に入れても良いが、データ読み込みの際、パスを適宜修正すること。"
+  },
+  {
+    "objectID": "slides/slide01.html#講義概要-1",
+    "href": "slides/slide01.html#講義概要-1",
+    "title": "マクロ政治データ分析実習",
+    "section": "講義概要",
+    "text": "講義概要\n\n講義日: 木曜日 第4時限（14:40～16:10）\n場所: TC302教室（高槻キャンパス C棟 302教室）\n講義内容: 社会科学のリサーチデザイン & Rを用いたデータ分析の基礎\n\nリサーチデザイン\n統計的推論・仮説検定\n平均値の（差の）検定\n相関分析\n独立性の検定\n線形回帰分析\nロジスティック回帰分析\n\nRの使い方そのものについては解説しない。\n\nRの使い方は前期の「ミクロ政治データ分析実習」で解説済み\n\n前提知識: 前期の「ミクロ政治データ分析実習」を履修すること。\n\n未修の場合、{dplyr}、{tidyr}、{ggplot2}に関する知識が必要。\nブラインドタッチが出来ること。"
+  },
+  {
+    "objectID": "slides/slide01.html#重要前提知識",
+    "href": "slides/slide01.html#重要前提知識",
+    "title": "マクロ政治データ分析実習",
+    "section": "【重要】前提知識",
+    "text": "【重要】前提知識\n\n前期の「ミクロ政治データ分析実習」が履修済みか、それに相当する知識を持っていること\n\nRを使うのは第4回（10月13日）から\n未修者の場合は10月12日まで以下の内容を習得しておくこと。\n\n\n\n\n\n\n\n\n  \n  \n    \n      内容\n      『私たちのR』\n      「ミクロ政治データ分析実習」\n    \n  \n  \n    データの入出力\n第6、7章\n第3回\n    データ型とデータ構造\n第8、9章\n第7、8回\n    R Markdown\n第21章\n第5回\n    {dplyr}と{tidyr}を用いたデータハンドリング\n第12、13、14、15章\n第9、10、11回\n    {ggplot2}を用いた可視化\n第17、18、19章\n第12、13、14回\n  \n  \n  \n\n\n\n\n\n\nブラインド・タッチが出来ること。\n\nできない場合は、第4回まで習得しておくこと。\nグーグルで「タイビング 練習」で検索"
+  },
+  {
+    "objectID": "slides/slide04.html#summarytoolsの利用都築",
+    "href": "slides/slide04.html#summarytoolsの利用都築",
+    "title": "マクロ政治データ分析実習",
+    "section": "{summarytools}の利用（都築）",
+    "text": "{summarytools}の利用（都築）\n\n主要統計量のみ、行と列の交換\n\n\nコード結果\n\n\n\ndf2 %>%\n  select(-ID) %>% # 回答者IDの記述統計量は不要なので除外\n  descr()\n\n\n\n\n\nDescriptive Statistics  \ndf2  \nN: 3000  \n\n                    Age   Education    Gender   T_Jimin   T_Minshin     Voted   VotedParty\n------------- --------- ----------- --------- --------- ----------- --------- ------------\n         Mean     47.34        3.11      1.50     41.13       34.25      1.30         2.94\n      Std.Dev     15.63        0.89      0.50     28.02       25.95      0.53         2.21\n          Min     18.00        1.00      1.00      0.00        0.00      1.00         1.00\n          Max     75.00        4.00      2.00    100.00      100.00      3.00         7.00\n      N.Valid   3000.00     3000.00   3000.00   3000.00     3000.00   3000.00      2208.00"
+  },
+  {
+    "objectID": "slides/slide04.html#summarytoolsの利用1",
+    "href": "slides/slide04.html#summarytoolsの利用1",
+    "title": "マクロ政治データ分析実習",
+    "section": "{summarytools}の利用（1）",
+    "text": "{summarytools}の利用（1）\n\n{summarytools}のdescr()関数\n\ndescr()内には記述統計を確認するdata.frame / tibbleのオブジェクト名\n連続変数のみ記述統計量が出力される。\n\n\n\nコード結果\n\n\n\n# インストールされていない場合はRコンソール上にinstall.pacakges(\"summarytools\")\nlibrary(summarytools)\ndf2 %>%\n  select(-ID) %>% # 回答者IDの記述統計量は不要なので除外\n  descr()\n\n\n\n\n\nDescriptive Statistics  \ndf2  \nN: 3000  \n\n                        Age   Education    Gender   T_Jimin   T_Minshin     Voted   VotedParty\n----------------- --------- ----------- --------- --------- ----------- --------- ------------\n             Mean     47.34        3.11      1.50     41.13       34.25      1.30         2.94\n          Std.Dev     15.63        0.89      0.50     28.02       25.95      0.53         2.21\n              Min     18.00        1.00      1.00      0.00        0.00      1.00         1.00\n               Q1     34.00        2.00      1.00     20.00       10.00      1.00         1.00\n           Median     47.00        3.00      2.00     50.00       40.00      1.00         2.00\n               Q3     61.00        4.00      2.00     60.00       50.00      2.00         5.00\n              Max     75.00        4.00      2.00    100.00      100.00      3.00         7.00\n              MAD     19.27        1.48      0.00     29.65       29.65      0.00         1.48\n              IQR     27.00        2.00      1.00     40.00       40.00      1.00         4.00\n               CV      0.33        0.29      0.33      0.68        0.76      0.41         0.75\n         Skewness     -0.03       -0.38     -0.01      0.02        0.16      1.56         0.82\n      SE.Skewness      0.04        0.04      0.04      0.04        0.04      0.04         0.05\n         Kurtosis     -1.14       -1.28     -2.00     -0.83       -0.81      1.53        -0.82\n          N.Valid   3000.00     3000.00   3000.00   3000.00     3000.00   3000.00      2208.00\n        Pct.Valid    100.00      100.00    100.00    100.00      100.00    100.00        73.60"
+  },
+  {
+    "objectID": "slides/slide04.html#summarytoolsの利用2",
+    "href": "slides/slide04.html#summarytoolsの利用2",
+    "title": "マクロ政治データ分析実習",
+    "section": "{summarytools}の利用（2）",
+    "text": "{summarytools}の利用（2）\n\n主要統計量のみ、行と列の交換、変数の順番は固定\n\n\ndf2 %>%\n  select(-ID) %>%\n  # 平均値、標準偏差、最小値、最大値、有効ケース数\n  descr(stats = c(\"mean\", \"sd\", \"min\", \"max\", \"n.valid\"),\n        transpose = TRUE, \n        sort = \"p\")\n\nDescriptive Statistics  \ndf2  \nN: 3000  \n\n                    Mean   Std.Dev     Min      Max   N.Valid\n---------------- ------- --------- ------- -------- ---------\n             Age   47.34     15.63   18.00    75.00   3000.00\n       Education    3.11      0.89    1.00     4.00   3000.00\n          Gender    1.50      0.50    1.00     2.00   3000.00\n         T_Jimin   41.13     28.02    0.00   100.00   3000.00\n       T_Minshin   34.25     25.95    0.00   100.00   3000.00\n           Voted    1.30      0.53    1.00     3.00   3000.00\n      VotedParty    2.94      2.21    1.00     7.00   2208.00"
+  },
+  {
+    "objectID": "slides/slide04.html#summarytoolsの利用3",
+    "href": "slides/slide04.html#summarytoolsの利用3",
+    "title": "マクロ政治データ分析実習",
+    "section": "{summarytools}の利用（3）",
+    "text": "{summarytools}の利用（3）\n\nRMarkdownを使う場合（Chunkオプションとしてresults = \"asis\"を指定）\n\n\ndf2 %>%\n  select(-ID) %>%\n  descr(stats = c(\"mean\", \"sd\", \"min\", \"max\", \"n.valid\"),\n        transpose = TRUE, sort = \"p\", \n        style = \"rmarkdown\", plain.ascii = FALSE)\nDescriptive Statistics\ndf2\nN: 3000\n\n\n\n \nMean\nStd.Dev\nMin\nMax\nN.Valid\n\n\n\n\nAge\n47.34\n15.63\n18.00\n75.00\n3000.00\n\n\nEducation\n3.11\n0.89\n1.00\n4.00\n3000.00\n\n\nGender\n1.50\n0.50\n1.00\n2.00\n3000.00\n\n\nT_Jimin\n41.13\n28.02\n0.00\n100.00\n3000.00\n\n\nT_Minshin\n34.25\n25.95\n0.00\n100.00\n3000.00\n\n\nVoted\n1.30\n0.53\n1.00\n3.00\n3000.00\n\n\nVotedParty\n2.94\n2.21\n1.00\n7.00\n2208.00"
+  },
+  {
+    "objectID": "slides/slide04.html#連続変数continuous-variable",
+    "href": "slides/slide04.html#連続変数continuous-variable",
+    "title": "マクロ政治データ分析実習",
+    "section": "連続変数（continuous variable）",
+    "text": "連続変数（continuous variable）\n間隔尺度、または比率尺度で測定された変数\n\n量的変数の例: 年齢 (Age)、感情温度 (T_JiminとT_Minshin)\n\n変数の尺度についてはミクロ政治データ分析実習の第6回を参照\n\n量的変数の記述統計量（太字は掲載がほぼ必須の記述統計量）\n\n平均値 (mean())\n中央値 (median())\n標準偏差 (sd())\n分散 (var())\n最小値 (min())\n最大値 (max())\n欠損値を除く有効ケース数 (Observation; Obs)\n\n一部の変数に欠損値が含まれている場合は必須\nただし、分析を行う場合、予め欠損値を含む行を削除 or 補完する場合が多い\n\nその他"
+  },
+  {
+    "objectID": "slides/slide04.html#カテゴリ変数categorical-variable",
+    "href": "slides/slide04.html#カテゴリ変数categorical-variable",
+    "title": "マクロ政治データ分析実習",
+    "section": "カテゴリ変数（categorical variable）",
+    "text": "カテゴリ変数（categorical variable）\nカテゴリ変数：名目尺度で測定された変数（=名目変数）\n\nカテゴリ変数の例: 性別 (Gender)、投票参加 (Voted)、投票先 (VotedParty)\n\n教育水準（Education）のような順序変数は、連続変数としてもカテゴリ変数としても扱うことが可能\n\n名目尺度は足し算、掛け算などができないため、平均値や標準偏差のような概念が存在しない。\n\nカテゴリ変数の可視化\n\n方法1: 度数分布表を作成する\n\n事前にfactor化する\n\n方法2: ダミー変数に変換し、量的変数と同じ扱い\n\n記述統計の表を作成する場合は、ダミー変換後、量的変数同様に扱う"
   }
 ]
